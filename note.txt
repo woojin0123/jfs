@@ -36,7 +36,7 @@ github https://github.com/
     나 저기에 파일 추가할 거야
     git add .
     문 열었다
-    git commit -m "first commit"
+    git commit -m "아무말"
     밀어주기
     git push -u origin main
     -----
