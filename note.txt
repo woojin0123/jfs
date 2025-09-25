@@ -42,3 +42,11 @@ github https://github.com/
     git push -u origin main
     -----
     -u : --set upstream의 약자 (업로드라고 생각하면 됨)
+
+
+    github에 있는 자료 다운 방법 (시작하기 전에 항상 다운받기)
+    1. 백업 폴더 생성 (매번 할 필요 없음)
+    2. git에서 백업 폴더 들어가기 
+    - cd 폴더명
+    3. 명령어 입력
+    - git clone https://github.com/woojin0123/jfs.git
