@@ -15,6 +15,7 @@ Client Computer : 내 컴퓨터
 Server Computer : github > 폴더 생성 > readme.md
 
 git    > 자료를 github에 업로드/다운로드
+        이건 에디터와 상관없이 이용 가능
 
 
 github는 저장소로만 활용
@@ -36,7 +37,7 @@ github https://github.com/
     나 저기에 파일 추가할 거야
     git add .
     문 열었다
-    git commit -m "아무말"
+    git commit -m "어떤 내용을 수정했는지에 대한 짧은 설명"
     밀어주기
     git push -u origin main
     -----
