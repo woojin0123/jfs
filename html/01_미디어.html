@@ -7,16 +7,24 @@
     <title>Document</title>
 </head>
 
+<!-- 태그 검증 사이트 https://caniuse.com/ -->
+
 <!-- 콘텐츠 크기 단위 px % vw vh 등 -->
- <!-- 홈페이지에서 비디오 다운받는 방법 첫번째
+<!-- 홈페이지에서 비디오 다운받는 방법 첫번째
  1. 페이지 접속
  2. F12 클릭 후 video 검색
  3. mp4 파일 찾고 우클릭 > 새창에서 열기 > 저장 -->
- 
- <!-- 홈페이지에서 비디오 다운받는 방법 두번째
+
+<!-- 홈페이지에서 비디오 다운받는 방법 두번째
   1. 페이지 접속
   2. F12 클릭 후 network 클릭
   3. mp4 찾고 우클릭 > 새창에서 열기 > 저장 -->
+
+  <!-- ./ 현재 폴더 위치 -->
+  <!-- ../ 현재 폴더에서 상위 폴더로 이동 
+        ex. ../../../ 세번 나오는 거 -->
+<!-- ctrl+d : 다중 선택 > 같은 단어를 한번에 선택하는 거 -->
+<!-- alt+클릭 : 다중 커서 (선택 후 문자 일괄 추가 가능) -->
 
 
 <!DOCTYPE html>
@@ -26,32 +34,41 @@
     <!-- margin : 좌우 여백 -->
     <h1> Bear and Ggirook </h1>
     <p> A Bear and Ggirooks are playing in the river.
-        <br> 
+        <br>
         <br> Let's watch the video together!
     </p>
 
-    <video width="320" height="240" controls> 
+     <video controls poster="./../assets/image/mov_bbb.png" style="width: 400;" height: 300;>
+        <source src="./../assets/video/movie_bbb.mp4" type="video/mp4"> </video>
+
+
+    <video width="320" height="240" controls autoplay>
         <!-- control이 true면 생략 가능  -->
-        <source src="movie_bbb.mp4" type="video/mp4">
-        <source src="movie_bbb.wepm" type="video/wepm">
+        <source src="./../assets/video/movie_bbb.mp4" type="video/mp4">
+        <source src="./../assets/video/movie_bbb.mp4" type="video/wepm">
         Your browser does not support the video tag.
     </video>
 
     <video width="320" height="240" controls>
-        <source src="movie_bbb.mp4" type="video/mp4">
-        <source src="movie_bbb.wepm" type="video/wepm">
+        <source src="./../assets/video/movie_bbb" type="video/mp4">
+        <source src="./../assets/video/movie_bbb.webm" type="video/wepm">
         Your browser does not support the video tag.
     </video>
     <br>
     <!-- 자동플레이 무음 설정 autoplay muted *크롬은 무음 설정 안하면 안됨* 
          무한 반복 설정 loop -->
-     <!-- control 삭제 시 재생바 사라짐 -->
-    <video src="movie_bbb.mp4" width="100%" autoplay muted loop style="width: 100%; height: 100vh; object-fit: cover;"></video>
+    <!-- control 삭제 시 재생바 사라짐 -->
+    <video src="./../assets/video/movie_bbb.mp4" width="100%" autoplay muted loop
+        style="width: 100%; height: 100vh; object-fit: cover;"></video>
     <!-- 빈요소: img(이미지) br(엔터) hr(구분선) -->
     <hr style="border: 3px solid red;">
-    
-    <video src="main_video1.mp4" width="100%" autoplay muted loop style="width: 100%; height: 100vh; object-fit: cover;"></video>
-    
+
+    <video src="./../assets/video/movie_bbb.mp4" width="100%" autoplay muted loop
+        style="width: 100%; height: 100vh; object-fit: cover;"></video>
+
+      
+        <img src="./../assets/image/다운로드.jpg" alt="과녁판" style="width: 200px; border: 3px solid rebeccapurple;">
+
 </body>
 
 </html>
@@ -87,48 +104,78 @@
     <p style="font-size: 30px; color: blue;">내용입니다</p>
     <p>내용입니다</p>
     <!-- <a></a>는 링크 거는 역할, href(하이퍼링크/요소)없이는 링크 적용이 안된다</a> -->
-    <a href style="font-size: 40px; color: cadetblue; font-style: italic;"="https://github.com/woojin0123/jfs.git">github</a>
+    <a href
+        style="font-size: 40px; color: cadetblue; font-style: italic;"="https://github.com/woojin0123/jfs.git">github</a>
+
     <br><br>
-    <img src="figma.png" alt="대체택스트" width="">
+
+    <img src="./../assets/image/figma.png" alt="대체택스트" width="">
+
+
     <!-- 복제: shift+alt+아래or위방향키 -->
     <!-- width="792" height="446" -->
     <br><iframe src="https://www.youtube.com/embed/1d3ptg314ZQ?autoplay=1" title="[경기 H/L] 롯데 vs 삼성 (09.24)"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="width: 480px; height: 360px;"></iframe>
-    <br>
-    <ul style="line-height: 6;">
-        <li>아메리카노</li>
-        <li>카페모카</li>
-        <li>카푸치노</li>
-        <li>카페라떼</li>
-        <li>자바칩 프라푸치노</li>
-    </ul>
-    <br>
-    <ul>
-        <li>아메리카노</li>
-        <li>카페모카</li>
-        <li>카푸치노</li>
-        <li>카페라떼</li>
-        <li>자바칩 프라푸치노</li>
-    </ul>
-    <br>
-    <H2 style="font-size: 50px;">250925 오전 기준 야구 순위</H2>
-    <ol>
-        <li style="color: darkred;">LG</li>
-        <li style="color: orangered;">한화</li>
-        <li style="color: red;">SSG</li>
-        <li style="color: blue;">삼성</li>
-        <li>KT</li>
-    </ol>
-    <!-- 웹 접근성: 모든 사람이 동등하게 사용 가능(사회적 약자도 사용할 수 있게) -->
-    <!-- html 유효성 검사 사이트 : https://validator.w3.org -->
-    <!-- ex. img src 뒤에 alt가 따라오는 이유 : 웹 접근성 때문에  -->
-    <img src="https://search.pstatic.net/sunny/?src=https%3A%2F%2Fcdn.iconscout.com%2Ficon%2Fpremium%2Fpng-256-thumb%2Fdartboard-254-847867.png&type=sc960_832"
-        width="100" alt="과녁판 이미지">
-    <img src="https://search.pstatic.net/sunny/?src=https%3A%2F%2Fcdn.iconscout.com%2Ficon%2Fpremium%2Fpng-256-thumb%2Fdartboard-254-847867.png&type=sc960_832"
-        alt="과녁판 이미지" style="width:100px"> <!-- style은 글로벌 속성 : 모든 태그에 사용 가능함-->
-    <!-- <br><br><img src="figma.svg" alt="이미지를 텍스트로 표현+이미지가 표시되지 않을 때 검색할 수 있는 용도">  -->
+
+        <br>
+        <iframe src="https://www.youtube.com/embed/1d3ptg314ZQ?autoplay=1" title="[경기 H/L] 롯데 vs 삼성 (09.24)"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
+            style="width: 480px; height: 360px;"></iframe>
+        <br>
+
+        <ul style="line-height: 6;">
+            <li>아메리카노</li>
+            <li>카페모카</li>
+            <li>카푸치노</li>
+            <li>카페라떼</li>
+            <li>자바칩 프라푸치노</li>
+        </ul>
+        <br>
+        <ul>
+            <li>아메리카노</li>
+            <li>카페모카</li>
+            <li>카푸치노</li>
+            <li>카페라떼</li>
+            <li>자바칩 프라푸치노</li>
+        </ul>
+        <br>
+        <H2 style="font-size: 50px;">250925 오전 기준 야구 순위</H2>
+        <ol>
+            <li style="color: darkred;">LG</li>
+            <li style="color: orangered;">한화</li>
+            <li style="color: red;">SSG</li>
+            <li style="color: blue;">삼성</li>
+            <li style="color: black;">KT</li>
+        </ol>
+        <!-- 웹 접근성: 모든 사람이 동등하게 사용 가능(사회적 약자도 사용할 수 있게) -->
+        <!-- html 유효성 검사 사이트 : https://validator.w3.org -->
+        <!-- ex. img src 뒤에 alt가 따라오는 이유 : 웹 접근성 때문에  -->
+        <img src="https://search.pstatic.net/sunny/?src=https%3A%2F%2Fcdn.iconscout.com%2Ficon%2Fpremium%2Fpng-256-thumb%2Fdartboard-254-847867.png&type=sc960_832"
+            width="100" alt="과녁판 이미지">
+        <img src="https://search.pstatic.net/sunny/?src=https%3A%2F%2Fcdn.iconscout.com%2Ficon%2Fpremium%2Fpng-256-thumb%2Fdartboard-254-847867.png&type=sc960_832"
+            alt="과녁판 이미지" style="width:100px"> <!-- style은 글로벌 속성 : 모든 태그에 사용 가능함-->
+        <!-- <br><br><img src="figma.svg" alt="이미지를 텍스트로 표현+이미지가 표시되지 않을 때 검색할 수 있는 용도">  -->
+<br>
+
+<!-- 오디오 -->
+<!-- 유튭 오디오 라이브러리
+ https://studio.youtube.com/channel/UCPXWw6K3NqP0w2Qi32P9K5A/music -->
+
+ <audio controls>
+  <source src="./../assets/audio/horse.ogg" type="audio/ogg">
+  <source src="./../assets/audio/horse.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+
+    <audio src="./../assets/Échappé - Dan Bodan.mp3" width="100%" autoplay muted loop</audio>
+
+
+
+
 </body>
 
 <!-- 주석의 효능
