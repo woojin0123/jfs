@@ -7,8 +7,57 @@
     <title>Document</title>
 </head>
 
+<!-- 콘텐츠 크기 단위 px % vw vh 등 -->
+ <!-- 홈페이지에서 비디오 다운받는 방법 첫번째
+ 1. 페이지 접속
+ 2. F12 클릭 후 video 검색
+ 3. mp4 파일 찾고 우클릭 > 새창에서 열기 > 저장 -->
+ 
+ <!-- 홈페이지에서 비디오 다운받는 방법 두번째
+  1. 페이지 접속
+  2. F12 클릭 후 network 클릭
+  3. mp4 찾고 우클릭 > 새창에서 열기 > 저장 -->
+
+
+<!DOCTYPE html>
+<html>
+
+<body style="background-color: azure; margin: 0;">
+    <!-- margin : 좌우 여백 -->
+    <h1> Bear and Ggirook </h1>
+    <p> A Bear and Ggirooks are playing in the river.
+        <br> 
+        <br> Let's watch the video together!
+    </p>
+
+    <video width="320" height="240" controls> 
+        <!-- control이 true면 생략 가능  -->
+        <source src="movie_bbb.mp4" type="video/mp4">
+        <source src="movie_bbb.wepm" type="video/wepm">
+        Your browser does not support the video tag.
+    </video>
+
+    <video width="320" height="240" controls>
+        <source src="movie_bbb.mp4" type="video/mp4">
+        <source src="movie_bbb.wepm" type="video/wepm">
+        Your browser does not support the video tag.
+    </video>
+    <br>
+    <!-- 자동플레이 무음 설정 autoplay muted *크롬은 무음 설정 안하면 안됨* 
+         무한 반복 설정 loop -->
+     <!-- control 삭제 시 재생바 사라짐 -->
+    <video src="movie_bbb.mp4" width="100%" autoplay muted loop style="width: 100%; height: 100vh; object-fit: cover;"></video>
+    <!-- 빈요소: img(이미지) br(엔터) hr(구분선) -->
+    <hr style="border: 3px solid red;">
+    
+    <video src="main_video1.mp4" width="100%" autoplay muted loop style="width: 100%; height: 100vh; object-fit: cover;"></video>
+    
+</body>
+
+</html>
+
+
 <body>
-<video src=""></video>
     <!-- html 형식 -->
     <!-- <시작태그>내용</끝태그> -->
 
@@ -31,47 +80,54 @@
 
     <!-- 시작태그&끝 태그 (ex. <h1> content </h1>)
             빈태그: 끝태그 -->
+
+
     <h1>제목입니다</h1>
-    <h1>제목입니다</h1>
+    <h1 style="font-size: 50px; color: slateblue;">제목입니다</h1>
     <p style="font-size: 30px; color: blue;">내용입니다</p>
     <p>내용입니다</p>
     <!-- <a></a>는 링크 거는 역할, href(하이퍼링크/요소)없이는 링크 적용이 안된다</a> -->
-    <a href="https://github.com/woojin0123/jfs.git">github</a>
+    <a href style="font-size: 40px; color: cadetblue; font-style: italic;"="https://github.com/woojin0123/jfs.git">github</a>
     <br><br>
     <img src="figma.png" alt="대체택스트" width="">
     <!-- 복제: shift+alt+아래or위방향키 -->
-     <!-- width="792" height="446" -->
-   <br> <iframe src="https://www.youtube.com/embed/1d3ptg314ZQ?autoplay=1" title="[경기 H/L] 롯데 vs 삼성 (09.24)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="width: 800px; height: 500px;"></iframe>
-<br>
- <ul style="line-height: 6;">
-    <li>아메리카노</li>
-    <li>카페모카</li>
-    <li>카푸치노</li>
-    <li>카페라떼</li>
-    <li>자바칩 프라푸치노</li>
- </ul>
-<br>
- <ul>
-    <li>아메리카노</li>
-    <li>카페모카</li>
-    <li>카푸치노</li>
-    <li>카페라떼</li>
-    <li>자바칩 프라푸치노</li>
- </ul>
-<br>
-<H2>250925 오전 기준 야구 순위</H2>
-<ol>
-    <li>LG</li>
-    <li>한화</li>
-    <li>SSG</li>
-    <li>삼성</li>
-    <li>KT</li>
-</ol>
-<!-- 웹 접근성: 모든 사람이 동등하게 사용 가능(사회적 약자도 사용할 수 있게) -->
- <!-- html 유효성 검사 사이트 : https://validator.w3.org -->
-  <!-- ex. img src 뒤에 alt가 따라오는 이유 : 웹 접근성 때문에  -->
-<img src="https://search.pstatic.net/sunny/?src=https%3A%2F%2Fcdn.iconscout.com%2Ficon%2Fpremium%2Fpng-256-thumb%2Fdartboard-254-847867.png&type=sc960_832" width="100" alt="과녁판 이미지">
-<img src="https://search.pstatic.net/sunny/?src=https%3A%2F%2Fcdn.iconscout.com%2Ficon%2Fpremium%2Fpng-256-thumb%2Fdartboard-254-847867.png&type=sc960_832"  alt="과녁판 이미지" style="width:100px"> <!-- style은 글로벌 속성 : 모든 태그에 사용 가능함-->
+    <!-- width="792" height="446" -->
+    <br><iframe src="https://www.youtube.com/embed/1d3ptg314ZQ?autoplay=1" title="[경기 H/L] 롯데 vs 삼성 (09.24)"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="width: 480px; height: 360px;"></iframe>
+    <br>
+    <ul style="line-height: 6;">
+        <li>아메리카노</li>
+        <li>카페모카</li>
+        <li>카푸치노</li>
+        <li>카페라떼</li>
+        <li>자바칩 프라푸치노</li>
+    </ul>
+    <br>
+    <ul>
+        <li>아메리카노</li>
+        <li>카페모카</li>
+        <li>카푸치노</li>
+        <li>카페라떼</li>
+        <li>자바칩 프라푸치노</li>
+    </ul>
+    <br>
+    <H2 style="font-size: 50px;">250925 오전 기준 야구 순위</H2>
+    <ol>
+        <li style="color: darkred;">LG</li>
+        <li style="color: orangered;">한화</li>
+        <li style="color: red;">SSG</li>
+        <li style="color: blue;">삼성</li>
+        <li>KT</li>
+    </ol>
+    <!-- 웹 접근성: 모든 사람이 동등하게 사용 가능(사회적 약자도 사용할 수 있게) -->
+    <!-- html 유효성 검사 사이트 : https://validator.w3.org -->
+    <!-- ex. img src 뒤에 alt가 따라오는 이유 : 웹 접근성 때문에  -->
+    <img src="https://search.pstatic.net/sunny/?src=https%3A%2F%2Fcdn.iconscout.com%2Ficon%2Fpremium%2Fpng-256-thumb%2Fdartboard-254-847867.png&type=sc960_832"
+        width="100" alt="과녁판 이미지">
+    <img src="https://search.pstatic.net/sunny/?src=https%3A%2F%2Fcdn.iconscout.com%2Ficon%2Fpremium%2Fpng-256-thumb%2Fdartboard-254-847867.png&type=sc960_832"
+        alt="과녁판 이미지" style="width:100px"> <!-- style은 글로벌 속성 : 모든 태그에 사용 가능함-->
     <!-- <br><br><img src="figma.svg" alt="이미지를 텍스트로 표현+이미지가 표시되지 않을 때 검색할 수 있는 용도">  -->
 </body>
 
