@@ -25,7 +25,7 @@ github https://github.com/
 
            <!-- 주석 (설명글) --> 컨트롤 슬래시 : 주석
      <!-- 
-    초기화
+      초기화
     git init
     서버 연결
     git remote add origin https://github.com/woojin0123/jfs.git
@@ -48,5 +48,9 @@ github https://github.com/
     1. 백업 폴더 생성 (매번 할 필요 없음)
     2. git에서 백업 폴더 들어가기 
     - cd 폴더명
+
+      ***** clone 작업 하기 전에 하기 (최초 1회)
+     git config --global woojin0123
+     git config --global iamwjwj@gmail.com
     3. 명령어 입력
     - git clone https://github.com/woojin0123/jfs.git
