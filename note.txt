@@ -1,0 +1,56 @@
+https://codingand.notion.site/950h-17e2620edc1980e6916fc6028272b217
+
+1. VSCode 제거
+2. VSCode 기본 설치
+3. 확장 프로그램 설치
+- (필수/미러링) Live Server
+- (선택/언어) Korean Language Pack
+- (선택/테마) One Dark Pro
+- (선택/효과) Power Mode
+- (추천/연동) vscode-pdf
+- (추천/아이콘) VSCode-icons > VSCode icon 선택 (not seti)
+
+
+Client Computer : 내 컴퓨터
+Server Computer : github > 폴더 생성 > readme.md
+
+git    > 자료를 github에 업로드/다운로드
+        이건 에디터와 상관없이 이용 가능
+
+
+github는 저장소로만 활용
+github https://github.com/
+       > 저장소 (Repository)
+       > 파일/폴더 저장공간 확보
+
+           <!-- 주석 (설명글) --> 컨트롤 슬래시 : 주석
+     <!-- 
+      초기화
+    git init
+    서버 연결
+    git remote add origin https://github.com/woojin0123/jfs.git
+
+    github 저장소에 업로드하기
+    - 내 컴퓨터(드라이브>이름폴더>jfs폴더)에서 jfs로 저장하기
+    매일 반복하기 (add commit push)
+    -----
+    나 저기에 파일 추가할 거야
+    git add .
+    문 열었다
+    git commit -m "어떤 내용을 수정했는지에 대한 짧은 설명"
+    밀어주기
+    git push -u origin main
+    -----
+    -u : --set upstream의 약자 (업로드라고 생각하면 됨)
+
+
+    github에 있는 자료 다운 방법 (시작하기 전에 항상 다운받기)
+    1. 백업 폴더 생성 (매번 할 필요 없음)
+    2. git에서 백업 폴더 들어가기 
+    - cd 폴더명
+
+      ***** clone 작업 하기 전에 하기 (최초 1회)
+     git config --global woojin0123
+     git config --global iamwjwj@gmail.com
+    3. 명령어 입력
+    - git clone https://github.com/woojin0123/jfs.git

@@ -1,0 +1,99 @@
+<!-- !+tab (html 자동 불러오기) -->
+<!DOCTYPE html>
+
+<!-- HTML 문서의 시작-->
+
+<html lang="ko">
+<!-- 언어 선택 참고 링크: https://www.w3schools.com/tags/ref_language_codes.asp
+        en: 영어 (기본 설정) 
+        ko: 한국어
+        zh: 중국어
+        ja: 일본어 -->
+
+<!-- 머리의 시작 -->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- 웹 브라우저의 제목 표시줄에 표시할 내용 -->
+    <title>HTML 기본 구조</title>
+            
+<!-- 외부 스타일 (css) -->
+        <link rel="stylesheet" href="스타일.css">
+<!-- 내부 스크립트 -->
+        <style></style>
+
+    </head>
+<!-- 머리의 끝 -->
+
+<!-- 본문의 시작 -->
+<!-- 인라인 스타일 -->
+     <body style="background-color: aquamarine;">
+
+<!-- 웹 브라우저에 표시할 내용 기록 -->
+
+<!-- 콘텐츠 제목 : h1~h6 -->
+        <h1>콘텐츠 제목</h1>
+
+<!-- 본문 내용 (문단, 단락)-->
+<!-- span: 선택 영역만 스타일을 주기 위함 -->
+<!-- **우선 검색 순서**
+     strong: 강한 강조 텍스트 em: 중요한 텍스트 mark: 강조 텍스트 -->
+        <p><span style="color: blueviolet; font-weight: bold; font-size: 30px;">Lorem ipsum</span> dolor sit amet consectetur, <mark style="background-color: orange;">adipisicing elit</mark>. Quasi, nulla magni. <i>Doloribus non</i>, dolores incidunt, earum debitis <span style="font-style: italic;">quaerat eaque enim recusandae</span> ipsam <span style="background-color: yellowgreen;">ratione aliquid</span> aliquam <b>doloremque fugit modi, id magnam.</b></p>
+
+<!-- lorem+tab 내용은 없는데 디자인 참고용으로 입력하는 에밋 -->
+<!-- lorem숫자+tab : 숫자만큼만 단어 표기/더미 텍스트  -->
+        <p>Lorem ipsum dolor sit amet.</p>
+
+<!-- ul의 자식은 li만 사용 가능 -->
+<!-- li 안에는 모든 태그 사용 가능 (h, p등 불가) -->
+        <ul>
+            <li>
+                <ul>
+                    <li>순서없는 목록 만들기</li>
+                </ul>
+            </li>
+        </ul>
+
+<!-- 하이퍼 링크 -->
+      <a href="표시할 파일">내용</a>
+
+<!-- 이미지 삽입 태그 (jpg, gif, png<투명배경사진>, svg<로고, 아이콘> -->
+<!-- 더미 이미지 링크 : https://picsum.photos/ -->
+      <img src="https://picsum.photos/id/237/200/300" alt="대체텍스트">
+
+<!-- 비디오 삽입 태그 (mp4, webm, ogv) -->
+<!-- 무료 비디오 사이트 : https://www.pexels.com/ko-kr/videos/ -->
+<!-- autoplay: 자동 플레이 *크롬에서는 muted 들어가야함
+         loop: 반복 -->
+     <video controls style="width: 50%;" autoplay muted loop>
+        <source src="./../assets/video/main_video1.mp4" type="video/mp4">
+        <source src="" type="video/webm">
+        <source src="" type="video/ogv">
+     </video>
+
+<!-- 오디오 삽입 태그 (mp3, wav, ogg) -->
+<!-- 무료 효과음 사이트 : https://pgtd.tistory.com/ -->
+<!-- autoplay: 자동 플레이 *크롬에서는 muted 들어가야함
+     loop: 반복 -->
+     <audio controls autoplay loop>
+        <source src="./../assets/audio/991FEF365FCA019639.mp3" type="audio/mpeg">
+        <source src="" type="audio/wav">
+        <source src="" type="audio/ogg">
+    </audio>
+
+<!-- '외부' 파일, url 가져오기 (유튜브, 네이버 등) -->
+<!-- *frameborder="0" 삭제 후 style="border: 0;" 삽입 -->
+        <iframe src="https://www.daum.net/" style="border: 0; width: 100%;"></iframe>
+
+<!-- hr: 경계선 -->
+<hr>
+
+
+<script>"자바스크립트의 내용"</script>
+
+    </body>
+<!-- 본문의 끝 -->
+
+<!-- HTML 문서의 끝 -->
+</html>
