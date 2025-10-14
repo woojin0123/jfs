@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+/* 
+부모요소: 플렉스 컨테이너
+*/
+.container {
+display: flex;
+flex-direction: row;
+background-color: DodgerBlue;
+width: max-content;
+}
+/* 
+자식요소: 플렉스 아이템
+- 가로배치
+- 크기: 콘텐츠 크기
+- display: inline-block; 과 같은 성격
+*/
+.container div {
+  background-color: #f1f1f1;
+  margin: 10px;
+  padding: 20px;
+}
+
+</style>
+</head>
+<body>
+<!-- div.container는 flex 컨테이너 -->
+    <div class="container">
+<!-- 플렉스 컨테이너의 자식은 플렉스 아이템 -->
+    <div>Item 1</div>
+    <div>Item 2</div>
+    <div>Item 3</div> 
+</body>
+</html>

@@ -70,10 +70,16 @@ body {
 
 /* card-container */
 /* 배경색: bgc */
+#section {
+    display: flex; /* df */
+    justify-content: center; /* jcc */
+}
+
 .card-container {
     width: 340px;
     background-color: #DDE3F1;
     /* overflow: hidden;  ->넘친 부분은 숨긴다.(지운다) */
+    margin: 20px;
 }
 
 .card-image-wrapper {

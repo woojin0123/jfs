@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css 가상클래스선택자</title>
+    <style>
+
+/* 
+가상 클래스 선택자
+    *n= 1이상의 정수, 수열(2n, 2n+1...), odd (홀수), even (짝수)
+    *홀수: odd, 2n-1, 2n+1
+    *짝수: even, 2n
+
+~of-type (동일한 태그 유형을 가진 요소를 대상)
+    선택자:nth-of-type(n) n번째
+    선택자:nth-last-of-type(n) 역순
+    선택자:first-of-type 첫번째
+    선택자:last-of-type 마지막
+    선택자:only-of-type 자식이 하나인 요소
+
+~child (부모 요소의 모든 자식 요소를 대상)
+    선택자:nth-child(n) n번째
+    선택자:nth-last-child 역순
+    선택자:first-child 첫번째
+    선택자:last-child 마지막
+    선택자:only-child
+
+형제 관계 선택자
+    형선택자+제선택자 : 바로 아래 동생만
+    형선택자~제선택자 : 모든 동생 (인접형제선택자)
+    *(~ : tilde 틸드)
+
+    선택자:empty 요소가 없다
+*/
+
+/* p 요소 중 첫번째 */
+p:first-of-type {text-decoration: underline;} /* tdu */
+p:nth-child(3) {font-style: italic;} /* fsi */
+p:nth-of-type() {font-style: italic;}
+
+/* p 요소 중 마지막 */
+p:last-of-type {text-decoration: underline;} /* tdu */
+p:nth-last-of-type(1) {text-decoration: underline;}
+p:nth-last-child(1) {font-style: italic;}
+
+/* p 요소 중 짝수 */
+p:nth-of-type(2n) {color: red;}
+p:nth-of-type(even) {color: red;}
+p:nth-child(2n) {background-color: aquamarine;}
+
+/* p 요소 중 홀수  */
+p:nth-of-type(2n+1) {color: blue;}
+p:nth-of-type(2n-1) {color: blue;}
+p:nth-of-type(odd) {color: blue;}
+
+div h2:only-of-type {border: 2px solid darkgoldenrod;}
+div h2:only-child {border: 2px solid darkgoldenrod;}
+
+:empty {
+    display: block;
+    width: 200px;
+    height: 100px;
+    border: 1px solid salmon;
+}
+
+.box {
+    border: 3px solid darkcyan;
+    width: max-content /* 콘텐츠 크기에 맞게 박스 크기 조절 */
+}
+
+    </style>
+</head>
+<body>
+    <div>
+        <h2>형제관계 선택자</h2>
+        <p>나는 첫번째문단</p>
+    </div>
+
+    <div></div>
+    <p></p>
+        <div>
+            <h1 class="box">가상클래스선택자</h1>
+            <p>
+                <ul>
+                    <li>~of-type는 태그 종류를 구분함(지정 태그 내에서 순서대로)</li>
+                    <li>~child는 태그 종류를 구분하지 않음(태그 상관없이 순서대로)</li>
+                </ul>
+            </p>
+            <p>나는 1번째 문단이다</p>
+            <p>나는 2번째 문단이다</p>
+            <h2>인접형제선택자</h2>
+            <p>나는 3번째 문단이다</p>
+            <p>나는 4번째 문단이다</p>
+            <p>나는 5번째 문단이다</p>
+            <p>나는 6번째 문단이다</p>
+        </div>
+    
+</body>
+</html>

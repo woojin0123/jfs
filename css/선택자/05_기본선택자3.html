@@ -5,12 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS 선택자</title>
     <style>
+        /* https://codingand.notion.site/CSS-27f2620edc1981808338fc29ee0dcad7 */
         /* 
             1. 가상 클래스(Pseudo-class, 슈도 클래스) 선택자
-                :hover
+                a:link 방문 전 (a태그에만 적용)
+                a:visited 방문 후 (a태그에만 적용)
+                선택자:hover 마우스를 올렸을 때
+                선택자:active 마우스로 누르고 있을 때
+                *네가지를 모두 지정하려면 위 순서대로 기록
             2. 가상 요소(Pseudo-element) 선택자
-                ::after
-                ::before
+                ::after 뒤에 내용 삽입
+                ::before 앞에 내용 삽입
+                ex.  
+                <h1>♥제목☆<h1>
         */
 
         div {

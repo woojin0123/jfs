@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+/* 
+부모요소: 플렉스 컨테이너
+1. flex-direction
+- 표시 방향
+  row(행): 좌>우
+  column(열): 상>하
+  * flex-direction: row면 주축이 row, 교차축은 column
+2. flex-wrap
+- 감쌀지?
+3. flex-flow: direction warp;
+- flex-flow: row nowrap;
+- 약칭 속성
+
+4. justify-content 
+- 주축의 정렬
+5. align-items
+- 교차축의 정렬
+6. align-content
+- 교차축의 정렬
+- flex:wrap;인 상황에서 사용
+*/
+.container {
+display: flex;
+height: 600px;
+background-color: DodgerBlue;
+}
+/* 
+자식요소: 플렉스 아이템
+- 가로배치
+- 가로 크기: 콘텐츠 크기
+- 세로 크기: 부모크기만큼
+- display: inline-block; 과 같은 성격
+*/
+.container div {
+  background-color: #f1f1f1;
+  margin: 10px;
+  padding: 20px;
+}
+
+
+</style>
+</head>
+<body>
+<!-- div.container는 flex 컨테이너 -->
+    <div class="container">
+<!-- 플렉스 컨테이너의 자식은 플렉스 아이템 -->
+    <div>item 1</div>
+    <div>item 2</div>
+    <div>item 3</div>
+    <div>item 4</div>
+    <div>item 5</div>
+    <div>item 6</div>
+    <div>item 7</div>
+    <div>item 8</div>
+    <div>item 9</div>
+    <div>item 10</div>
+    <div>item 11</div>
+    <div>item 12</div>
+</body>
+</html>
