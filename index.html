@@ -4,78 +4,131 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>차우진</title>
-<!-- 외부 스타일: link 태그로 css파일을 연결 -->
+    <!-- 외부 스타일: link 태그로 CSS파일을 연결 -->
+     
+    <link rel="stylesheet" href="common.css">
     <link rel="stylesheet" href="style2.css">
 </head>
+
 <body>
-      <!-- 
-        정보 구조(IA) 설계
-            메인 페이지1: Home
-                -> index.html
-            서브 페이지2: about me, my story
-                -> about.html
-            서브 페이지3: work(portfolio, project)
-                -> work.html
-            서브 페이지4: contact us
-                -> contact.html
-    <h1>개인 사이트</h1>
-    <p>나의 개인 사이트입니다.</p>
- <!-- h1+p+nav>ul>li*2>a[href] 에밋 기능*  -->
-  <header>
-            <!-- h1.logo>a[href=index.html] -->
-            <h1 class="logo"><a href="index.html">Home</a></h1>
-   <nav>
+    <!-- header(헤더) area -->
+    <!-- 나중에 개인사이트)
+      **정보 구조(IA) 설계**
+        메인 페이지1: Home
+            -> index.html
+        서브 페이지2: about me / my story
+            -> about.html
+        서브 페이지3: work / portfolio / project
+            -> work.html
+        서브 페이지4: contact us
+            -> contact.html
+    -->
+    <header>
+         <!-- 로고 -->
+          <!-- h1.logo>a[href]="index.html" -->
+          <h1 class="logo"><a href="index.html">Home</a></h1>
+         <!-- 내비게이션: GNB -->
+     
+        <nav>
             <ul>
-                <!-- shift+alt+방향키 -->
                 <li><a href="about.html">About me</a></li>
                 <li><a href="work.html">Work</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="contact.html">Contact us</a></li>
             </ul>
         </nav>
-    </header>
+     </header>
 
     <!-- section(본문) area -->
-    <!-- https://www.honorsville.co.kr/ -->
+    <!-- https://composecoffee.com/  컴포즈 -->
+    <!-- #div1 -->
+    <div id="sec1" class="sec">
+        <video src="./assets/vid/2853789-uhd_3840_2160_24fps.mp4" type="video.mp4"></video>
+        <div class="outer">
+            <div class="container">
+                <h2>커피를 커피답게</h2>
+                <p>진정한 커피로, 당신을 당신답게</p>
+                <ul class="counter">
+                    <li>
+                        <span>11</span>
+                        <span>년</span>
+                        <div>함께한 시간</div>
+                    </li>
+                    <li>
+                        <span>3047 </span>
+                        <span>개</span>
+                        <div>가맹점 수</div>
+                    </li>
+                    <li>
+                        <span>17,589,812</span>
+                        <span>명</span>
+                        <div>컴포저 (App 누적 가입자)</div>
+                    </li>
+                </ul>
+            </div>
+        </div> 
+    </div> <!-- #sec1 -->
 
-     <!-- card-container -->
-    <div id="section">
+    <!-- https://www.honorsville.co.kr/   경남이너스빌 -->
+
+    <!-- card-container -->
+    <div id="sec2" class="sec">
         <div class="card-container">
             <div class="card-image-wrapper">
-                <img src="https://www.honorsville.co.kr/upload/temp/20255303432444.jpg" alt="충주연수 경남아너스빌 센터원 아파트 외관"
-                    class="card-image">
+                <img src="https://www.honorsville.co.kr/upload/temp/20255303432444.jpg" alt="충주연수 경남아너스빌 센터원 아파트 외관" class="card-image">
+                <!-- <img src="apartment-complex.jpg" alt="충주연수 경남아너스빌 센터원 아파트 외관" class="card-image"> -->
             </div>
-
-            <!-- card-content -->
             <div class="card-content">
                 <div class="card-header">
                     <span class="tag-badge">분양중</span>
-                  
-                      <span class="like-button"><i class="fa-solid fa-heart"></i></span>
+                     <span class="like-button"><i class="fa-solid fa-heart"></i></span>
                 </div>
-                <h2 class="card-title">충주연수 경남아너스빌 센터원</h2>
+              <div class="card-body">
+                <h3 class="card-title">충주연수 경남아너스빌 센터원</h3>
                 <div class="card-details">
                     <p>충청북도 충주시 연수동 787-25 일원</p>
                     <p>243세대</p>
                 </div>
                 <div class="card-contact">
                     <p class="phone-number">1866-0234</p>
+                </div>
+                </div>
+            </div>
+        </div> <!-- card-container -->
+        <div class="card-container">
+            <!-- card-image-wrapper -->
+            <div class="card-image-wrapper">
+                <img src="https://www.honorsville.co.kr/upload/temp/20255303432444.jpg" alt="충주연수 경남아너스빌 센터원 아파트 외관" class="card-image">
+                <!-- <img src="apartment-complex.jpg" alt="충주연수 경남아너스빌 센터원 아파트 외관" class="card-image"> -->
+            </div>
+            <div class="card-content">
+                <div class="card-header">
+                    <span class="tag-badge">분양중</span>
+                     <span class="like-button"><i class="fa-solid fa-heart"></i></span>
+                </div>
+              <div class="card-body">
+                <h3 class="card-title">충주연수 경남아너스빌 센터원</h3>
+                <div class="card-details">
+                    <p>충청북도 충주시 연수동 787-25 일원</p>
+                    <p>243세대</p>
+                </div>
+                <div class="card-contact">
+                    <p class="phone-number">1866-0234</p>
+                </div>
                 </div>
             </div>
         </div>
         <div class="card-container">
             <div class="card-image-wrapper">
-                <img src="https://www.honorsville.co.kr/upload/temp/20255303432444.jpg" alt="충주연수 경남아너스빌 센터원 아파트 외관"
-                    class="card-image">
+                <img src="https://www.honorsville.co.kr/upload/temp/20255303432444.jpg" alt="충주연수 경남아너스빌 센터원 아파트 외관" class="card-image">
+                <!-- <img src="apartment-complex.jpg" alt="충주연수 경남아너스빌 센터원 아파트 외관" class="card-image"> -->
             </div>
-
-            <!-- card-content -->
             <div class="card-content">
                 <div class="card-header">
                     <span class="tag-badge">분양중</span>
-                   
-                      <span class="like-button"><i class="fa-solid fa-heart"></i></span>
+                     <span class="like-button"><i class="fa-solid fa-heart"></i></span>
                 </div>
-                <h2 class="card-title">충주연수 경남아너스빌 센터원</h2>
+              <div class="card-body">
+                <h3 class="card-title">충주연수 경남아너스빌 센터원</h3>
                 <div class="card-details">
                     <p>충청북도 충주시 연수동 787-25 일원</p>
                     <p>243세대</p>
@@ -83,37 +136,15 @@
                 <div class="card-contact">
                     <p class="phone-number">1866-0234</p>
                 </div>
-            </div>
-        </div>
-        <div class="card-container">
-            <div class="card-image-wrapper">
-                <img src="https://www.honorsville.co.kr/upload/temp/20255303432444.jpg" alt="충주연수 경남아너스빌 센터원 아파트 외관"
-                    class="card-image">
-            </div>
-            
-            <!-- card-content -->
-            <div class="card-content">
-                <div class="card-header">
-                    <span class="tag-badge">분양중</span>
-                      <span class="like-button"><i class="fa-solid fa-heart"></i></span>
-                </div>
-                <h2 class="card-title">충주연수 경남아너스빌 센터원</h2>
-                <div class="card-details">
-                    <p>충청북도 충주시 연수동 787-25 일원</p>
-                    <p>243세대</p>
-                </div>
-                <div class="card-contact">
-                    <p class="phone-number">1866-0234</p>
                 </div>
             </div>
         </div>
     </div>
-
     
-    <!-- footer(푸터) area -->
-    <footer>
-        <p>&copy; 2025 HGD. All rights reserved.</p>
-    </footer>
-</body>
 
+    <!-- footer(푸터) area -->
+     <footer>
+        <p>&copy; 2025 CWJ. All rights reserved.</p>
+     </footer>
+</body>
 </html>
