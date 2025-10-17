@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>sticky</title>
+    <style>
+      body {
+        height: 2000px;
+      }
+
+      /* 들여쓰기(정렬): shift+alt+f */
+      /* 
+            position: 위치;
+                기본값: static;
+                relative
+                    - static과 같지만 left,top,right,bottom을 사용 
+                    - left,top,right,bottom의 기준은?
+                        -> left, top, right, bottom을 지정하지 않았을 때의 위치, 즉 원래 위치
+                absolute
+                    - left,top,right,bottom의 기준은? 
+                        -> position이 static이 아닌 조상(부모)
+                fixed(고정된): 
+                    - left,top,right,bottom의 기준은? 뷰포트 
+                sticky
+                    - 처음은 relative처럼 동작하다가 top의 위치에 도달하면 fixed와 같아진다.
+
+            left
+            top
+            right
+            bottom
+        */
+
+      .parent {
+        position: sticky;
+        top: 0;
+        width: 400px;
+        height: 300px;
+        border: solid;
+      }
+
+    </style>
+  </head>
+  <body>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum ex tempore voluptatibus amet odio eaque culpa autem sed similique deserunt, commodi qui enim ipsam eligendi. Dolore voluptatibus nam magnam dicta.</p>
+      <div class="parent"></div>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia necessitatibus eum eveniet tempora quas dolorem asperiores omnis, minima aperiam quae. Sint molestias velit perferendis quas doloremque! Laudantium corporis veniam ipsa nulla facilis soluta adipisci cum sint fugiat, quas nihil eos, dolorum alias aperiam id. Repellendus odit mollitia sed sequi consequatur placeat, exercitationem qui ab voluptates commodi optio distinctio explicabo. Obcaecati sapiente deserunt assumenda, porro in pariatur rerum adipisci non facilis officiis mollitia alias excepturi accusantium fugiat reprehenderit enim voluptatum. Unde aspernatur incidunt quo, suscipit aliquid in. Magnam possimus voluptate quos optio consectetur placeat cumque eligendi alias dolor officiis. Voluptatibus, repudiandae.</p>
+  </body>
+</html>

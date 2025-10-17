@@ -1,84 +1,92 @@
-@charset "ut-8";
+@charset "utf-8"; /* @ch */
 @import url(common.css); /* @i */
-@import url(typo.css); /* @i */
+@import url(typo.css);
+@import url(footer.css);
 
 
-body {
-    /* 2. font-family 속성으로 지정 */
-    /* 글꼴은 하위 요소에 상속해 준다. */
-    /* font-family: 값1, 값2, 값3, ...; */
-    font-family: 'NanumSquare', sans-serif;
-    font-size: 15px;
-    line-height: 1.6;
-    color: #9a8b86;
-}
-.card-title {
-    font-size: 22px;
-    color: #333;
-    line-height: 27px;
-}
 .card-details p {
     /* p는 위아래 기본 마진이 있다. 폰트 크기의 1em */
     margin: 0;
 }
 
-.phone-number {
-    font-family: "Noto Sans KR", sans-serif;
-    font-size: 24px; /* fz24 */
-    color: #0f2244;
-    font-weight: bold; /* fwb */
-}
 /* header */
 /* section */
 /* section common(공통) */
 .sec {
+    position: relative;
     /* vh: viewport height */
     height: 100vh;
 }
+
 /* section1 area */
 /* #sec1 * {
-    outline: 1px solid blue
+    outline: 1px solid red;
 } */
-#sec1 .outer {
-    display: flex; /* df */
-    justify-content: center;
-    /* 인라인 요소 가로 정렬 */
-    align-items: center;
+#sec1 {
+    background-color: lightgreen;
+}
+#sec1 .vid {
+    position: absolute; /* poa */
+    width: 100%;
     height: 100%;
+    /* 박스 크기를 벗어나는 콘텐츠(비디오) 영역을 숨김 */
+    /* overflow: hidden; */
+}
+.ele-center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
 }
 #sec1 .container {
-    width: 100%;
-    max-width: 1330px;
-    text-align: center;
+    /* 너비가 100% 이지만, 최대 크기가 1330px */
+    width: 100%; /* w100p */
+    max-width: 1330px; /* maw1330 */
+    /* 인라인 요소(텍스트 포함) 가로 정렬 */
+    text-align: center; /* tac */
+}
+#sec1 .container p {
+    margin: 20px 0 100px; /* m40-0-120 */
 }
 #sec1 .counter {
-    display: flex;
+    display: flex; /* df */
     justify-content: center;
 }
 #sec1 .counter div {
     width: 307px;
-    /* height line-height 같으면 텍스트 수직 중앙 배치 (한줄 텍스트만 가능) */
+    /* height와 line-height가 같으면 텍스트가 수직 중앙 배치된다. 단, 한 줄 텍스트일때만 가능 */
     height: 44px;
-    line-height: 44px;
+    line-height: 44px; /* lh44px */
     background-color: rgba(255, 217, 0, .6);
     border-radius: 20px; /* bdrr */
     margin: 10px;
 }
+
 /* section2 area */
 #sec2 {
-    display: flex;
-    /* 현재 주축은 row */
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
+    /* background-image: url(./assets/honorsville/bg_section02.jpg);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover; */
+/* background-image: url(), url(),...; 맨 앞에 쓴 게 맨 위로 올라감 */
+    background: url(./assets/honorsville/bg_percel.jpg) no-repeat 50%/1180px 351px, url(./assets/honorsville/bg_section02.jpg) no-repeat 50%/cover;
+}
+
+#sec2 .card-list {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    display: flex; /* df */
+    gap: 20px; /* g20 */
 }
 
 /* card-container */
 /* 배경색: bgc */
 .card-container {
     width: 340px;
-    background-color: #DDE3F1;
-    /* overflow: hidden;  ->넘친 부분은 숨긴다.(지운다) */
+    background-color: #EDF5F7;
+    /* overflow: hidden; */
     /* margin: 20px; */
 }
 
@@ -94,7 +102,9 @@ body {
 }
 
 .card-content {
-    /* 상 좌우 하 */
+    /* 마진 겹침 해결!
+        -> 마진이 부모 바깥으로 지정되는 것을 방지
+     */
     display: flow-root;
 }
 
@@ -140,5 +150,51 @@ body {
 /* 카드 UI 정보 */
 .card-body {
     margin: 0 45px 120px; /* m0-45-120 */
+}
+
+/* secton 3 area */
+#sec3 {
+    /* 
+    배경 이미지 + paralax scrolling 
+    - 스크롤 올리고 내릴 때 효과주기 (배경 이미지 고정)
+    */
+    background-attachment: fixed; /* bga */
+    background: url(./assets/2025_autumn_pick_bg_250916.jpg) no-repeat 50%/cover fixed;
+}
+#sec3 .intro {
+    position: absolute;
+    left: 400px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 380px;
+    height: 520px;
+    /* background: rgb(221, 185, 85); */
+    text-align: right;
+}
+#sec3 .intro h2 span{
+    display: block;
+}
+#sec3 .intro p:first-of-type {
+    margin: 48px 0 16px; /* m48-0-16 */
+}
+#sec3 .intro a {
+    display: inline-block;
+    border: 2px solid var(--white-color); /* bd */
+    border-radius: 5px; /* bdrr */
+    margin-top: 28px;
+    padding: 6px 24px;
+}
+#sec3 .intro a:hover {
+    background: var(--white-color);
+    color: #222;
+    text-decoration: underline;
+    transition: 0.7s; /* trs, 전환 */
+}
+#sec3 .product {
+    position: absolute;
+    left: 890px;
+    top: 187px;
+    width: 880px;
+    height: 550px;
 }
 /* footer */
