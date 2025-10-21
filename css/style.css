@@ -1,77 +1,127 @@
 @charset "utf-8";
-/* web font 1 - CDN */
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
-@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css);
-/* web font 2 - @font-face > 쓸 폰트 다 입력해야함*/
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css');
+/* 웹 폰트: 방법I - CDN */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+/* 웹 폰트: 방법II - @font-face -> CDN❌ */
 @font-face {
-    font-family: Lato-Thin;
-    src: url(./../assets/font/Lato-Thin.ttf);
+    /* 사용자 정의 폰트명 */
+    font-family: Lato-Regular;
+    /* 상대주소 */
+    /* 
+        / 작업 영역 폴더(root)
+        ./ 현재위치, 한 번만
+        ../ 부모위치, 여러 번
+        예) a폴더>b폴더>c폴더: 파일.html
+        예) a폴더: ../../이미지.jpg
+    */
+    /* 내 컴퓨터에서는 */
+    src: url(../assets/font/Lato-Regular.ttf);
 }
 @font-face {
-    font-family: Lato-Regular;
-    src: url(./../assets/font/Lato-Regular.ttf);
-    /* src: url(https://woojin0123.github.io/jfs/assets/font/Lato-Regular.ttf) */
+    /* 사용자 정의 폰트명 */
+    font-family: Lato-Thin;
+    /* 절대주소 */
+    /* URL: 프로토콜://도메인/폴더경로/파일 */
+    src: url(https://fsclass-n.github.io/jfs/assets/font/Lato-Thin.ttf);
 }
 
-/* reset */
+/* reset(초기화) */
 * {box-sizing: border-box;}
 :root {
-    /* 스크롤 시 부드러운 움직임 효과 */
+    /* 페이지 내에서 이동 시 부드러운 움직임 효과 */
     scroll-behavior: smooth;
 }
-body,h1,h2,h3,p,ul{
+body,h1,h2,h3,p,ul {
     margin: 0;
 }
-ul {padding: 0; list-style: none;}
-/* typography */
-/* :root= html */
+ul {padding: 0; list-style:none;}
 a {
     text-decoration: none;
 }
+iframe {
+    width: 100%;
+    height: 100%;
+}
+button {
+    border:none;
+}
+
+/* typography(타이포그래피) */
+/* :root는 html태그를 선택한다. */
 :root {
     font-size: 10px;
 }
 body {
-/* rem: 배수 */
-/* root에서 지정한 크기(10px)*1.5 */
-    font: 1.5rem/1.6 "Lato-regular", sans-serif;
+    /* 
+        단위: rem은 :root에서 지정한 크기의 배수
+        예) 10px * 1.5배 -> 15px
+    */
+    font: 1.5rem/1.6 "Lato-Regular", sans-serif;
+    color: #777;
 }
 h2 {
     font-weight: 400;
     font-size: 2.4rem;
     color: #fff;
-    letter-spacing: 1rem;
-    text-align: center;
-    text-transform: uppercase;
+    /* 글자사이 간격: 자간 */
+    letter-spacing: 1rem; /* ls */
+    text-transform: uppercase; /* tt */
 }
-header a{
+h3 {
+    font-size: 2.4rem;
+}
+header a {
+    color: #f3f3f3;
+}
+footer a, footer p {
     color: #fff;
 }
-footer a, p {
-    color: #fff;
-}
-/* a 태그의 경우 직접 지정 */
+/* a태그는 글자색의 경우 a태그에 직접 지정(상속되지 않는다) */
 footer .top-btn a {
-    color: #000;
-    font-weight: 400;
-    font-size: 10px;
+    color: #333;
 }
-footer.top-btn i {
+footer .sns {
+    margin: 24px;
+}
+footer .sns i {
     font-size: 2.4rem;
     margin: 0 -3px;
 }
-/* common */
+#contact h2 {
+    font-size: 3.6rem;
+}
+#contact a {
+    color: #777;
+}
+#contact button {
+    color: #fff;
+}
+#contact .addr {
+    font-size: 1.8rem;
+}
+
+/* common(공통) */
 h2 {
-    background: #041D2E;
-    padding: 8px 40px 8px 50px;
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); /* trft */
 }
-/* header */
+h3 {
+    text-align: center;
+    margin: 64px 0 10px;
+}
+h3+p {
+    text-align: center;
+}
+
+/* header area */
+header {
+    z-index: 99999;
+    position: fixed; /* pof */
+}
 header .gnb ul {
-    position: fixed;
     display: flex;
 }
 header .gnb li a {
@@ -79,75 +129,97 @@ header .gnb li a {
     padding: 8px 16px;
 }
 header .gnb li a:hover {
-    background: #fff;
-    color: #041D2E
+    background: #333;
 }
-/* footer */
+header .gnb li i {
+    margin-right: 8px;
+}
+
+
+/* footer area */
 footer {
-    background: #777;
+    background: #555;
+    /* 푸터 안의 인라인 요소는 모두 가운데로(배치) */
     text-align: center;
     padding: 100px;
 }
 footer:hover {
-    background: #000;
+    background: #111;
 }
+/* to the top button */
 footer .top-btn {
     display: inline-block;
-    background: #5a5c5e;
+    background: #ddd;
     padding: 8px 16px;
 }
 footer .top-btn i {
     margin-right: 8px;
 }
-footer .sns {
-    margin: 16px 0 24px;
-}
-footer .sns i {
-    
-}
+
+
 /* section area: index.html */
 #home {
+    /* 뷰포트 크기로 높이 지정 */
     height: 100vh;
-    background: url(./../assets/benjamin-voros-phIFdC6lA4E-unsplash.jpg) no-repeat 50% 50%/cover;
+    background: url(./../assets/benjamin-voros-phIFdC6lA4E-unsplash.jpg) no-repeat 50% 50%/cover fixed;
 }
+#home h2 {
+    background: #555;
+    /* 일반적으로 좌우패딩을 상하보다 많이 준다. */
+    padding: 8px 24px 10px 30px;
+}
+
 /* section area: contact.html */
-.parallax-bg {
-    background: url(./../assets/parallax3.jpg) no-repeat 50% 50%/cover;
-    min-height: 400px;
-    background-attachment: fixed;
+#contact .contact {
+    width: 600px;
+}
+#contact .parallax-bg {
     position: relative;
-    margin-bottom: 60px;
+    height: 400px;
+    background: url(./../assets/parallax3.jpg) no-repeat 50% 50%/cover fixed;
 }
-.parallax-bg h2 {
-    background: none;
-    font-size: 36px;
+#contact .container {
+    display: flex;
+    justify-content: space-between;
+    width: 900px;
+    margin: 48px auto 96px;
 }
-#contact h3 {
-    display: block;
-    text-align: center;
-    font-size: 24px;
-    margin: 10px 0;
-    color: #777;
-    font-weight: 300;
+#contact .map {
+    width: 280px;
+    height: 160px;
+    border-radius: 5px;
+    /* 모서리 둥글게 하기 */
+    overflow:hidden;
+    margin-right: 32px;
 }
-#contact p {
-    display: block;
-    text-align: center;
-    font-size: 15px;
-    margin: 15px 0;
-    color: #777;
-    font-weight: 300;
-    font-style: italic;
+#contact .contact p {
+    margin: 24px 0 16px;
 }
-#container .contact {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
-    display: flex; /* df */
-    gap: 20px; /* g20 */
-    display: flex;   
+#contact .frm-input {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
 }
-#contact .button {
-    background: #000;
+#contact input {
+    width: 100%;
+    height: 45px;
+    padding-left: 16px;
+}
+#contact textarea  {
+    width: 100%;
+    /* 텍스트영역 상자의 크기 조정 불가 */
+    resize: none;
+    height: 150px;
+    margin-top: 10px;
+}
+#contact button {
+    background: #111;
+    padding: 12px 24px;
+    margin-top: 10px;
+}
+#contact i {
+    margin-right: 8px;
+}
+#contact .addr i {
+    margin-right: 16px;
 }
