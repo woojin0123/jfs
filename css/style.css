@@ -25,6 +25,9 @@ body,h1,h2,h3,p,ul{
 ul {padding: 0; list-style: none;}
 /* typography */
 /* :root= html */
+a {
+    text-decoration: none;
+}
 :root {
     font-size: 10px;
 }
@@ -41,9 +44,11 @@ h2 {
     text-align: center;
     text-transform: uppercase;
 }
+header a{
+    color: #fff;
+}
 footer a, p {
     color: #fff;
-    text-decoration: none;
 }
 /* a 태그의 경우 직접 지정 */
 footer .top-btn a {
@@ -64,9 +69,18 @@ h2 {
     top: 50%;
     transform: translate(-50%, -50%);
 }
-#home {
-    height: 100vh;
-    background: url(./../assets/benjamin-voros-phIFdC6lA4E-unsplash.jpg) no-repeat 50% 50%/cover;
+/* header */
+header .gnb ul {
+    position: fixed;
+    display: flex;
+}
+header .gnb li a {
+    display: inline-block;
+    padding: 8px 16px;
+}
+header .gnb li a:hover {
+    background: #fff;
+    color: #041D2E
 }
 /* footer */
 footer {
@@ -90,4 +104,50 @@ footer .sns {
 }
 footer .sns i {
     
+}
+/* section area: index.html */
+#home {
+    height: 100vh;
+    background: url(./../assets/benjamin-voros-phIFdC6lA4E-unsplash.jpg) no-repeat 50% 50%/cover;
+}
+/* section area: contact.html */
+.parallax-bg {
+    background: url(./../assets/parallax3.jpg) no-repeat 50% 50%/cover;
+    min-height: 400px;
+    background-attachment: fixed;
+    position: relative;
+    margin-bottom: 60px;
+}
+.parallax-bg h2 {
+    background: none;
+    font-size: 36px;
+}
+#contact h3 {
+    display: block;
+    text-align: center;
+    font-size: 24px;
+    margin: 10px 0;
+    color: #777;
+    font-weight: 300;
+}
+#contact p {
+    display: block;
+    text-align: center;
+    font-size: 15px;
+    margin: 15px 0;
+    color: #777;
+    font-weight: 300;
+    font-style: italic;
+}
+#container .contact {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    display: flex; /* df */
+    gap: 20px; /* g20 */
+    display: flex;   
+}
+#contact .button {
+    background: #000;
 }

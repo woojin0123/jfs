@@ -1,51 +1,43 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>차우진</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Work</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
-
 <body>
-    <!-- header(헤더) area -->
-    <!-- 
-        정보 구조(IA) 설계
-            메인 페이지1: Home
-                -> index.html
-            서브 페이지2: about me, my story
-                -> about.html
-            서브 페이지3: work(portfolio, project)
-                -> work.html
-            서브 페이지4: contact us
-                -> contact.html
-    -->
-    <!-- shift+alt+f -->
-    <header>
-        <!-- 로고 -->
-        <!-- h1.logo>a[href=index.html] -->
-        <h1 class="logo"><a href="index.html">Home</a></h1>
-        <!-- 내비게이션: GNB -->
-        <nav>
-            <ul>
-                <!-- shift+alt+방향키 -->
-                <li><a href="about.html">About me</a></li>
-                <li><a href="work.html">Work</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- section(본문) area -->
-    <section>
-        <h2>Work</h2>
-    </section>
-
-    <!-- footer(푸터) area -->
-    <footer>
-        <p>&copy; 2025 HGD. All rights reserved.</p>
-    </footer>
+<!-- header -->
+ <header>
+    <nav class="gnb">
+        <ul>
+            <li><a href="../index.html">Home</a>
+            <li><a href="about.html"><i class="fa-regular fa-user"></i>About</a>
+            <li><a href="work.html"><i class="fa-solid fa-play"></i></i>Portfolio</a>
+            <li><a href="contact.html"><i class="fa-solid fa-envelope"></i>Contact</a>
+            </li>
+        </ul>
+    </nav>
+ </header>
+<!-- section -->
+    <div id="home">
+        <h2>Cha Woojin</h2>
+    </div>
+<!-- footer -->
+ <footer>
+<!-- 폰트어썸 -->
+<!-- 1. 라이브러리 CDN 연결 (https://cdnjs.com) -->
+<!-- 2. 아이콘 검색하여 지정 -->
+    <div class="top-btn"><a href="#top"><i class="fa-solid fa-arrow-up"></i>To the top</a></div>
+    <div class="sns">
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-snapchat"></i></a>
+        <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
+        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+    </div>
+    <p>&copy; 2025 CWJ. All rights reserved.</p>
+ </footer>
 </body>
-
 </html>

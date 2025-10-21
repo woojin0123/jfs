@@ -1,51 +1,81 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>홍길동</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Contact</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
-
 <body>
-    <!-- header(헤더) area -->
-    <!-- 
-        정보 구조(IA) 설계
-            메인 페이지1: Home
-                -> index.html
-            서브 페이지2: about me, my story
-                -> about.html
-            서브 페이지3: work(portfolio, project)
-                -> work.html
-            서브 페이지4: contact us
-                -> contact.html
-    -->
-    <!-- shift+alt+f -->
-    <header>
-        <!-- 로고 -->
-        <!-- h1.logo>a[href=index.html] -->
-        <h1 class="logo"><a href="index.html">Home</a></h1>
-        <!-- 내비게이션: GNB -->
-        <nav>
-            <ul>
-                <!-- shift+alt+방향키 -->
-                <li><a href="about.html">About me</a></li>
-                <li><a href="work.html">Work</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- section(본문) area -->
-    <section>
-        <h2>Contact</h2>
-    </section>
-
-    <!-- footer(푸터) area -->
-    <footer>
-        <p>&copy; 2025 HGD. All rights reserved.</p>
-    </footer>
+<!-- header -->
+ <header>
+    <nav class="gnb">
+        <ul>
+            <li><a href="../index.html">Home</a>
+            <li><a href="about.html"><i class="fa-regular fa-user"></i>About</a>
+            <li><a href="work.html"><i class="fa-solid fa-play"></i></i>Portfolio</a>
+            <li><a href="contact.html"><i class="fa-solid fa-envelope"></i>Contact</a>
+            </li>
+        </ul>
+    </nav>
+ </header>
+<!-- section -->
+    <div id="contact">
+        <div class="parallax-bg">
+            <h2>CONTACT</h2>
+        </div>
+        <h3>내가 일하는 곳</h3>
+        <p>여러분의 피드백을 기다리고 있습니다!</p>
+        <div class="container">
+                <div class="map">
+                    <!-- 구글 지도: 공유>지도 퍼가기 -->
+                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3171.672264919952!2d127.11001399999999!3d37.350267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b59c5d7697313%3A0xbba08f656485ef2c!2z65GQ65Oc66a87Lu07ZOo7YSw7ZWZ7JuQIOyEseuCqOu2hOuLuSAo6rWsLuydtOygoOyVhOy5tOuNsOuvuOy7tO2TqO2EsO2VmeybkCk!5e0!3m2!1sko!2skr!4v1761029194130!5m2!1sko!2skr" width="160" height="90" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+                <div class="contact">
+                    <ul class="addr">
+                        <li><i class="fa-solid fa-location-dot"></i>성남시 분당구</li>
+                        <li><i class="fa-solid fa-phone"></i>Phone: <a href="tel:010-2323-2323"></a>+82 23232323</li>
+                        <li><i class="fa-solid fa-envelope"></i>Email: <a href="mailto:iamwjwj@gmail.com"></a> iamwjwj@gmail.com</li>
+                    </ul>
+                    <p>제가 궁금하시다면 <i class="fa-solid fa-square-phone"></i> 주세요.</p>
+                <!-- form 양식
+                        fieldset
+                        legend
+                        input < 제일 많이 씀, 종료태그 없음
+                        textarea
+                        button < 기본값: submit
+                        select
+                option
+                optgroup
+                
+                -->
+                <form action="contact.jsp">
+                    <input type="text">
+                    <input type="email">
+                    <textarea name="" id=""></textarea>
+                    <!-- <input type="submit" value="메시지 보내기"> -->
+                    <button type="submit"><i class="fa-solid fa-paper-plane"></i>메시지 보내기</button>
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- footer -->
+ <footer>
+<!-- 폰트어썸 -->
+<!-- 1. 라이브러리 CDN 연결 (https://cdnjs.com) -->
+<!-- 2. 아이콘 검색하여 지정 -->
+    <div class="top-btn"><a href="#top"><i class="fa-solid fa-arrow-up"></i>To the top</a></div>
+    <div class="sns">
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-snapchat"></i></a>
+        <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
+        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+    </div>
+    <p>&copy; 2025 CWJ. All rights reserved.</p>
+ </footer>
 </body>
-
 </html>
