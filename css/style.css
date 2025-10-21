@@ -1,6 +1,7 @@
 @charset "utf-8";
 /* web font 1 - CDN */
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css);
 /* web font 2 - @font-face > 쓸 폰트 다 입력해야함*/
 @font-face {
     font-family: Lato-Thin;
@@ -14,26 +15,50 @@
 
 /* reset */
 * {box-sizing: border-box;}
-body,h1,h2,h3,p,ul {
+:root {
+    /* 스크롤 시 부드러운 움직임 효과 */
+    scroll-behavior: smooth;
+}
+body,h1,h2,h3,p,ul{
     margin: 0;
 }
 ul {padding: 0; list-style: none;}
 /* typography */
+/* :root= html */
+:root {
+    font-size: 10px;
+}
 body {
-    font-family: "Lato-regular", sans-serif;
+/* rem: 배수 */
+/* root에서 지정한 크기(10px)*1.5 */
+    font: 1.5rem/1.6 "Lato-regular", sans-serif;
 }
 h2 {
     font-weight: 400;
-    font-size: 24px;
+    font-size: 2.4rem;
     color: #fff;
-    letter-spacing: 10px;
-    background: #041D2E;
+    letter-spacing: 1rem;
     text-align: center;
-    padding: 8px 40px 8px 50px;
     text-transform: uppercase;
+}
+footer a, p {
+    color: #fff;
+    text-decoration: none;
+}
+/* a 태그의 경우 직접 지정 */
+footer .top-btn a {
+    color: #000;
+    font-weight: 400;
+    font-size: 10px;
+}
+footer.top-btn i {
+    font-size: 2.4rem;
+    margin: 0 -3px;
 }
 /* common */
 h2 {
+    background: #041D2E;
+    padding: 8px 40px 8px 50px;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -42,4 +67,27 @@ h2 {
 #home {
     height: 100vh;
     background: url(./../assets/benjamin-voros-phIFdC6lA4E-unsplash.jpg) no-repeat 50% 50%/cover;
+}
+/* footer */
+footer {
+    background: #777;
+    text-align: center;
+    padding: 100px;
+}
+footer:hover {
+    background: #000;
+}
+footer .top-btn {
+    display: inline-block;
+    background: #5a5c5e;
+    padding: 8px 16px;
+}
+footer .top-btn i {
+    margin-right: 8px;
+}
+footer .sns {
+    margin: 16px 0 24px;
+}
+footer .sns i {
+    
 }
