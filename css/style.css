@@ -100,7 +100,15 @@ footer .sns i {
 #contact .addr {
     font-size: 1.8rem;
 }
-
+textarea {
+    font: 1.5rem/1.6 "Lato-Regular", sans-serif;
+}
+/* 가상 클래스
+    ::placeholder */
+::placeholder {
+    font: 1.5rem/1.6 "Lato-Regular", sans-serif;
+    color: ccc;
+}
 /* common(공통) */
 h2 {
     position: absolute;
@@ -211,6 +219,8 @@ footer .top-btn i {
     resize: none;
     height: 150px;
     margin-top: 10px;
+    padding-top: 16px;
+    padding-left: 16px;
 }
 #contact button {
     background: #111;
@@ -222,4 +232,7 @@ footer .top-btn i {
 }
 #contact .addr i {
     margin-right: 16px;
+}
+#contact .frm-btn {
+    text-align: right;
 }
