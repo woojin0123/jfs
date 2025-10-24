@@ -1,0 +1,102 @@
+@charset "utf-8"; /* @ch */
+@import url(common.css); /* @i */
+
+/* typo */
+h2 {
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: var(--gray3);
+}
+
+.container {
+    width: 1040px;
+    margin: auto;
+}
+
+.bc {
+    margin-bottom: 5px;
+}
+
+.search_wrap {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    box-sizing: content-box;
+    height: 38px;
+    padding: 20px 30px;
+    background: #f4f4f2;
+    border-radius: 3px;
+}
+
+.search_wrap input {
+    width: 320px;
+    height: 36px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding-left: 8px;
+    margin-right: 3px;
+}
+
+.search_wrap button {
+    width: 54px;
+    height: 38px;
+    background: #777;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--white-color);
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
+/* breadcrumb */
+.bc {
+    display: flex;
+    position: relative;
+    justify-content: end;
+    font-size: 1.2rem;
+    color: #222;
+}
+
+.bc li:not(:last-child)::after {
+    font-family: "Font Awesome 7 free";
+    content: '〉';
+    margin: 5px;
+    color: #222;
+}
+
+/* notice tablearea */
+.notice {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 50px;
+}
+
+.notice td {
+    border-bottom: 1px solid #ddd;
+    color: #666;
+}
+
+.notice th {
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+}
+
+.notice td:not(:nth-child(2)) {
+    text-align: center;
+}
+
+.notice th, .notice td {
+    padding: 17px;
+}
+
+.notice a:hover {
+    text-decoration: underline;
+} 
+
+/* pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    border: 1px solid #000;
+    margin-top: 50px;
+}
