@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D 변환: translate</title>
+    <style>
+
+/* 변환(transform)은 블록레벨 요소에 지정 */
+/* 
+transform: 값 값 값...;
+          translate(x,y)   x, y 위치 이동
+          translateX(x)    x 위치 이동 (좌우)
+          translateY(y)    y 위치 이동 (상하)
+          rotate()      회전
+          scaleX()      크기
+          scaleY()
+          scale()
+          skewX()       기울기
+          skewY()
+          skew()
+          matrix()      혼합
+*/
+.outer1 {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background: blueviolet;
+}
+
+.inner1 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: chartreuse;
+    transform: translate(-250px, 0px); /* 기본값 */
+    /* transform: translate(50px, 100px); */
+    transition: 1s; /* 숫자가 작을수록 빨라짐 */
+}
+
+.outer1:hover .inner1 { /* 아우터에 올리면 이너에 효과 */
+    transform: translate(0px, 0px);
+}
+
+.outer2 {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background: blueviolet;
+}
+
+.inner2 {
+    position: absolute;
+    bottom: 0;
+    width: 100px;
+    height: 100px;
+    background: chartreuse;
+    transform: translate(-250px, 0px); 
+    /* transform: translate(50px, 100px); */
+    transition: 1s;
+}
+
+.outer2:hover .inner2 {
+    transform: translate(0px, 0px);
+}
+
+.outer3 {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background: blueviolet;
+}
+.inner3 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: chartreuse;
+    transform: translate(-0px, 250px); 
+    /* transform: translate(50px, 100px); */
+    transition: 1s;
+}
+
+.outer3:hover .inner3 {
+    transform: translate(0px, 0px);
+}
+.outer4 {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background: blueviolet;
+}
+
+.inner4 {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 100px;
+    height: 40px;
+    border-radius: 50px;
+    background: chartreuse;
+    transform: translate(-50px, 0px); 
+    transition: 1s;
+    opacity: 0;
+}
+
+.outer4:hover .inner4 {
+    transform: translate(-50%, -30px);
+    opacity: 1;
+}
+
+    </style>
+</head>
+<body>
+    <div class="outer1">
+        <div class="inner1">위치이동</div>
+    </div><br>
+    <div class="outer2">
+        <div class="inner2">위치이동</div>
+    </div><br>
+    <div class="outer3">
+        <div class="inner3">위치이동</div>
+    </div><br>
+    <div class="outer4">
+        <div class="inner4">위치이동</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D 변환: rotate</title>
+    <style>
+
+.close {
+    /* background: lightblue; */
+/* transform: rotate(); 단위: deg(dgree), 0-360deg */
+    display: inline-block;
+    transform: rotate(0deg); /* 기본값 */
+    transform-origin: 50% 54%; /* 기본값: 50% 50%, 회전점 변경 */
+    transition: .5s; /* 소수점 앞의 0은 생략 가능/숫자가 작을수록 빨라짐 */
+}
+
+.close:hover {
+  transform: rotate(300deg);
+}
+    </style>
+</head>
+<body>
+    <div class="close">❌</div>
+</body>
+</html>
