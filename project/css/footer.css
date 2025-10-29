@@ -32,7 +32,7 @@ footer .inquiry {
     height: 426px;
     padding-top: 120px;
     /* 배경 이미지 높이: 196px */
-    background: #fff url(./../../basic/assets/footer_img.png) no-repeat 0 100%;
+    background: #fff url(./../../basic/assets/imgs/footer_img.png) no-repeat 0 100%;
 }
 footer .inquiry .inner {
     display: flex;
@@ -56,7 +56,7 @@ footer .inquiry .faq-btn {
 }
 footer .inquiry .faq-btn span {
     /* background: 색 url() 반복여부 x위치 y위치/크기; */
-    background: url(./../../basic/assets/icon_main_inquiry_01.png) no-repeat 0 0/contain;
+    background: url(./../../basic/assets/imgs/icon_main_inquiry_01.png) no-repeat 0 0/contain;
     padding-left: 67px;
 }
 footer .inquiry .consult-btn {
@@ -68,13 +68,13 @@ footer .inquiry .consult-btn {
     padding: 35px 0;
 }
 footer .inquiry .consult-btn span {
-    background: url(./../../basic/assets/icon_main_inquiry_02.png) no-repeat;
+    background: url(./../../basic/assets/imgs/icon_main_inquiry_02.png) no-repeat;
     background-size: contain;
     padding-left: 57px;
 }
 /* info: 정보 */
 footer .info {
-    background: #222 url(./../../basic/assets/logo.png) no-repeat 80px 70px;
+    background: #222 url(./../../basic/assets/imgs/logo.png) no-repeat 80px 70px;
     /* 기본값: background-origin: padding-box; */
     /* background-origin: content-box; */
     /* 시작 부분 정하는 거 */

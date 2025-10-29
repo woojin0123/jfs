@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상하슬라이드</title>
+
+    <style>
+        /* reset */
+        body, ul {margin: 0;}
+        ul {padding: 0; list-style: none;}
+        img {
+            vertical-align: top;
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        /* slide */
+        .slider {
+            width: 600px;
+            height: 300px;
+            overflow: hidden;
+            margin: 50px auto;
+            border: 20px solid rebeccapurple;
+        }
+        .slides {
+
+            animation: slideRoll 9s infinite ease-in-out;
+        }
+@keyframes slideRoll {
+    0% {transform: translateY(0);}
+    33.33% {transform: translateY(-300px);}
+    11.11% {transform: translateY(-300px);}
+    44.44% {transform: translateY(-600px);}
+    66.66% {transform: translateY(-600px);}
+    77.77% {transform: translateY(-900px);}
+    100% {transform: translateY(-900px);}
+}
+    </style>
+</head>
+<body>
+    <div class="slider">
+        <ul class="slides">
+            <li><img src="../../assets/imgs/20250314110653975050.png" alt="이미지1"></li>
+            <li><img src="../../assets/imgs/20250616093330346112.png" alt="이미지2"></li>
+            <li><img src="../../assets/imgs/20250901085834611046.png" alt="이미지3"></li>
+<!-- 롤링이미지 -->
+            <li><img src="../../assets/imgs/20250314110653975050.png" alt="이미지1"></li>
+        </ul>
+    </div>
+</body>
+</html>

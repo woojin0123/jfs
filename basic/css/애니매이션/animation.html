@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>애니매이션</title>
+    <style>
+/* 
+The animation code 
+    @keyframes 애니매이션이름 {
+        from {css 속성: 값;}
+        to {css 속성: 값;}
+    }
+    @keyframes 애니매이션이름 {
+        0% {css 속성: 값;}
+        25% {css 속성: 값;}
+        50% {css 속성: 값;}
+        75% {css 속성: 값;}
+        100% {css 속성: 값;}
+    }
+
+
+*/
+@keyframes myAnimation {
+    from {background-color: red;}
+    to {background-color: yellow;}
+}
+
+/* 
+애니매이션을 적용시킬 요소 
+    이름- animation-name: myAnimation; *****필수*****
+    동작시간- animation-duration: 4s; *****필수*****
+    가속도- animation-timing-function: ease;
+    지연시간- animation-delay
+    반복횟수- animation-iteration-count: 1; (기본값/ 숫자만큼 반복. 무한 반복: infinite)
+    방향설정(왕복 등)- animation-direction
+    상태 유지- animation-fill-mode
+    animation-play-state
+*/
+div {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    animation-name: myAnimation; /* *****필수***** */
+    animation-duration: 4s; /* *****필수***** */
+    /* animation-iteration-count: infinite; */
+    animation-fill-mode: forwards; /* from > to > 초기값 to에서 멈춤 */
+}
+    </style>
+</head>
+
+<body>
+ <div>애니매이션</div>
+</body>
+
+</html>

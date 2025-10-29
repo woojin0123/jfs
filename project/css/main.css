@@ -283,7 +283,7 @@ footer .inquiry .con-btn a {
     - 스크롤 올리고 내릴 때 효과주기 (배경 이미지 고정)
     */
     background-attachment: fixed; /* bga */
-    background: url(./../../basic/assets/2025_autumn_pick_bg_250916.jpg) no-repeat 50%/cover fixed;
+    background: url(./../../basic/assets/imgs/2025_autumn_pick_bg_250916.jpg) no-repeat 50%/cover fixed;
 }
 #sec3 .intro {
     position: absolute;
