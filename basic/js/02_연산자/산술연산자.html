@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS: 산술연산자</title>
+</head>
+<body>
+    <script>
+/* 
+산술연산자
+    +
+    -
+    *
+    /
+    % (나머지 연산)
+        ex. 5 % 2 > 1
+    ++
+    --
+    ** (거듭제곱, ES6)
+        ex. 2*2*2*2*2 > 32
+            2**5 > 32
+*/
+
+// 변수 선언 키워드: var, let(재사용o), const(재사용x)
+// 변수 사용 시 기본적으로 const를 사용하고 재사용이 필요하면 let 사용하기
+
+// 변수 선언
+let num1 = 5;
+let num2 = 2;
+const num3 = num4 = 0;
+// 출력
+document.write("5 + 2 = " + (num1 + num2) + '<br>'); // 5 + 2 = 7
+document.write("5 - 2 = " + (num1 - num2) + '<br>'); // 5 - 2 = 3
+document.write("5 * 2 = " + (num1 * num2) + '<br>'); // 5 * 2 = 10
+document.write("5 / 2 = " + (num1 / num2) + '<br>'); // 5 / 2 = 2.5
+document.write("5 % 2 = " + (num1 % num2) + '<br>'); // 5 % 2 = 1
+
+/* 
+증감연산자
+    ++
+    --
+전위연산: ++피연산자 --피연산자 선 계산 후 출력
+후위연산: 피연산자++ 피연산자-- 선 출력 후 계산
+*/
+document.write("num1++ = " + num1++ + '<br>'); // num1++ = 5
+document.write("++num1 = " + ++num1 + '<br>'); // ++num1 = 7
+document.write("num2-- = " + num2-- + '<br>'); // num2-- = 2
+document.write("--num2 = " + --num2 + '<br>'); // --num2 = 0
+    </script>
+</body>
+</html>

@@ -3,32 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>상하슬라이드</title>
+    <title>상하롤링텍스트</title>
 
     <style>
         /* reset */
         body, ul {margin: 0;}
         ul {padding: 0; list-style: none;}
-        img {
-            vertical-align: top;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
 
         /* slide */
         .slider {
-            width: 600px;
-            height: 300px;
+            width: 400px;
+            height: 45px;
             overflow: hidden;
             margin: 50px auto;
-            border: 20px solid rebeccapurple;
+            border: 3px solid rebeccapurple;
         }
         .slides {
             height: calc(100% * 4);
             animation: slideRoll 9s infinite ease-in-out;
         }
-        
         @keyframes slideRoll {
             0% {transform: translateY(0);}
             11.11% {transform: translateY(-25%);}
@@ -39,18 +32,26 @@
             100% {transform: translateY(-75%);}
         }
         .slider li {
+            display: flex;
+            align-items: center;
             height: 25%;
+            padding-left: 8px;
+        }
+/* 말 줄임표 효과 */
+        .slider li span {
+            text-overflow: ellipsis; /* 문장 길 때 ... */
+            white-space: nowrap; /* 글 길어도 한줄로 */
+            overflow: hidden;
         }
     </style>
 </head>
 <body>
     <div class="slider">
         <ul class="slides">
-            <li><img src="../../assets/imgs/20250314110653975050.png" alt="이미지1"></li>
-            <li><img src="../../assets/imgs/20250616093330346112.png" alt="이미지2"></li>
-            <li><img src="../../assets/imgs/20250901085834611046.png" alt="이미지3"></li>
-<!-- 롤링이미지 -->
-            <li><img src="../../assets/imgs/20250314110653975050.png" alt="이미지1"></li>
+            <li><span>나는 개똥벌레 친구가 없네 저기 개똥 무덤이 내 집 걸인 걸 아무리 웃어봐도 어쩔 수 없네 어쩌구저쩌구 어쩌구</span></li>
+            <li><span>이렇게 멋진 파란 하늘 위로 날으는 멋진 융단을 타고 이렇게 멋진  어쩌구저쩌구</span></li>
+            <li><span>[속보] 지금 집에 가고 싶어</span></li>
+            <li><span>나는 개똥벌레 친구가 없네 저기 개똥 무덤이 내 집 걸인 걸 아무리 웃어봐도 어쩔 수 없네 어쩌구저쩌구 어쩌구</span></li>
         </ul>
     </div>
 </body>

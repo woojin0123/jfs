@@ -7,11 +7,12 @@
 
     <style>
         /* reset */
-        body {margin: 0;}
+        body, ul {margin: 0;}
+        ul {padding: 0; list-style: none;}
         img {
             vertical-align: top;
             width: 100%;
-            height: 300px;
+            height: 100%;
             object-fit: cover;
         }
 
@@ -25,7 +26,8 @@
         }
         .slides {
             display: flex;
-            width: 100%;
+            width: calc(100% * 4); /* 연산자 앞뒤 띄어쓰기 */
+            height: 100%;
             /* animation-name: slideRoll;
             animation-duration: 9s;
             animation-iteration-count: infinite; */
@@ -33,26 +35,26 @@
             /* animation: 이름 동작시간 [반복횟수]; */
             animation: slideRoll 9s infinite ease-in-out;
         }
-@keyframes slideRoll {
-    0% {transform: translateX(0);}
-    11.11% {transform: translateX(-100%);} /* 잠시 멈췄다가 움직이려면 같은 px로 고정 */
-    33.33% {transform: translateX(-100%);}
-    44.44% {transform: translateX(-200%);}
-    66.66% {transform: translateX(-200%);}
-    77.77% {transform: translateX(-300%);}
-    100% {transform: translateX(-300%);}
-}
+        @keyframes slideRoll {
+            0% {transform:translateX(0);}
+            11.11% {transform:translateX(-25%);}
+            33.33% {transform:translateX(-25%);}
+            44.44% {transform:translateX(-50%);}
+            66.66% {transform:translateX(-50%);}
+            77.77% {transform:translateX(-75%);}
+            100% {transform:translateX(-75%);}
+        }
     </style>
 </head>
 <body>
     <div class="slider">
-        <div class="slides">
-            <img src="../../assets/imgs/20250314110653975050.png" alt="이미지1">
-            <img src="../../assets/imgs/20250616093330346112.png" alt="이미지2">
-            <img src="../../assets/imgs/20250901085834611046.png" alt="이미지3">
+        <ul class="slides">
+            <li><img src="../../assets/imgs/20250314110653975050.png" alt="이미지1"></li>
+            <li><img src="../../assets/imgs/20250616093330346112.png" alt="이미지2"></li>
+            <li><img src="../../assets/imgs/20250901085834611046.png" alt="이미지3"></li>
 <!-- 롤링이미지 -->
-            <img src="../../assets/imgs/20250314110653975050.png" alt="이미지1">
-        </div>
+            <li><img src="../../assets/imgs/20250314110653975050.png" alt="이미지1"></li>
+        </ul>
     </div>
 </body>
 </html>

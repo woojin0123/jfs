@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>페이드슬라이드</title>
+    <style>
+/* reset */
+/* :where(선택자, 선택자, ...) (css4) 우선순위 낮음*/
+/* :is(선택자, 선택자, ...) (css4) 우선순위 높음*/ 
+:where(body,ul) {
+    margin: 0;
+}
+
+ul {
+    padding: 0; 
+    list-style: none;
+}
+
+img {
+    vertical-align: top; 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover;
+}
+
+/* 슬라이드 */
+.slider {
+    position: relative;
+    width: 600px;
+    height: 300px;
+    margin: 50px auto;
+    border: 20px solid violet;
+}
+.slides li {
+    /* absolute: li 안에 있는 이미지들을 겹친다 */
+    position: absolute;
+    width: 600px;
+    height: 100%;
+    opacity: 0; /* fade 메인 */
+    animation: crossfade 9s infinite;
+}
+
+/* 각 이미지의 시작 타이밍 0초 뒤, 3초 뒤, 6초 뒤 */
+.slides li:nth-child(1) {animation-delay: 0s; opacity: 1;}
+.slides li:nth-child(2) {animation-delay: 3s;}
+.slides li:nth-child(3) {animation-delay: 6s;}
+
+/* 교차 페이드 효과 */
+@keyframes crossfade {
+    0% {opacity: 0;}
+    10% {opacity: 1;}
+    40% {opacity: 1;}
+    50% {opacity: 0;}
+    100% {opacity: 0;}
+}
+</style>
+</head>
+
+<body>
+    <div class="slider">
+        <div class="slides">
+            <ul>
+                <li><img src="../../assets/imgs/20250314110653975050.png" alt="이미지1"></li>
+                <li><img src="../../assets/imgs/20250616093330346112.png" alt="이미지2"></li>
+                <li><img src="../../assets/imgs/20250901085834611046.png" alt="이미지3"></li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

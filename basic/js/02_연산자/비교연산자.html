@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS: 비교연산자</title>
+</head>
+<body>
+    <script>
+/* 
+비교연산자
+    > 크다 (초과)
+    < 작다 (미만)
+    >= 크거나 같다 (이상)
+    <= 작거나 같다 (이하)
+    == 값이 같다
+    === 값과 타입이 같다
+    != 값이 다르다
+    !== 값과 타입이 다르다
+*/
+
+// 변수 선언 키워드: var, let(재사용o), const(재사용x)
+// 변수 사용 시 기본적으로 const를 사용하고 재사용이 필요하면 let 사용하기
+
+// 변수 선언
+const num = 5;
+const str = '5'
+
+// 출력 비교&논리 연산의 결과는 boolean 데이터(true or false)
+document.write("5 > '5' = " + (num > str) + '<br>'); // 5 > '5' = false
+document.write("5 < '5' = " + (num < str) + '<br>'); // 5 < '5' = false
+document.write("5 >= '5' = " + (num >= str) + '<br>'); // 5 >= '5' = true
+document.write("5 <= '5' = " + (num <= str) + '<br>'); // 5 <= '5' = true
+document.write("5 == '5' = " + (num == str) + '<br>'); // 5 == '5' = true
+document.write("5 === '5' = " + (num === str) + '<br>'); // 5 === '5' = false
+document.write("5 != '5' = " + (num != str) + '<br>'); // 5 != '5' = false
+document.write("5 !== '5' = " + (num !== str) + '<br>'); // 5 !== '5' = true
+
+
+/* 
+증감연산자
+    ++
+    --
+전위연산: ++피연산자 --피연산자 선 계산 후 출력
+후위연산: 피연산자++ 피연산자-- 선 출력 후 계산
+*/
+document.write("num1++ = " + num1++ + '<br>'); // num1++ = 5
+document.write("++num1 = " + ++num1 + '<br>'); // ++num1 = 7
+document.write("num2-- = " + num2-- + '<br>'); // num2-- = 2
+document.write("--num2 = " + --num2 + '<br>'); // --num2 = 0
+    </script>
+</body>
+</html>

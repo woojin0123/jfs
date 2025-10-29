@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>좌우롤링텍스트</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .marquee {
+            font-size: 90px;
+            font-weight: bold;
+            letter-spacing: 12px;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+        .marquee .inner {
+            display: flex;
+        }
+        .marquee .inner span {
+            animation: txtRoll 9s linear infinite ;
+        }
+        
+        @keyframes txtRoll {
+            0% {transform: translateX(0%);}
+            100% {transform: translateX(-100%);}
+        }
+        .marquee .right span {
+            animation-direction: reverse;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="marquee">
+        <div class="inner">
+            <span>PRESTIGE 〓 CONSIDERATION 〓 AFFINITY</span>
+            <span>PRESTIGE 〓 CONSIDERATION 〓 AFFINITY</span>
+        </div>
+        <div class="inner right">
+            <span>PRESTIGE 〓 CONSIDERATION 〓 AFFINITY</span>
+            <span>PRESTIGE 〓 CONSIDERATION 〓 AFFINITY</span>
+        </div>
+    </div>
+</body>
+</html>
