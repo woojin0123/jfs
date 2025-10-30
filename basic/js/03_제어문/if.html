@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS: if문</title>
+</head>
+<body>
+    <script>
+/* 
+if문의 형식
+1. 조건이 true면 실행
+    if(조건) {
+        실행문;
+    }
+2. 조건1이 true면 코드1 실행하고 조건2가 false면 if 아래 다음 문장 실행
+    조건2가 true면 코드2 실행
+    조건1이 false면 if 아래 다음 문장 실행
+** 둘 중 하나가 false
+    if (조건1) {
+    코드1;
+    if (조건2) {
+    코드2;
+    }
+}
+
+*/
+    let age = prompt('나이를 입력하세요.');
+
+    if (age >= 19) {
+        document.write('성인입니다.')
+    };
+
+    if (false) {
+    document.write('성인입니다.');
+    }
+    if (age >= 19) {
+        document.write('성인입니다');
+        if (age >= 30) {
+            document.write('30이 넘었군요');
+        }
+    }
+    if (age < 19) {
+        document.writeln('성인이 아닙니다');
+    }
+if (age >= 19) {
+    document.write('성인입니다');
+} else {
+    document.write('성인이 아닙니다');
+}
+
+/* 
+if~else문의 형식
+///// 조건이 true면 코드1 실행, false면 코드2 실행
+    if (조건) {
+        코드1;
+    } else {
+        코드2;
+    }
+삼항연산자
+(조건) ? 코드1 : 코드2
+*/
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS: 조건(삼항)연산자</title>
+</head>
+<body>
+    <script>
+/* 
+조건(삼항)연산자
+    (조건) ? 참일 때 실행할 문장 : 거짓일 때 실행할 문장
+    > 조건이 참이면 참 실행, 아니면 거짓 실행
+*/
+
+    const x = 7;
+    const y = 2;
+
+    document.write('x > y ? x : y = ' + (x > y ? x : y) + '<br>');
+    document.write('x < y ? x : y = ' + (x < y ? x : y) + '<br>');
+
+// if 제어문
+/* 
+if 제어문의 문법
+    if (조건) {
+    참일 때 실행할 문장
+    } else {
+    거짓일 때 실행할 문장
+    }
+*/
+document.write(x > y ? x : y);
+if (x > y) {
+    x;
+} else {
+    y;
+}
+
+if (x > y) {
+    document.write(x);
+} else {
+    document.write(y);
+}
+    </script>
+</body>
+</html>

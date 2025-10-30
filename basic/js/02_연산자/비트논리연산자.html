@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS: 비트논리연산자</title>
+</head>
+<body>
+    <script>
+        const x=5;    // 0101 2진수로 표현
+	    const y=7;    // 0111
+
+        // x=10; // 재할당 / const는 재할당 불가 / TypeError: Assignment to constant variable.
+
+        // 이진법으로 계산
+/*  
+10진수 (0-10)
+2진수 (0,1)
+8진수 (0-7)
+16진수 (0-15)
+Decimal Binary Octal Hexadecimal
+접수사: 없음, 0b, 0o, 0x
+10진수      2진수       8진수       16진수
+DEC         BIN         OCT         HEX
+0           0000        0           0
+1           0001        1           1
+2           0010        2           2
+3           0011        3           3
+4           0100        4           4
+5           0101        5           5
+6           0110        6           6
+7           0111        7           7
+8           1000        10          8
+9           1001        11          9
+10          1010        12          A
+100         1100100     144         64            
+
+*/
+
+        // 비트곱 : 0101 0111 에서 1 겹치는 값만 계산 > 0101
+	    document.write("x & y = " + (x & y) + "<br>");  // x & y = 5
+	    // 비트합 : 0101 0111 에서 1 들어간 거 모두 계산 > 0111
+	    document.write("x | y = " + (x | y) + "<br>"); // x | y = 7
+	    // 배타적 비트합 : 0101 0111에서 다른 거만 계산 > 0010
+	    document.write("x ^ y = " + (x ^ y) + "<br>"); // x ^ y = 2
+	    // 비트 부정 : 5에 1을 더하고 부호 반전
+	    document.write("~x = " + (~x) + "<br>"); // ~x = -6
+    </script>
+</body>
+</html>
