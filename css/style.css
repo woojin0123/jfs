@@ -169,12 +169,31 @@ footer .top-btn i {
 #home {
     /* 뷰포트 크기로 높이 지정 */
     height: 100vh;
-    background: url(./../assets/imgs/benjamin-voros-phIFdC6lA4E-unsplash.jpg) no-repeat 50% 50%/cover fixed;
+    background: url(../assets/imgs/benjamin-voros-phIFdC6lA4E-unsplash.jpg) no-repeat 50% 50%/cover fixed;
 }
 #home h2 {
-    background: #555;
+    /* background: #555; */
     /* 일반적으로 좌우패딩을 상하보다 많이 준다. */
     padding: 8px 24px 10px 30px;
+}
+.circle_ani {
+    position: absolute;
+    right: 0;
+    top: -100px;
+    width: 135px;
+    height: 136px;
+    /* background: lightgrey; */
+    /* transform: rotate(0deg); 기본값 */
+    transition: linear 5s;
+    animation: circle 50s linear infinite;
+}
+@keyframes circle {
+    0% {
+        transform: rotate(0deg) scale(3);
+    }
+    100% {
+        transform: rotate(720deg) scale(3);
+    }
 }
 
 /* section area: contact.html */

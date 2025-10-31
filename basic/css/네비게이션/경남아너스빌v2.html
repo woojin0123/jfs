@@ -25,10 +25,12 @@
 /* 헤더 */
         #header {
             background: #0f2233;
-            overflow: hidden;
+            /* overflow: hidden; */
         }
+
+        /* 호버시 서브메뉴 영역 */
 /* ::after ::before 사용 시 content는 필수 */
-        #header::after {
+        /* #header::after {
             content: '';
             color: #fff;
             display: block;
@@ -39,7 +41,9 @@
         }
         #header:hover::after {
             height: 200px;
-        }
+        } */
+
+
         #header a {
             color: #fff;
         }
@@ -61,7 +65,7 @@
             align-self: flex-start;
             position: absolute;
             left: 50%;
-            top: 32px;
+            top: 33px;
             transform: translateX(-50%);
             /* background: pink; */
         }
@@ -78,6 +82,7 @@
         .main li {
             width: 150px;
         }
+
 /* 메인 메뉴에 마우스 올렸을 때 나오는 밑줄 */
 /* main 안에 li 안에 a에만 효과를 주고 싶다 > > > 이렇게 안하면 자식의 자식까지 적용됨 */
         .main>li>a {
@@ -108,6 +113,11 @@ transform-origin: 50% 50%; (기본값)
         #header .main a:hover {
             color: #bbb;
         }
+        #header .mainli:hover .sub{
+            height: 200px;
+            visibility: visible;
+            opacity: 1;
+        }
 /* 메인 메뉴에 :hover시 서브 메뉴 나타내기 */
         .main:hover .sub {
             /* display: block; */
@@ -121,7 +131,13 @@ transform-origin: 50% 50%; (기본값)
             font-size: 1.6rem;
             line-height: 2;
             font-weight: 400;
-            margin-top: 45px;
+            padding-top: 20px;
+            margin-top: 40px;
+            background: #fff;
+            height: 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: .3s;
         }
         /* a태그 글자색은 a태그에 직접 지정 */
         #header .sub a { 

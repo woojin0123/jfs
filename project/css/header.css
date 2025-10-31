@@ -1,0 +1,111 @@
+@charset "utf-8";
+
+/* 초기화 */
+        @import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
+
+/* 헤더 */
+        #header {
+/* 포지션이 static(포지션 지정 안함)인 요소보다 위에 배치 */
+/* 포지션을 지정했을 경우에는 z-index의 숫자가 클수록 위로 배치됨 */
+/*  fixed or absolute 설정 시 width: 100%로 설정해야함 */
+            position: fixed;
+            width: 100%;
+            z-index: 10;
+            background: #0f2233;
+            overflow: hidden;
+        }
+/* ::after ::before 사용 시 content는 필수 */
+        #header::after {
+            content: '';
+            color: #fff;
+            display: block;
+            width: 100%;
+            height: 0;
+            background: #fff;
+            transition: .5s;
+        }
+        #header:hover::after {
+            height: 200px;
+        }
+        #header a {
+            color: #fff;
+        }
+        #header a:hover {
+            color: #bbb;
+        }
+        #header .container {
+            position: relative;
+            padding: 0 50px;
+            height: 95px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* background: lightcyan; */
+        }
+/* 로고 */
+/* 글로벌 내비게이션 바(GNB) */
+        #gnb {
+            align-self: flex-start;
+            position: absolute;
+            left: 50%;
+            top: 32px;
+            transform: translateX(-50%);
+            /* background: pink; */
+        }
+/* 1depth: Main Menu */
+        #header .main {
+            width: 600px;
+            display: flex;
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            /* background: blue; */
+        }
+/* justfy-contents: 중앙정렬 안돼서 li 사이에 간격 줌 */
+        #header .main li {
+            width: 150px;
+        }
+/* 메인 메뉴에 마우스 올렸을 때 나오는 밑줄 */
+/* main 안에 li 안에 a에만 효과를 주고 싶다 > > > 이렇게 안하면 자식의 자식까지 적용됨 */
+        #header .main>li>a {
+            display: inline-block;
+        }
+        #header .main>li>a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 3px;
+            background: #bbb;
+/* margin: auto로 설정 시 밑줄이 가운데서부터 나타남 */
+            margin: auto;
+            /* transform: scaleX(0); */
+            transition: .5s;
+            /* border-bottom: 3px solid lightcoral; */
+        }
+        #header .main>li>a:hover::after {
+            width: 100%;
+            /* transform: scaleX(1); */
+        }
+        #header .main a:hover {
+            color: #bbb;
+        }
+/* 메인 메뉴에 :hover시 서브 메뉴 나타내기 */
+        #header .main:hover .sub {
+            /* display: block; */
+            /* visibility: visible; */
+            /* background: #fff; */
+            opacity: 1;
+        }
+/* 2depth: Sub Menu */
+        #header .sub {
+            /* display: none; */
+            font-size: 1.6rem;
+            line-height: 2;
+            font-weight: 400;
+            margin-top: 45px;
+        }
+        /* a태그 글자색은 a태그에 직접 지정 */
+        #header .sub a { 
+            color: #333;
+        }
+        /* sns 로그인 회원가입 */

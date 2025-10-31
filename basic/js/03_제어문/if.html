@@ -1,65 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS: if문</title>
 </head>
+
 <body>
     <script>
-/* 
-if문의 형식
-1. 조건이 true면 실행
-    if(조건) {
-        실행문;
-    }
-2. 조건1이 true면 코드1 실행하고 조건2가 false면 if 아래 다음 문장 실행
-    조건2가 true면 코드2 실행
-    조건1이 false면 if 아래 다음 문장 실행
-** 둘 중 하나가 false
-    if (조건1) {
-    코드1;
-    if (조건2) {
-    코드2;
-    }
-}
+        /* 
+            제어문 끝에는 ; 쓰지 않는다.
 
-*/
-    let age = prompt('나이를 입력하세요.');
+            if문의 형식
+                if (조건) {
+                    코드;
+                }
+                -> 조건이 true이면 코드를 실행
 
-    if (age >= 19) {
-        document.write('성인입니다.')
-    };
+                if (조건1) {
+                    코드1;
+                    if (조건2) {
+                        코드2;
+                    }
+                }
+                조건1이 true이면 코드1 실행하고,
+                조건2가 false이면 if 아래 다음 문장 실행
+                조건2가 true이면 코드2 실행
+                조건1이 false이면 if 아래 다음 문장 실행
+        */
 
-    if (false) {
-    document.write('성인입니다.');
-    }
-    if (age >= 19) {
-        document.write('성인입니다');
-        if (age >= 30) {
-            document.write('30이 넘었군요');
+        // ()괄호 안의 내용은 true 또는 false 값을 갖을 수 있는 표현식!
+        let age = prompt('나이를 입력하세요.');
+
+        if (age >= 19) {
+            document.write('성인입니다.');
         }
-    }
-    if (age < 19) {
-        document.writeln('성인이 아닙니다');
-    }
-if (age >= 19) {
-    document.write('성인입니다');
-} else {
-    document.write('성인이 아닙니다');
-}
+        if (false) {
+            document.write('성인입니다.');
+        }
 
-/* 
-if~else문의 형식
-///// 조건이 true면 코드1 실행, false면 코드2 실행
-    if (조건) {
-        코드1;
-    } else {
-        코드2;
-    }
-삼항연산자
-(조건) ? 코드1 : 코드2
-*/
+        if (age >= 19) {
+            document.write('성인입니다.');
+            if (age >= 30) {
+                document.write('30이 넘었군요!');
+            }
+        }
+        if (age < 19) {
+            document.write('성인이 아닙니다.');
+        }
+
+        /* 
+            if~else문 두 번째 형식
+                if (조건) {
+                    코드1;
+                } else {
+                    코드2;
+                }
+                ->  조건이 true이면 코드1 실행,
+                    아니면 코드2를 실행
+
+            삼항 연산자
+                (조건) ? 코드1 : 코드2
+        */
+
+        // 입력: 변수 선언
+        let result;
+
+        // 처리: 제어문
+        if (age >= 19) {
+            result = '성인입니다.';
+        } else {
+            result = '미성년자1입니다.';
+        }
+
+        // 출력
+        document.write(result + '<br><br>');
+
+        // (age >= 19) ? document.write('성인입니다.') : document.write('미성년자2입니다.');
+        result = (age >= 19) ? '성인입니다.' : '미성년입니다.';
+        document.write(result + '<br><br>');
+
+
+        /*
+            제어문 안에 다른 제어문을 사용!
+
+            if (조건) {
+                if (조건) {
+                    코드1;
+                }
+            } else {
+                if (조건) {
+                    코드1;
+                } else {
+                    코드2;
+                }
+            }
+        */
+
+        // 변수 선언
+        const gender = 'M';
+        age = 21; // let은 재할당⭕, 재선언❌
+
+        // 처리: 나이+성별
+        // ==는 타입 비교❌, === 타입 비교⭕
+        if (gender === 'F') {
+            if (age >= 19) {
+                result = '성인 여성입니다.';
+            } else {
+                result = '미성인 여성입니다.';
+            }
+        } else {
+            if (age >= 19) {
+                result = '성인 남성입니다.';
+            } else {
+                result = '미성인 남성입니다.';
+            }
+        }
+        document.write('당신은 ' + result + '<br><br>');
+
+        /* 
+            예약어(키워드): true, false, if, else
+
+            if~else if~else(다중 if문) 세 번째 형식
+                if (조건) {
+                    코드1;
+                } else if (조건) {
+                    코드2;
+                } else if (조건) {
+                    코드3;
+                } else if (조건) {
+                    코드4;
+                } else {
+                    코드5;
+                }
+        */
+
+        // 변수 선언
+        const point = prompt('당신의 점수를 입력하세요.');
+        let grade;
+
+        // 처리
+        if (point > 100) {
+            result = "잘못 입력하셨습니다. 다시 입력해 주세요.";
+        } else if (point >= 90) {
+            grade = 'A';
+            result = '아주 잘했어요.';
+        } else if (point >= 80) {
+            grade = 'B';
+            result = '잘했어요.';
+        } else if (point >= 70) {
+            grade = 'C';
+            result = '조금만 노력하면 잘할 수 있어요.';
+        } else if (point >= 60) {
+            grade = 'D';
+            result = '좀 더 노력하세요.';
+        } else {
+            grade = 'F';
+            result = '많이 노력하시기 바랍니다.';
+        }
+
+        // 출력
+        document.write(result + '<br>' + '학생의 학점은 <b style="color:red;">' + grade + '</b>입니다.<br><br>');
+
     </script>
 </body>
+
 </html>
