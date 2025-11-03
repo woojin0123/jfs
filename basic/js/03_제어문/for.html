@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS: for문</title>
+</head>
+<body>
+    <script>
+/* 
+for문 기본 형식
+    for(초기식; 조건식; 증감식) {
+    코드(실행문장);
+    }
+        초기식
+        - 변수 초기화 (최초 1회 실행)
+            for (let 변수(i,j,k, ...)=값;)
+        조건식
+        - 블록 내 문장 반복 횟수 결정
+        - 조건식이 true일 때 코드 반복
+        - num<=9;
+        증감식 
+        - 변수값을 증가 또는 감소
+        - i++, i--, i=i+1 ...
+        - num++
+*/
+// 반복 횟수가 정해져 있을 때 for문, 정해져 있지 않을 때 while문
+// for (let 변수=값; 조건식; 증감식) {코드;}
+// for (let num=1; num<=10; num++) {}
+// for (let num=0; num<10; num++) {}
+for (let num=0; num<=9; num++) {
+    document.write('for문 수행: ' + num + '<br>');
+}
+        // 진행 순서
+        // 1. num=1;
+        // 2. num<=5; (true)
+        // 3. 출력문
+        // 4. num++; =2
+        // 5. num<=5; (true)
+        // ... 중략 ...
+
+        // nn. num<=9; (false)
+
+// 문자열
+let num;
+const st = 'ABCDEF' // 문자열의 길이=6, st.length > 문자열의 문자 수
+let ct;
+// st = 문자열 객체
+// length = 속성
+// .은 객체와 속성을 구분하는 구분자
+
+// let num=1, ct=st.length;
+// for ( ; num<ct; ) {}
+for (num=1, ct=st.length; num<ct; num++) {
+    document.write('문자열 반복 수행1: ' + num + '<br>');
+}
+// num= 1>2>3>4>5>6
+// ct=6
+
+
+num=1, ct=st.length;
+for ( ; num<ct; ) {
+    document.write('문자열 반복 수행2: ' + num + '<br>');
+        num++;
+} 
+
+// const는 재선언 불가, 재할당 불가
+// let 재선언 불가, 재할당 가능
+
+num=1
+// 위에있는 ct 그대로 사용 가능
+// st='ABCDEF';
+// ct=st.length;
+
+for( ; ; ) {
+if(num<ct) {
+    document.write('for(;;) 반복 수행: ' + num + '<br>');
+    num++;
+// continue를 만나면 반복문의 증감식으로 이동 
+    continue;
+// 실행 코드;
+    }
+    break; 
+}
+// 만약 if 조건이 거짓이면 if문 벗어남
+// break를 만나면 반복문을 벗어남
+
+
+    </script>
+</body>
+</html>
