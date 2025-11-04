@@ -35,7 +35,16 @@
 body,h1,h2,h3,p,ul {
     margin: 0;
 }
-ul {padding: 0; list-style:none;}
+ul {
+    padding: 0; 
+    list-style:none;
+}
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    vertical-align: middle;
+}
 a {
     text-decoration: none;
 }
@@ -107,7 +116,7 @@ textarea {
     ::placeholder */
 ::placeholder {
     font: 1.5rem/1.6 "Lato-Regular", sans-serif;
-    color: ccc;
+    color: #ccc;
 }
 /* common(공통) */
 h2 {
@@ -160,15 +169,23 @@ footer .top-btn {
     background: #ddd;
     padding: 8px 16px;
 }
+footer .top-btn:hover {
+    background: #bbb;
+}
+footer .top-btn a:hover {
+    color: #111;
+}
 footer .top-btn i {
     margin-right: 8px;
 }
 
 
-/* section area: index.html */
+/* index section area: index.html */
 #home {
+    position: relative;
     /* 뷰포트 크기로 높이 지정 */
     height: 100vh;
+    overflow: hidden;
     background: url(../assets/imgs/benjamin-voros-phIFdC6lA4E-unsplash.jpg) no-repeat 50% 50%/cover fixed;
 }
 #home h2 {
@@ -179,7 +196,6 @@ footer .top-btn i {
 .circle_ani {
     position: absolute;
     right: 0;
-    top: -100px;
     width: 135px;
     height: 136px;
     /* background: lightgrey; */
@@ -196,28 +212,51 @@ footer .top-btn i {
     }
 }
 
-/* section area: contact.html */
-#contact .contact {
-    width: 600px;
-}
-#contact .parallax-bg {
+/* work+contact section common area */
+.parallax-bg {
     position: relative;
     height: 400px;
-    background: url(./../assets/imgs/parallax3.jpg) no-repeat 50% 50%/cover fixed;
+    background: no-repeat 50% 50% / cover fixed;
+}
+.container {
+    width: 900px;
+    margin: 48px auto 96px;
+    text-align: center;
+}
+button {
+    background: #f1f1f1;
+    padding: 12px 24px;
+    margin-top: 10px;
+}
+/* work section area: work.html */
+#work .parallax-bg {
+    background: url(./../assets/imgs/parallax2.jpg)
+}
+#work .portfolio {
+    display: flex;
+}
+#work .portfolio li {
+    width: 216px;
+    height: 162px;
+}
+/* contact section area: contact.html */
+#contact .parallax-bg {
+    background: url(./../assets/imgs/parallax3.jpg)
 }
 #contact .container {
     display: flex;
     justify-content: space-between;
-    width: 900px;
-    margin: 48px auto 96px;
 }
 #contact .map {
     width: 280px;
     height: 160px;
     border-radius: 5px;
     /* 모서리 둥글게 하기 */
-    overflow:hidden;
+    overflow: hidden;
     margin-right: 32px;
+}
+#contact .contact {
+    width: 600px;
 }
 #contact .contact p {
     margin: 24px 0 16px;
@@ -243,8 +282,6 @@ footer .top-btn i {
 }
 #contact button {
     background: #111;
-    padding: 12px 24px;
-    margin-top: 10px;
 }
 #contact i {
     margin-right: 8px;
