@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS: type of</title>
+</head>
+<body>
+    <script>
+/* 
+데이터 타입
+    - 기본 7개
+        : number (숫자)
+            = 정수, 실수
+            = 64비트 부동 소수점
+        : string (문자열)
+        : boolean (불, 부울)
+        : undefined
+        : null
+        : bigint (ver. ES2020)
+            = 큰 정수, 무한대
+            = ex. 123456789n
+        : Symbol (ver. ES2015)
+    
+    - 참조(객체)
+        : function(){} (함수)
+        : array (배열) []
+        : object (객체) {}
+        
+typeof 연산자
+    - 데이터의 타입 확인
+*/
+let x;
+document.write('123: ' + typeof 123 + '<br>');
+document.write('12.3: ' + typeof 12.3 + '<br>');
+document.write('123n: ' + typeof 123n + '<br>');
+document.write('Hello: ' + typeof 'Hello' + '<br>');
+document.write('true: ' + typeof true + '<br>');
+document.write('10>2: ' + typeof (10>2) + '<br>');
+document.write('x: ' + typeof x + '<br>');
+document.write('null: ' + typeof null + '<br>'); // 버그
+document.write('symbol: ' + typeof symbol + '<br>');
+document.write('function: ' + typeof function(){} + '<br>');
+document.write('배열: ' + typeof [] + '<br>');
+document.write('객체: ' + typeof {} + '<br>');
+    </script>
+</body>
+</html>

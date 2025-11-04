@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS: break</title>
+</head>
+<body>
+    <script>
+// 제어문 내에서 제어문을 탈출할 떄 사용
+        let x = 0, sum = 0;
+        while(1) {
+            x += 3;
+            if(x > 100) 
+            break;
+            sum+=x;
+            document.write(x + " ");
+        }
+        document.write("<br> 1~100까지 수 중 3의 배수 합:" + sum + '<br>');   
+        
+
+// %를 연산자로 활용 (3으로 나눴을 때 나머지가 0이면 3의 배수)
+// i % 3 === 0
+sum = 0;
+for(let i = 1; i <= 100 ; i++) {
+    if (i % 3 === 0)
+    sum += i;
+    document.write(i + '');
+    continue;
+}
+document.write('<br> 1-100까지 3의 배수의 합: ' + sum + '<br>');
+
+
+        // var x=0;
+        // var sum=0;
+        // for(x=1; x<=100; x++) {
+        //     if(x%3 != 0)
+        //         continue;    
+        // sum+=x;
+        // document.write(x + " ");
+        // }
+        // document.write("<p/>");
+        // document.write("1~100까지 수 중 3의 배수 합 : <b>" + sum + "</b>");   
+    </script>
+</body>
+</html>

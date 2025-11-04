@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS: for vs while문</title>
+</head>
+<body>
+    <script>
+let sum = 0;
+for (let x = 1; x <= 100; x++) {
+    sum = sum + x;
+}
+document.write('1-100까지의 합: ' + sum + '<br>');
+
+sum = 0;
+// 무한반복
+for (x = 0; 1; x++) {
+    sum = sum + x;
+    if (x === 10001) break; // break는 for문을 탈출
+}
+document.write('1-10000까지의 합: ' + sum + '<br>');
+
+    </script>
+
+
+</body>
+</html>
