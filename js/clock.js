@@ -1,4 +1,4 @@
-// 디지털 시계 (colck.js)
+// 디지털 시계 (clock.js)
 
 function digitalClock() {
 
