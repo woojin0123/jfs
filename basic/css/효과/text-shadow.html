@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>text-shadow</title>
+    <style>
+        body {background: #ccc; color: #fff;}
+        .ori {
+/* 
+emmit: ts
+text-shadow: x위치 y위치 흐림효과 색; 
+그림자에 색 안주면 글자색 따라감
+*/
+            text-shadow: 2px 2px blue;
+        }
+
+        .blur {
+            text-shadow: 2px 2px 5px blue;
+        }
+
+        .neon {
+              text-shadow: 0 0 5px blue;
+        }
+
+        .double {
+            text-shadow: 0 0 3px #ff0000, 0 0 5px #0000ff;
+        }
+
+        .triple {
+            text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+        }
+        .border {
+            text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+        }
+        /* border는 상하좌우 1px씩 */
+    </style>
+</head>
+
+<body>
+    <h1 class="ori">text-shadow: 2px 2px;</h1>
+    <h1 class="blur">text-shadow: 2px 2px 5px blue;</h1>
+    <h1 class="neon">text-shadow: 0 0 5px blue;</h1>
+    <h1 class="double">text-shadow: 0 0 3px #ff0000, 0 0 5px #0000ff;</h1>
+    <h1 class="triple">text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;</h1>
+    <h1 class="border">text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;</h1>
+
+</body>
+
+</html>

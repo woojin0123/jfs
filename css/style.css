@@ -74,7 +74,7 @@ body {
 }
 h2 {
     font-weight: 400;
-    font-size: 2.4rem;
+    font-size: 3.6rem;
     color: #fff;
     /* 글자사이 간격: 자간 */
     letter-spacing: 1rem; /* ls */
@@ -245,8 +245,20 @@ button {
     height: 162px;
 }
 #work button {
+    width: 200px;
+    height: 50px;
     margin: 64px 0 0;
+    background: inherit; /* 부모에게 상속 */
+    color: #000;
+    box-shadow: none;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    transition: 2s ease-out;
 }
+#work button:hover {
+    box-shadow: 0 0 6px rgba(35, 173, 278, 1);
+}
+
 /* contact section area: contact.html */
 #contact .parallax-bg {
     background: url(./../assets/imgs/parallax3.jpg)

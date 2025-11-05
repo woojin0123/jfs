@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS: return</title>
+</head>
+<body>
+    <script>
+/* 
+선언적 함수
+    function 함수명([매개변수, ...]) {
+    코드;
+    return 값;
+    }
+
+함수 호출
+    함수명([인자, ...])
+*/
+
+// 외부로부터 값(자연수)을 입력받아서 1부터 입력받은 숫자까지의 합계
+let sum = 123345; // 전역변수
+
+let num; // 전역변수
+function add(name, num) {
+    document.write(name + '이 숫자' + num + '을 입력' + '<br>' + '1부터 ' + num + '까지의 합은 ' + '<br>')
+// 템플릿 리터럴
+// `${}`
+// ${변수|표현식|함수호출문}
+// +, '' 삭제
+document.write(`${name}이 숫자 ${num}을 입력했습니다. 이때 1부터 ${num}까지의 합은 `)
+    sum = 0; // 전역변수
+    console.log(sum);
+    for (let i= 1; i<= num; i++) {
+        sum+= i;
+    }
+    return sum;
+}
+let result = add('홍길동', 10);
+document.write(result + '입니다.');
+// name, num, sum은 function () 내부에서만 쓸 수 있는 지역변수
+// result는 전역변수라서 외부에서 사용 가능
+
+
+function add(x, y) {
+    return x + y;
+}
+function subtract(x, y) {
+    return x - y;
+}
+function multiply(x, y) {
+    return x * y;
+}
+function divide(x, y) {
+    return x / y;
+}
+
+document.write('----------------<br>');
+document.write(add(5, 2) + '<br>');
+const addition = add;
+document.write(addition(5, 2) + '<br>');
+document.write(`${addition(5, 2)}`);
+</script>
+</body>
+</html>

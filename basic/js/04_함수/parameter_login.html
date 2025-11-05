@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>로그인 예제 (prompt 사용, 배열/객체 없음)</title>
+  <style>
+    body {
+      font-family: 'Pretendard', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      color: white;
+      flex-direction: column;
+    }
+    h1 {
+      margin-bottom: 20px;
+      font-size: 28px;
+    }
+    .result {
+      margin-top: 20px;
+      padding: 15px 30px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      font-size: 18px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+  <h1>로그인 프로그램</h1>
+  <div class="result" id="resultBox">로그인 대기 중...</div>
+
+  <script>
+    // ✅ 등록된 계정 정보 (변수로 직접 선언)
+    const id1 = "std01", pw1 = "1111";
+    const id2 = "std02", pw2 = "2222";
+    const id3 = "std03", pw3 = "3333";
+
+    // ✅ 사용자 입력 받기
+    const inputId = prompt("아이디를 입력하세요:");
+    const inputPw = prompt("비밀번호를 입력하세요:");
+
+    // ✅ 로그인 검증
+    let loginSuccess = false;
+
+    if (inputId === id1 && inputPw === pw1) {
+      loginSuccess = true;
+    } else if (inputId === id2 && inputPw === pw2) {
+      loginSuccess = true;
+    } else if (inputId === id3 && inputPw === pw3) {
+      loginSuccess = true;
+    }
+
+    // ✅ 결과 출력
+    const resultBox = document.getElementById("resultBox");
+
+    if (loginSuccess) {
+      resultBox.innerHTML = '✅ 로그인 성공!<br>환영합니다';
+    } else {
+      resultBox.innerHTML = "❌ 로그인 실패! 아이디 또는 비밀번호가 잘못되었습니다.";
+    }
+  </script>
+</body>
+</html>

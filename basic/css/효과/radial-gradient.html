@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>radial-gradient</title>
+    <style>
+        /* background-image: radial-gradient(shape size at position, start-color, ..., last-color); */
+
+        /* 기본값: ellipse (타원) */
+        /* 원 만들고 싶으면 circle */
+        div {
+            width: 100px;
+            height: 100px;
+            margin: 20px;
+        }
+
+        /* 
+A value of 0deg is equivalent to "to top".
+A value of 90deg is equivalent to "to right".
+A value of 180deg is equivalent to "to bottom".
+A value of 270deg equivalent to "to left"
+*/
+
+        /* deg 이용 시 색 손실 x */
+        #g1 {
+            background-image: radial-gradient(red, yellow, green);
+        }
+
+        #g2 {
+            background-image: radial-gradient(red 5%, yellow 15%, green 60%);
+        }
+
+        #g3 {
+            background-image: radial-gradient(circle, red, yellow, green);
+        }
+
+        #g4 {
+            background-image: repeating-radial-gradient(red, yellow 10%, green 15%);
+        }
+
+        #grad1 {
+            background-color: red;
+            /* For browsers that do not support gradients */
+            background-image: radial-gradient(closest-side at 70% 60%, red, yellow, black);
+        }
+
+        #grad2 {
+            background-color: red;
+            /* For browsers that do not support gradients */
+            background-image: radial-gradient(farthest-side at 70% 60%, red, yellow, black);
+        }
+
+        #grad3 {
+            background-color: red;
+            /* For browsers that do not support gradients */
+            background-image: radial-gradient(closest-corner at 70% 60%, red, yellow, black);
+        }
+
+        #grad4 {
+            background-color: red;
+            /* For browsers that do not support gradients */
+            background-image: radial-gradient(farthest-corner at 70% 60%, red, yellow, black);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="g1"></div>
+    <div id="g2"></div>
+    <div id="g3"></div>
+    <div id="g4"></div>
+    <h2>closest-side:</h2>
+    <div id="grad1"></div>
+
+    <h2>farthest-side:</h2>
+    <div id="grad2"></div>
+
+    <h2>closest-corner:</h2>
+    <div id="grad3"></div>
+
+    <h2>farthest-corner (default):</h2>
+    <div id="grad4"></div>
+</body>
+
+</html>

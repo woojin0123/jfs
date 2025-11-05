@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>linear-gradient</title>
+    <style>
+/* background-image: linear-gradient(direction, color-stop1, color-stop2, ...); */
+        div {
+            width: 500px;
+            height: 100px;
+            margin: 20px;
+        }
+
+/* 
+A value of 0deg is equivalent to "to top".
+A value of 90deg is equivalent to "to right".
+A value of 180deg is equivalent to "to bottom".
+A value of 270deg equivalent to "to left"
+*/
+
+/* deg 이용 시 색 손실 x */
+        #g1 { 
+            background-image: linear-gradient(to bottom, red 50%, yellow 50%); /* 기본값 */
+        }
+        #g2 { 
+            background-image: linear-gradient(to right, red , yellow);
+        }
+        #g3 { 
+            background-image: linear-gradient(to bottom right, red, yellow);
+        }
+        #g4 { 
+            background-image: linear-gradient(180deg, red, yellow);
+        }
+        #g5 { 
+            background-image: linear-gradient(red, yellow, green);
+        }
+        #g6 { 
+            background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
+        }
+        #g7 { 
+            background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
+        }
+        #g8 { 
+            background-image: repeating-linear-gradient(red, yellow 10%, green 20%);
+        }
+    </style>
+</head>
+<body>
+    <div id="g1"></div>
+    <div id="g2"></div>
+    <div id="g3"></div>
+    <div id="g4"></div>
+    <div id="g5"></div>
+    <div id="g6"></div>
+    <div id="g7"></div>
+    <div id="g8"></div>
+</body>
+</html>

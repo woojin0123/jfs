@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>box-shadow</title>
+    <style>
+        body {
+            width: 500px;
+            height: 100px;
+            margin: 50px;
+        }
+        .ori {
+/* 
+emmit: ts
+box-shadow: x위치 y위치 흐림효과 색 inset;
+inset: 그림자가 내부로 
+그림자에 색 안주면 글자색 따라감
+*/
+            box-shadow: 2px 2px blue;
+        }
+
+        .blur {
+            box-shadow: 2px 2px 5px blue;
+        }
+
+        .neon {
+              box-shadow: 0 0 5px blue;
+        }
+
+        .double {
+            box-shadow: 0 0 3px #ff0000, 0 0 5px #0000ff;
+        }
+
+        .triple {
+            box-shadow: 5px 5px 8px blue, 10px 10px 8px red, 15px 15px 8px green;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            background: ;
+            /* cover: 꽉 채워짐, 잘릴 수 있음 contain:  */
+        }
+        img {
+            width: 500px;
+            height: 100px;
+            margin: 50px;
+            background: #000;
+            overflow: hidden;
+            box-shadow: 5px 5px 8px blue, 10px 10px 8px red, 15px 15px 8px green;
+        }
+        button.p4 {
+            width: 200px;
+            height: 50px;
+            background: inherit; /* 부모에게 상속 */
+            color: #000;
+            box-shadow: none;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            transition: 2s ease-out;
+        }
+        button.p4:hover {
+            box-shadow: 0 0 6px rgba(35, 173, 278, 1);
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <p class="ori">box-shadow: 2px 2px;</p>
+    <p class="blur">box-shadow: 2px 2px 5px blue;</p>
+    <p class="neon">box-shadow: 0 0 5px blue;</p>
+    <p class="double">box-shadow: 0 0 3px #ff0000, 0 0 5px #0000ff;</p>
+    <p class="triple">box-shadow: 5px 5px 8px blue, 10px 10px 8px red, 15px 15px 8px green;</p>
+    <p><img src="https://www.w3schools.com/css/rock600x400.jpg" alt="이미지 박스 그림자"></p>
+    <p><button class="p4">더보기</button></p>
+
+</body>
+
+</html>
