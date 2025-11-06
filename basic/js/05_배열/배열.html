@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS: 배열</title>
+</head>
+<body>
+    <script>
+/* 
+베열(array)
+        - 여러 데이터를 모아놓은 하나의 덩어리
+        - 배열에 저장된 데이터= 원소
+        - const 배열명 = [값, 값, ...]
+*/        
+
+        // 객체.속성
+        // 객체.메서드()
+        const cities = ['서울', '경기', '인천'];
+        console.log(cities);
+        // 배열의 인덱스
+        // 배열명[인덱스]
+        function city () {
+        for (let i=0; i<cities.length; i++) {
+            document.write(cities[i] + '<br>');
+        }
+    }
+    city();
+
+    // 요소 추가
+    cities[3] = '광주';
+    cities[4] = '부산';
+    document.write('<br>');
+    city();
+
+    // 요소 제거
+    cities[3] = undefined;
+    cities[4] = '';
+    document.write('<br>');
+    city();
+    
+
+    // 배열로 평균 구하기
+    const nums = [95, 88, ,72 ,68, ,99 ,82 ,78, 85];
+    document.write(nums.length + '<br>');
+
+    let count = sum =  0;
+
+     for (let i = 0; i<nums.length; i++) {
+        if(nums[i] === undefined) {
+            continue;
+        } else {
+            sum += nums[i];
+            count++;
+        }
+    }
+    const avg = sum / count;
+    document.write(`총원 ${nums.length}명에서 ${count}명의 합계는 ${sum}이고 평균은 ${avg}이다.`); // 83.375
+
+    // 데이터 타입 혼합
+    const x = 5;
+    const arr = [100, '서울', true, x];
+    document.write('<br>');
+    document.write('<br>' + arr);
+
+    // 객체 생성 - new Array() : 생성자 함수
+    // const 배열명 = new Array(값들 사용 가능);
+    document.write('<br>--------------<br>');
+    const cities2 = ['서울', '경기', '인천'];
+    const cities3 = ['서울', '경기', '인천'];
+
+    const cities4 = new Array('서울', '경기', '인천');
+    const cities5 = new Array('서울', '경기', '인천');
+    document.write(cities2 + '<br>');
+    document.write(cities2[0] + '<br>');
+
+    document.write((cities2 == cities3) + '<br>'); // false
+    document.write((cities3 == cities4) + '<br>'); // false
+    document.write((cities4 == cities5) + '<br>'); // false
+// false 이유: 저장 공간이 달라서
+// 메모리 공간(RAM): 변수- stack, 객체요소- heap
+
+// instanceof 연산자
+// city instanceof instanceof 객체
+// 객체의 인스턴트면 true, 아니면 false
+document.write('<br>');
+document.write((cities2 instanceof Array) + '<br>'); // true
+document.write((cities4 instanceof Array) + '<br>'); // true
+
+// Array.isArray(인스턴스)
+const date = new Date();
+document.write((Array.isArray(cities3)) + '<br>'); // true
+document.write((Array.isArray(date)) + '<br>'); // false
+document.write((Array.isArray(cities4)) + '<br>'); // true
+document.write((typeof cities4) + '<br>'); // object
+// isArray: 인스턴스
+// 배열이면 true, 아니면 false
+    </script>
+</body>
+</html>

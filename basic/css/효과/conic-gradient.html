@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>conic-gradient</title>
+    <style>
+        /* background-image: conic-gradient([from angle] [at position,] color [degree], color [degree], ...); 
+        - from 각도: 색 시작 기준, 0deg (기본값)
+        - at x위치 y위치: 중심점, 50% 50% (기본값)
+        - 색 뒤에 deg는 색의 위치
+        */
+
+        div {
+            width: 100px;
+            height: 100px;
+            margin: 20px;
+        }
+
+
+        /* deg 이용 시 색 손실 x */
+        #g1 {
+            background-image: conic-gradient(red, yellow, green);
+        }
+
+        #g2 {
+            background-image: conic-gradient(red, yellow, green, blue, black);
+        }
+
+        #g3 {
+            background-image: conic-gradient(red 45deg, yellow 90deg, green 210deg);
+        }
+
+        #g4 {
+            background-image: conic-gradient(red, yellow, green, blue, black);
+            border-radius: 50%;
+}
+
+        #grad1 {
+            background-image: conic-gradient(red 0deg, red 90deg, yellow 90deg, yellow 180deg, green 180deg, green 270deg, blue 270deg);
+            border-radius: 50%;
+        }
+
+        #grad2 {
+            background-image: conic-gradient(from 90deg, red, yellow, green);
+        }
+
+        #grad3 {
+            background-image: conic-gradient(at 60% 45%, red, yellow, green);
+        }
+
+        #grad4 {
+            background-image: repeating-conic-gradient(red 10%, yellow 20%);
+            border-radius: 50%;
+        }
+        #grad5 {
+            background-image: repeating-conic-gradient(red 0deg 10deg, yellow 10deg 20deg, blue 20deg 30deg);
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="g1"></div>
+    <div id="g2"></div>
+    <div id="g3"></div>
+    <div id="g4"></div>
+    <div id="grad1"></div>
+    <div id="grad2"></div>
+    <div id="grad3"></div>
+    <div id="grad4"></div>
+    <div id="grad5"></div>
+</body>
+
+</html>

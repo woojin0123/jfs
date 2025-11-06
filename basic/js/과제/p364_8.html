@@ -4,41 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>구구단 만들기</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #000;
+            padding: 8px 16px;
+        }
+    </style>
 </head>
 <body>
+      <h1>📘 구구단 (1단 ~ 9단)</h1>
+  <div id="tableContainer"></div>
     <script>
+ // ✅ 표 전체 HTML을 문자열로 생성
+    let tableHTML = "<table>";
+
+    // ✅ 1단~9단 제목 행
+    tableHTML += "<tr>";
+    for (let dan = 1; dan <= 9; dan++) {
+      tableHTML += `<th>${dan}단</th>`;
+    }
+    tableHTML += "</tr>";
+
+    // ✅ 각 행(1~9까지 곱셈 결과)
+    for (let i = 1; i <= 9; i++) {
+      tableHTML += "<tr>";
+      for (let dan = 1; dan <= 9; dan++) {
+        tableHTML += `<td>${dan}×${i}= ${dan * i}</td>`;
+      }
+      tableHTML += "</tr>";
+    }
+
+    tableHTML += "</table>";
+
+    // ✅ 결과를 HTML에 출력
+    document.getElementById("tableContainer").innerHTML = tableHTML;
+
+
 document.write('<table border>');
 document.write("<tr>")
     for (let x = 1; x <= 9; x++) {
-            document.write("<th>");
-            document.write(x + '단');
-            document.write("</th>");
+            document.write(`<th>${x}단</th>`);
     }
     document.write("</tr>");
         document.write("<tr>");
             for (let x = 1; x <= 9; x++) {
                 for (let y = 1; y <= 9; y++) {
-                    document.write("<td>");
-                    document.write(x + "*" + y + "=" + x*y);
-                    document.write("</td>");
-                }
-                document.write("</tr>");
-            }
-        document.write("</table>");
-
-
-
-
-document.write('<table border>');
-document.write("<tr>")
-    for (let x = 1; x <= 9; x++) {
-            document.write("<th>" + x + "단</th>");
-    }
-    document.write("</tr>");
-        document.write("<tr>");
-            for (let x = 1; x <= 9; x++) {
-                for (let y = 1; y <= 9; y++) {
-                    document.write("<td>" + x + "*" + y + "=" + x*y + "</td>");
+                    document.write(`<td>${x}*${y}=${x*y}</td>`);
                 }
                 document.write("</tr>");
             }

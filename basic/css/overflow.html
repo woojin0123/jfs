@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css: overflow</title>
+    <style>
+/* 
+visible : 기본값, 넘침
+hidden  : 밖으로 나간 부분은 숨겨짐
+scroll  : 상하좌우 스크롤바 추가
+auto    : 필요할 때만 스크롤바 생김
+clip    : 밖으로 나간 부분 삭제
+*/
+#wrap {
+    display: flex;
+}
+#wrap div {
+  width: 500px;
+  height: 100px;
+  background-color: coral;
+  margin: 30px;
+}
+.div1 { /* 기본값 */
+    overflow: visible;
+    }
+.div2 {
+    overflow: hidden;
+    }
+.div3 {
+    overflow: scroll;
+    }
+.div7 {
+    overflow: scroll; 
+    overflow-y: hidden;
+    white-space: nowrap;
+    }
+.div8 {
+    overflow: scroll; 
+    overflow-x: hidden;
+    }
+.div4 {
+    overflow: auto;
+    }
+.div5 {
+    overflow: clip;
+    }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="div1"><b>visible</b><br>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic necessitatibus numquam debitis ullam. Autem, atque? Deleniti quasi ex molestias dolore alias fugit natus adipisci, ab beatae, distinctio in cumque corrupti.</div>
+        <div class="div2"><b>hidden</b><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, beatae facere reprehenderit tempore maiores officiis laborum ipsam saepe iusto, ullam maxime esse eaque? Hic numquam ipsam aspernatur fuga facilis quia.</div>
+        <div class="div3"><b>scroll</b><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, beatae facere reprehenderit tempore maiores officiis laborum ipsam saepe iusto, ullam maxime esse eaque? Hic numquam ipsam aspernatur fuga facilis quia.</div>
+        <div class="div7"><b>scroll</b><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, beatae facere reprehenderit tempore maiores officiis laborum ipsam saepe iusto, ullam maxime esse eaque? Hic numquam ipsam aspernatur fuga facilis quia.</div>
+        <div class="div8"><b>scroll</b><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, beatae facere reprehenderit tempore maiores officiis laborum ipsam saepe iusto, ullam maxime esse eaque? Hic numquam ipsam aspernatur fuga facilis quia.</div>
+        <div class="div4"><b>auto</b><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, beatae facere reprehenderit tempore maiores officiis laborum ipsam saepe iusto, ullam maxime esse eaque? Hic numquam ipsam aspernatur fuga facilis quia.</div>
+        <div class="div5"><b>clip</b><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, beatae facere reprehenderit tempore maiores officiis laborum ipsam saepe iusto, ullam maxime esse eaque? Hic numquam ipsam aspernatur fuga facilis quia.</div>
+    </div>
+</body>
+</html>

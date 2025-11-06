@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구구단ver 표</title>
+    <style>
+table {
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid #000;
+    padding: 8px 16px;
+}
+
+    </style>
+</head>
+<body>
+    <script>
+// ${표현식(값이 될 수 있는 것)}
+        for (let i = 1; i<=9; i++) {
+            document.write(`${i}단<br>`)
+            for (let dan=1; dan<=9; dan++) {
+                document.write(`${i}*${dan} = ${i * dan}<br>`)
+            }
+        }
+
+let result = '<table><tr>';
+    for(let dan=1; dan<=9; dan++) {
+        result += `<th>${dan}단</th>`
+    }
+    result += '</tr>';
+
+for (let i = 1; i<=9; i++){
+   result += '<tr>'
+    for(let dan=1; dan<=9; dan++) {
+       result += `<td>${dan} * ${i} = ${dan * i}</td>`
+    }
+       result += '</tr>'
+}
+       result += '</table>'
+        document.write(result);
+    </script>
+</body>
+</html>

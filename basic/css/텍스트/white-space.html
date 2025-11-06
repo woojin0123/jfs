@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css: white-space</title>
+    <style>
+/* 
+white-space
+    - 요소 내부의 공백 처리 방법
+        : normal; 기본값, 화면 크기에 따라감
+        : nowrap; 줄바꿈 안하기
+        : pre; 입력한 그대로를 보여줌
+        : pre-line; 입력한 그대로, 엔터만 적용
+        : pre-wrap; 엔터, 스페이스바 그대로 적용
+*/
+p {
+    border: 1px solid #000;
+}
+/* 화면 크기 조정 시 자동 줄바꿈 o, 엔터 x, 스페이스 x */
+p.a {
+  white-space: nowrap; /* whsn */
+}
+/* 화면 크기 조정 시 자동 줄바꿈 x, 엔터 x 스페이스 x */
+p.b {
+  white-space: normal; /* whs */
+}
+/* 화면 크기 조정 시 자동 줄바꿈 x, 엔터 o 스페이스 o */
+p.c {
+  white-space: pre; /* whsp */
+}
+/* 화면 크기 조정 시 자동 줄바꿈 o, 엔터 o 스페이스 x */
+p.d {
+  white-space: pre-line; /* whspl */
+}
+/* 화면 크기 조정 시 자동 줄바꿈 o, 엔터 o 스페이스 o */
+p.e {
+  white-space: pre-wrap; /* whspw */
+}
+    </style>
+</head>
+<body>
+
+<h2>white-space: nowrap:</h2>
+<p class="a">
+This is some           text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+</p>
+
+<h2>white-space: normal:</h2>
+<p class="b">
+This is some           text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+</p>
+
+<h2>white-space: pre</h2>
+<p class="c">
+This is some           text. This is some text. This is some text.
+    This is some text. This is some text. This is some text.
+        This is some text. This is some text. This is some text.
+            This is some text. This is some text. This is some text.
+</p>
+
+<h2>white-space: pre-line</h2>
+<p class="d">
+This is some           text. This is some text. This is some text. 
+    This is some text. This is some text. This is some text. 
+        This is some text. This is some text. This is some text. 
+            This is some text. This is some text. This is some text. 
+</p>
+
+<h2>white-space: pre-wrap</h2>
+<p class="e">
+This is some           text. This is some text. This is some text. 
+    This is some text. This is some text. This is some text. 
+        This is some text. This is some text. This is some text. 
+            This is some text. This is some text. This is some text. 
+</p>
+</body>
+</html>

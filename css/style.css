@@ -215,6 +215,20 @@ footer .top-btn i {
     }
 }
 
+/* about section area */
+#about .basic p {
+    text-align: left;
+}
+#about .basic .inner {
+    display: flex;
+}
+#about .basic .inner div {
+    flex: 50%;
+}
+#about .basic .inner p {
+    flex: 50%;
+}
+
 /* work+contact section common area */
 .parallax-bg {
     position: relative;

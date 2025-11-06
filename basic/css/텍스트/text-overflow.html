@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css: text-overflow</title>
+<style>
+/* 
+text-overflow: 글씨가 넘쳤을 때 어떻게 표시할건지?
+                : ellipsis (기본값, 생략)
+                : clip (자르기)
+
+*/
+div {
+    width: 100px;
+    border: 1px solid #000;
+    margin: 50px;
+}
+div:hover {
+    overflow: visible;
+}
+.div1 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.div2 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
+}
+.div3 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: "----";
+}
+</style>
+</head>
+<body>
+    <div class="div1">안녕하세요 Hello Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione expedita officiis mollitia voluptas saepe, nobis provident hic! Voluptatem quasi quod odit ab. Tempora saepe sapiente quasi excepturi aperiam consequatur quibusdam?
+    </div>
+    <div class="div2">안녕하세요 Hello Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione expedita officiis mollitia voluptas saepe, nobis provident hic! Voluptatem quasi quod odit ab. Tempora saepe sapiente quasi excepturi aperiam consequatur quibusdam?</div>
+    <div class="div3">안녕하세요 Hello Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione expedita officiis mollitia voluptas saepe, nobis provident hic! Voluptatem quasi quod odit ab. Tempora saepe sapiente quasi excepturi aperiam consequatur quibusdam?</div>
+</body>
+</html>
