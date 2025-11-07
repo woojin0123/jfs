@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css: text-decoration</title>
+    <style>
+/* 
+개별속성(ver. css3)
+    text-decoration: none; 기본값
+    text-decoration: overline; 윗줄
+    text-decoration: line-through; 취소선
+    text-decoration: underline; 밑줄
+    text-decoration: overline underline; 윗줄 밑줄
+
+    text-decoration-style: solid; (기본값, 실선)
+    text-decoration-style: double; (밑 두줄)
+    text-decoration-style: dotted; (점선)
+    text-decoration-style: dashed; (대시)
+    text-decoration-style: wavy; (물결)
+
+    text-decoration-thickness: auto; (기본값)
+    text-decoration-thickness: ;
+    text-decoration-thickness: ;
+
+속기속성
+    text-decoration: 
+*/
+
+div.a {
+  text-decoration-line: overline;
+}
+
+div.b {
+  text-decoration-line: line-through;
+}
+
+div.c {
+  text-decoration-line: underline; /* a태그 기본값 */
+}
+
+div.d {
+  text-decoration-line: overline underline;
+}
+    </style>
+</head>
+<body>
+    <div class="a">text-decoration-line: overline;</div>
+    <div class="b">text-decoration-line: line-through;</div>
+    <div class="c">text-decoration-line: underline;</div>
+    <div class="d">text-decoration-line: overline underline;</div>
+    <u>underline</u>
+    <ins>insert</ins>
+    <s>line-through</s>
+    <del>delete</del>
+</body>
+</html>

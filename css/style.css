@@ -216,17 +216,89 @@ footer .top-btn i {
 }
 
 /* about section area */
+#about .basic strong {
+    text-decoration: underline 2px wavy rgba(196, 142, 247, 9);
+}
+#about .container i {
+    margin-right: 14px;
+}
+#about p {
+    line-height: 1.8;
+}
+#about .basic b {
+    display: inline-block;
+    margin-bottom: 24px;
+}
 #about .basic p {
     text-align: left;
 }
 #about .basic .inner {
     display: flex;
+    gap: 48px;
+    margin: 48px 0 70px;
 }
 #about .basic .inner div {
     flex: 50%;
 }
 #about .basic .inner p {
     flex: 50%;
+}
+#about .basic .inner img {
+    height: 283px;
+    filter: opacity(50%);
+}
+#about .basic .inner img:hover {
+    filter: none;
+}
+
+/* skill area */
+#about .skill > p {
+    margin: 30px;
+    font-size: 1.8rem;
+}
+#about .skill .inner p {
+    text-align: left;
+    margin: 15px 0;
+    letter-spacing: 6px;
+}
+#about .prograssbar {
+    background: #f1f1f1;
+}
+#about .prograssbar div {
+    height: 35px;
+    line-height: 35px;
+    color: #fff;
+    background: #616161;
+}
+#about .prograssbar:nth-of-type(1) div {
+    width: 90%;
+}
+#about .prograssbar:nth-of-type(2) div {
+    width: 80%;
+}
+#about .prograssbar:nth-of-type(3) div {
+    width: 70%;
+}
+
+/* count area */
+#about .count ul {
+    display: flex;
+    text-align: center;
+    height: 135px;
+    padding: 36px 0;
+    background: #333;
+    color: #fff;
+}
+#about .count ul li {
+    flex: 25%;
+}
+#about .count li {
+    font-size: 1.5rem;
+}
+#about .count span {
+    display: block;
+    font-size: 2.4rem;
+    
 }
 
 /* work+contact section common area */

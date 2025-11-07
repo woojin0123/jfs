@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS: 배열 메서드</title>
+</head>
+<body>
+    <script>
+/* 
+배열의 method
+    1. join (연결자)
+    2. concat
+    3. reverse
+    4. sort
+    5. slice
+    6. splice
+    7. pop
+    8. push
+    9. shift
+    10. unshift
+    11. forEach
+    12. map
+    13. filter
+    14. indexOf
+    15. lastIndexOf
+*/
+
+ let result;
+        const cities = ['서울', '경기', '인천'];
+        // 배열이름.메서드()
+        // 배열.join(): ,
+        result = cities.join();
+        document.write(result + '<br>');
+        document.write(typeof result + '<br>');
+        document.write(cities + '<br>');
+        document.write(typeof cities + '<br>');
+        // 배열.join('구분자')
+        result = cities.join('-');
+        document.write(result + '<br>');
+        result = cities.join(' 그리고 ');
+        document.write(result + '<br>');
+
+        const fruits = ['사과', '딸기', '포도'];
+        const names = ['차길동', '박길동', '김길동'];
+
+        document.write('---------------------<br>');
+        // 배열.concat(값, 값, ...)
+        result = cities.concat('부산', '광주');
+        document.write(result + '<br>');
+        document.write(cities + '<br>');
+        document.write(typeof result + '<br>');
+        // 메서드 체이닝
+        result = cities.concat(fruits).join('-');
+        document.write(result + '<br>');
+        result = cities.concat(fruits, names, '부산');
+        document.write(result + '<br>');
+
+        document.write('---------------------<br>');
+        const nums = [9, 8, 7, 6, 5, 4, 3, 2, 1];
+        result = nums.join();
+        document.write(result + '<br>');
+
+        // reverse()
+        result = nums.reverse();
+        document.write(result + '<br>');
+        result = names.join();
+        document.write(result + '<br>');
+        result = names.reverse();
+        document.write(result + '<br>');
+        document.write(names + '<br>');
+
+        document.write('---------------------<br>');
+        const ndata1 = [19, 38, 67, 26, 55, 24, 53, 12, 31];
+        // 숫자의 경우 자리수가 다른 숫자를 정렬할 때 문제 발생! 
+        const ndata2 = [132, 2, 41, 123, 45, 1234, 6, 29, 4567];
+        const edata = ['Apple', 'Html', 'Game', 'Computer', 'Java'];
+        let kdata = ['서울', '부산', '구포', '대구', '인천'];
+        // sort() - 오름차순 정렬
+        // 1, 2, 3, 4, ...
+        // 가, 나, 다, 라, ...
+        // a, b, c, d, ...
+        result = ndata1.sort();
+        document.write(result + '<br>');
+        // 함수 데이터: function(){}
+        // sort(비교함수)
+        // sort(function(a, b){return a - b;})
+        // 화살표 함수: sort((a, b)=>a - b;)
+        // result = ndata2.sort(
+        //     function(a, b){return a - b;}
+        // );
+        result = ndata2.sort(
+            //(a, b)=>{return a - b;}
+            (a, b) => a - b
+        );
+        document.write(result + '<br>');
+        result = edata.sort();
+        document.write(result + '<br>');
+        result = kdata.sort();
+        document.write(result + '<br>');
+        document.write(kdata + '<br>');
+
+        document.write('---------------------<br>');
+        kdata = ['서울', '부산', '구포', '대구', '인천', '대전', '세종']; 
+        // slice(인덱스1, 인덱스2)
+        // 인덱스1에서 (인덱스2-1)까지의 값을 새로운 배열로 반환
+        result = kdata.slice(0, 4);
+        document.write(result + '<br>'); // ['서울', '부산', '구포', '대구']
+        result = kdata.slice(-2, -1); 
+        document.write(result + '<br>'); // ['대전']
+        result = kdata.slice(-4, -2);
+        document.write(result + '<br>'); // ['대구', '인천']
+        document.write(typeof result + '<br>'); // ['대구', '인천']
+        document.write(kdata + '<br>'); // ['대구', '인천']
+    </script>
+</body>
+</html>

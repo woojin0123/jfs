@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS: 배열 접근 조작</title>
+</head>
+<body>
+    <script>
+
+// 빈 배열 생성
+const nums = [];
+
+// 조회
+function selectFn() {
+        // 1-100까지의 숫자를 출력
+        for (let i=0; i<100; i++) {
+            nums[i] = i + 1;
+            document.write(nums[i] + ' ');
+        }
+}
+selectFn();
+// 1-100까지의 숫자 중에서 홀수는 0으로 수정(update)
+// 배열명[인덱스] = 값;
+function updateFn() {
+        for (let i = 0; i<=99; i++) {
+            if (i % 2 === 0) {
+            nums[i] = 0;
+        }
+        continue;
+    }
+}
+
+function zeroFn() {
+    updateFn();
+    let sum = 0;
+        for (let i = 0; i<nums.length; i++) {
+            document.write(nums[i] + ' ');
+        }
+        document.write('<br>' + '<a href="배열접근조작2.html">새로고침</a>')
+}
+document.write('<br>')
+    </script>
+<!-- 버튼을 클릭했을 때 addFn() 호출 -->
+    <button type="button" onclick="zeroFn();">홀수값은 0으로 수정하기</button>
+</body>
+</html>

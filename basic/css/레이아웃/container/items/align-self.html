@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>align-self</title>
+    <style>
+/* 
+CSS Flex Items
+    order - 항목 표시 순서 지정
+    flex-grow - 특정 항목이 얼마나 커질지
+    flex-shrink - 특정 항목이 얼마나 줄어들지
+    flex-basis - 초기 길이 지정 (가로)
+    flex - grow, shrink, basis; * 순서대로 써야함 기본값: 0 1 auto;
+    align-self - 특정 항목의 교차축 정렬 지정
+*/
+.flex-container {
+    display: flex;
+    background: dodgerblue;
+    color: #fff;
+    font-size: 30px;
+    text-align: center;
+}
+
+.flex-container div {
+    background: gray;
+    margin: 10px;
+    padding: 10px;
+    width: 100px;
+}
+/* 
+align-self: align-items와 같지만 플렉스 아이템에 지정하는 속성
+            * 두개 동시 적용하면 self가 적용
+*/
+
+.flex-container div:nth-child(3) {
+    align-self: flex-start;
+    align-self: flex-end;
+    align-self: center;
+    align-self: stretch;
+    align-self: baseline;
+}
+    </style>
+</head>
+<body>
+    <div class="flex-container">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+  <div>4</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css: flex-grow</title>
+    <style>
+/* 
+CSS Flex Items
+    order - 항목 표시 순서 지정
+    flex-grow - 특정 항목이 얼마나 커질지
+    flex-shrink - 특정 항목이 얼마나 줄어들지
+    flex-basis - 초기 길이 지정 (가로)
+    flex - grow, shrink, basis; * 순서대로 써야함 기본값: 0 1 auto;
+    align-self - 특정 항목의 교차축 정렬 지정
+*/
+.flex-container {
+    display: flex;
+    background: dodgerblue;
+    color: #fff;
+    font-size: 30px;
+    text-align: center;
+}
+
+.flex-container div {
+    background: gray;
+    margin: 10px;
+    padding: 10px;
+    width: 100px;
+}
+/* 
+flex-grow: 0이상의 정수
+         : 화면 크기에 따라 조정, 숫자가 클수록 더 커짐
+*/
+/* 3개의 아이템 박스가 1:1:4 비율로 성장 */
+.flex-container div:nth-child(1) {flex-grow: 1;}
+.flex-container div:nth-child(2) {flex-grow: 1;}
+.flex-container div:nth-child(3) {flex-grow: 4;}
+    </style>
+</head>
+<body>
+    <div class="flex-container">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+</div>
+
+</body>
+</html>

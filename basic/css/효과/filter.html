@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css: filter</title>
+    <style>
+/* 
+filter
+    : grayscale (흑백)
+    : blur (흐림)
+    : brightness (밝기)
+    : contrast (대비)
+    : drop-shadow (그림자)
+    : hue-rotate (색상)
+    : invert (색반전)
+    : opacity (불투명도)
+    : saturate (채도)
+    : sepia (흑백 후 색 +1)
+
+*/
+
+img {
+  filter: opacity(50%);
+}
+img:hover {
+    filter: none;
+}
+    </style>
+</head>
+<body>
+    <img src="https://www.w3schools.com/cssref/pineapple.jpg" alt="파인애플">
+</body>
+</html>
