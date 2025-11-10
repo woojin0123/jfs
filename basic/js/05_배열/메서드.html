@@ -112,6 +112,38 @@
         document.write(result + '<br>'); // ['대구', '인천']
         document.write(typeof result + '<br>'); // ['대구', '인천']
         document.write(kdata + '<br>'); // ['대구', '인천']
+
+        document.write('---------------------<br>');
+        // kdata = ['서울', '부산', '구포', '대구', '인천', '대전', '세종']; 
+        document.write(kdata + '<br>'); // 서울,부산,구포,대구,인천,대전,세종
+
+        // splice: 기존 배열이 변경됨
+        // 1번 인덱스부터 2개를 삭제하여 변환
+        document.write(kdata.slice(1, 3) + '<br>') // 부산,구포
+        result = kdata.splice(1, 2);
+        document.write(result + '<br>'); // 부산,구포
+        document.write(kdata + '<br>'); // 서울,대구,인천,대전,세종
+
+        // 1번 인덱스부터 1개의 요소 삭제 후 그 자리에 새로운 요소를 추가하여 반환
+        result = kdata.splice(1, 1, '수원', '용인');
+        document.write(result + '<br>'); // 대구
+        document.write(kdata + '<br>'); // 서울,수원,용인,인천,대전,세종
+
+        // 배열명.splice(시작index, 삭제 갯수, 아이템)
+        // 2번 인덱스부터 배열의 끝 인덱스까지 반환
+        result = kdata.splice(2, Number.MAX_VALUE);
+        document.write(result + '<br>'); // 용인,인천,대전,세종
+        document.write(kdata + '<br>'); // 서울,수원
+
+
+        document.write('---------------------<br>');
+        // forEach(): 배열을 반복하며 저장된 데이터를 조회
+        kdata=['서울', '부산', '청주', '대구'];
+        function printArr(item, index) {
+            document.write(`배열 데이터 [${index}] : ${item} <br>`);
+        }
+        kdata.forEach()
+
     </script>
 </body>
 </html>
