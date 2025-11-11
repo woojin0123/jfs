@@ -216,14 +216,21 @@ footer .top-btn i {
 }
 
 /* about section area */
+#about .parallax-bg {
+    background: url(./../assets/imgs/about.jpg) 50%/cover fixed;
+}
+
 #about .basic strong {
     text-decoration: underline 2px wavy rgba(196, 142, 247, 9);
 }
 #about .container i {
     margin-right: 14px;
 }
-#about p {
+#about .container p {
     line-height: 1.8;
+}
+#about .name {
+    font-style: italic;
 }
 #about .basic b {
     display: inline-block;
@@ -301,7 +308,7 @@ footer .top-btn i {
     
 }
 
-/* work+contact section common area */
+/* about+work+contact section common area */
 .parallax-bg {
     position: relative;
     height: 400px;
@@ -320,7 +327,7 @@ button {
 }
 /* work section area: work.html */
 #work .parallax-bg {
-    background: url(./../assets/imgs/parallax2.jpg)
+    background: url(./../assets/imgs/portfolio.jpg) 50%/cover fixed;
 }
 #work .portfolio {
     display: flex;
@@ -347,7 +354,8 @@ button {
 
 /* contact section area: contact.html */
 #contact .parallax-bg {
-    background: url(./../assets/imgs/parallax3.jpg)
+    background: url(./../assets/imgs/contact.jpg) 50%/cover fixed;
+    background-position: 50% 60%;
 }
 #contact .container {
     display: flex;
@@ -363,6 +371,7 @@ button {
 }
 #contact .contact {
     width: 600px;
+    text-align: left;
 }
 #contact .contact p {
     margin: 24px 0 16px;

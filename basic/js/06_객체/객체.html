@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS: 연관배열</title>
+</head>
+<body>
+    <script>
+
+
+
+/* 
+객체(Object)?
+    : 현실 세계의 모든 것
+    : 유형 
+    ex. 사람, 동물, 자동차, 냉장고, TV, ...
+    : 무형
+    ex. 계좌, 계약, 춤, ...
+    
+객체의 유형
+    - 내장 객체: Date, Array
+
+    - 사용자 정의 객체
+
+
+객체(Object) 생성(선언)
+    const 변수 = {키:값, 키:값, ..., 키:값}
+
+    const 변수 = {
+        속성:값,
+        메서드:function(){}
+        ...
+        속성:값
+    }
+
+    const car = {
+    'company' : '현대',
+    'name' : '소나타',
+    'color': '흰색',
+    'door' : 4,
+    'speed' : 200, 
+    'start' : function(){return this.speed+10}
+    'accel' : function(){엑셀 밟으면 나간다}
+    'stop' :  function(){브레이크 밟으면 멈춘다}
+}
+    - this: this는 car를 가르킴. 
+            this.speed = car.speed
+
+
+객체 참조(조회)
+    변수['키']
+    변수.키
+    car['company']
+    car.company
+    cat.stop()
+    car.speed = 200;
+    car.speed = car.speed +10
+    car.start = 210
+
+객체.속성
+객체.메서드()
+    Array.length
+    Array.foreach()
+
+    const Array = {
+    length: ?????
+    foreach: function(ele, idx, arr) {~~~}
+    }
+*/
+
+// 객체 생성
+const data = {
+    'f0' : 100,
+    'f1' : 200,
+    'f2' : 300
+};
+// 객체 참조(조회)
+document.write(data + '<br>'); // console.log도 동일 // [object object]
+document.write(data['f0'] + '<br>'); // 100
+document.write(data['f1'] + '<br>'); // 200
+document.write(data.f2 + '<br>'); //300
+
+// 객체 추가(insert)
+data['f3'] = 400;
+data.f4 = 500;
+document.write(data['f3'] + '<br>'); // 400
+document.write(data.f4 + '<br>'); //500
+
+// 객체 변경(update, 수정)
+data.f2 = 500;
+document.write(data.f2 + '<br>'); // 500
+    </script>
+</body>
+</html>

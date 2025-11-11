@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS: 배열 안의 배열</title>
+</head>
+<body>
+    <script>
+/* 
+Java Script는 다차원 배열의 의미X
+    : 배열의 값은 기본/참조 데이터를 모두 값으로 가질 수 있음
+    ex. [1, 'string', true, [1,2,3]]
+*/
+
+// 스택: 배열 값이 담겨있는 주소
+// 힙: 배열 값
+
+// 배열 생성
+const arr = [
+    [11, 21, 31, 41, 0],
+    [60, 70, 80, 90, 0],
+];
+
+// 배열 참조
+document.write(arr[0][4] + '<br>'); 
+document.write(arr[0][3] + '<br>'); 
+
+// 배열 수정
+arr[0][4] = 50;
+arr[1][4] = 100;
+document.write(arr[0][4] + '<br>'); 
+document.write(arr[1][4] + '<br>'); 
+
+
+/* 
+
+function oddArr() {
+    const oddArr = arr[0];
+    for (let i = 0; i < oddArr.length; i++) {
+        document.write(oddArr[i] + ' ');
+    }
+    document.write('<br><a href="2차원배열.html">새로고침</a>');
+}
+
+function allArr() {
+    // arr.length = 2
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < arr[i].length; j++) {
+            // arr[0][0] arr[0][1] arr[0][2] arr[0][3]
+            // arr[1][0] arr[1][1] arr[1][2] arr[1][3] arr[1][4]
+            document.write(arr[i][j] + ' ');
+        }
+        document.write('<br>');
+    }
+    document.write('<br><a href="2차원배열.html">새로고침</a>');
+} 
+    
+*/
+
+function oddArr() {
+    const oddArr = arr[0];
+
+    /* for (let i = 0; i < oddArr.length; i++) {
+        document.write(oddArr[i] + ' ');
+    } */
+    oddArr.forEach(function (ele, idx) {
+        document.write(oddArr[idx] + ' ')
+    });
+    document.write('<br><a href="2차원배열.html">새로고침</a>');
+}
+
+function allArr() {
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < arr[i].length; j++) {
+            document.write(arr[i][j] + ' ');
+        }
+        document.write('<br>');
+    }
+    
+    // [값, 값, ...]
+    // [item1, item2, ...]
+    // [ele1, ele2, ...]
+    arr.forEach(function(ele, idx1) {
+        arr[idx1].forEach(function(ele, idx2){
+            document.write(arr[idx1][idx2] + ' ');
+        });
+        document.write('<br>');
+    });
+    document.write('<br><a href="2차원배열.html">새로고침</a>');
+}
+
+
+
+// 화살표 함수
+    arr.forEach((ele, idx1) => {
+        arr[idx1].forEach(function(ele, idx2){
+            document.write(arr[idx1][idx2] + ' ');
+        });
+        document.write('<br>');
+    });
+
+
+const arr2 = [];
+// 배열 값 입력
+
+for(let i = 0; i<5; i++) {
+    arr2[i]=[i+"-"+0, i+"-"+1, i+"-"+2];
+}
+
+// 배열 값 출력
+arr2.forEach((ele, i) => {
+    arr2[i].forEach((ele, j) => {
+        document.write(arr2[i][j] + ' ');
+    });
+    document.write('<br>')
+});
+    </script>
+
+<button type="button" onclick="oddArr()">홀수 배열</button>
+<button type="button" onclick="allArr()">전체 배열</button>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형 미디어쿼리</title>
+    <style>
+/* 
+미디어쿼리 형식:
+        @media (조건) {
+        css 기록
+        }
+    조건:
+        min-width: 값;
+        max-width: 값;
+
+장치: 데스크탑(1920px), 태블릿 PC(768px), 폰(360px), ...
+        * 작은 장치의 화면 해상도를 기준으로 작업
+
+브레이크 포인트(break point: 중단점)
+        - 크롬 브라우저: 320px, 375px, 425px, 768px, 1024px, 1440px, 2560(4k)px
+        - 부트스트랩 프레임워크: 576px, 768px, 1200px, 1400px
+
+https://getbootstrap.kr/        
+*/
+
+/* 모든 장치 (데스크탑: 1920px) */
+    body {
+        background: lightcyan;
+    }
+/* 최대 1024px: 1024px 이하의 장치: 테블릿, 폰 */
+    @media (max-width: 1024px) {
+            /* css 기록 */
+            body {background: lightcoral;}
+        }
+
+/* 최대 768px: 768px 이하의 장치: 태블릿, 폰 */
+    @media (max-width: 768px) {
+            /* css 기록 */
+            body {background: lightgoldenrodyellow;}
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
