@@ -25,9 +25,15 @@ https://getbootstrap.kr/
 */
 
 /* 모든 장치 (폰: 360px) */
-            body {
-                background: lightcyan;
-            }
+    body {
+        background: lightcyan;
+    }
+    /* orientation: portrait (기본값/세로)  */
+    @media (min-width: 768px) and (orientation: landscape) {
+        body {
+            background: lightseagreen;
+        }
+    }
 /* 최소 768px: 768px 이상의 장치: 테블릿, 데스크탑 */
     @media (min-width: 768px) {
             /* css 기록 */

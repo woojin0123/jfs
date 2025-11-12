@@ -6,8 +6,12 @@
     <title>JS: 객체사용</title>
 </head>
 <body>
-    <p id="var1">p#var1</p>
-    <p id="var2">p#var2</p>
+    <p id="var1">id1: getElementById</p>
+    <p id="var2">id2: querySelector</p>
+
+    <p class="var3">class3: getElementsByClassName</p>
+    <p class="var4">class4: querySelectorAll</p>
+    <p>tag5: getElementsByTagName</p>
     <script>
 /* 
 객체
@@ -29,7 +33,11 @@
 const car = {
     name: '소나타',
     speed: 100,
-    color: 'white'
+    color: 'white',
+    // 객체 내에서 사용한 this는 객체 자신임
+    start: function(){return `${this.name}가 출발합니다.`},
+    stop: function(a){return `속도가 100에서 ${a}로 줄었습니다.`},
+    accel: function(a, b){return `속도가 ${a}에서 ${b}로 가속되었습니다.`}
 }
 // 객체.메서드();
 document.write('잘가, write!');
@@ -41,8 +49,20 @@ document.write('잘가, write!');
 //          : HTML 태그 인식 O
 // textContent: HTML 요소에 내용 지정
 //          : HTML 태그 인식 X
+
+// 단일 요소
+    // const 변수 = document.getElementById('아이디명');
+    // const 변수 = document.querySelector('css선택자(.class #id)');
+
+// 같은 요소가 여러개
+    // const 변수 = document.getElementsByClassName('클래스명')[인덱스];
+    // const 변수 = document.querySelectorAll('css선택자(.class #id)')[인덱스];
+    // const 변수 = document.getElementsByTagName('태그명').item(인덱스);
 const var1 = document.getElementById('var1');
-const var2 = document.getElementById('var2');
+const var2 = document.querySelector('#var2');
+const var3 = document.getElementsByClassName('var3')[0];
+const var4 = document.querySelectorAll('.var4')[0];
+const var5 = document.getElementsByTagName('p').item(4);
 
 // p태그 내용 가져오기
 // 객체.innerHTML; (getter)
@@ -54,6 +74,26 @@ var1.innerHTML = `<b>${car.name}</b> 입니다.`;
 console.log(var2.textContent);
 // 객체.innerHTML; (setter)
 var2.textContent = `<b>${car.name}</b> 입니다.`;
+
+var3.innerHTML = car.start();
+var4.innerHTML = car.stop(0);
+var5.innerHTML = car.accel(0, 100);
+
+
+
+// // 객체 생성
+//     var car={
+//         name: 'Sonata', 
+//         speed: 100, 
+//         color: 'white'}; 
+
+// // 객체 참조
+// // 객체명.속성
+// const var1 = document.getElementById("var1");
+// var1.innerHTML = `자동차 이름: ${car.name}`
+// document.getElementById("var1").innerHTML="자동차 이름 : " + car['name'];
+// document.getElementById("var2").innerHTML="자동차 속도 : " + car.speed;
+// document.getElementById("var3").innerHTML="자동차 색상 : " + car.color;
     </script>
 </body>
 </html>

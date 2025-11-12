@@ -186,18 +186,29 @@ footer .top-btn i {
 /* index section area: index.html */
 #home {
     position: relative;
+    overflow: hidden;
+}
+#home .bgimg { 
     /* 뷰포트 크기로 높이 지정 */
     height: 100vh;
-    overflow: hidden;
     background: url(../assets/imgs/benjamin-voros-phIFdC6lA4E-unsplash.jpg) no-repeat 50% 50%/cover fixed;
 }
+#home.dark .bgimg {
+    filter: sepia(80%);
+    background: url(../assets/imgs/johannes-plenio-DKix6Un55mw-unsplash.jpg) no-repeat 50% 50%/cover fixed;
+}
 #home h2 {
-    /* background: #555; */
     /* 일반적으로 좌우패딩을 상하보다 많이 준다. */
     padding: 8px 24px 10px 30px;
+    font-size: 2rem;
+}
+#home.dark h2 {
+    text-shadow: 0 0 6px rgba(35, 173, 278, 1);
+    color: rgba(196, 202, 226, 0.89);
 }
 .circle_ani {
     position: absolute;
+    top: 0;
     right: 0;
     width: 135px;
     height: 136px;
@@ -337,7 +348,7 @@ button {
     width: 216px;
     height: 162px;
 }
-#work button {
+#shadow {
     width: 200px;
     height: 50px;
     margin: 64px 0 0;
@@ -348,7 +359,7 @@ button {
     border-radius: 3px;
     transition: 2s ease-out;
 }
-#work button:hover {
+#shadow:hover {
     box-shadow: 0 0 6px rgba(35, 173, 278, 1);
 }
 
