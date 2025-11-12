@@ -366,7 +366,7 @@ button {
 /* contact section area: contact.html */
 #contact .parallax-bg {
     background: url(./../assets/imgs/contact.jpg) 50%/cover fixed;
-    background-position: 50% 60%;
+    background-position: 50% 80%;
 }
 #contact .container {
     display: flex;
