@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS: 클래스</title>
+</head>
+<body>
+<h1>JavaScript Class Methods</h1>
+<p>클래스 정의 및 사용</p>
+
+<p id="demo"></p>
+
+<script>
+/* 
+클래스란?
+    - 객체를 생성하는 틀(템플릿)
+
+객체란?
+    -속성과 메서드를 가진 모든 데이터 구조
+    - 데이터 그 자체
+    - 넓은 의미에서 객체=인스턴스
+
+인스턴스란?
+    - 클래스(생성자)로 생성된 객체 (실제 메모리에 할당)
+* 인스턴스는 클래스로 만들어진 객체이다 *
+
+클래스 생성(선언)
+// 클래스명은 대문자로 시작(파스칼표기법)
+    class 클래스명() {
+        // 생성자 메서드
+        // 기본 생성자 자동 생성
+        // 개발자가 생성자를 만들면 자동 생성되지 않음
+기본 생성자: constructor(){
+          constructor(매개변수) {
+                this.name = name;
+                this.year = year;
+            }
+    }
+
+
+*/
+class Car {
+    // 생성자 메서드
+  constructor(name, year) {
+    this.name = name;
+    this.year = year;
+
+  }
+  // 일반 메서드
+  age() {
+    const date = new Date();
+    return date.getFullYear() - this.year;
+  }
+}
+
+const date = new Date();
+const year = date.getFullYear();
+// myCar는 인스턴스
+const myCar = new Car("Ford", 2014);
+document.getElementById("demo").innerHTML =
+"My car is " + myCar.age() + " years old.";
+</script>
+
+</body>
+</html>

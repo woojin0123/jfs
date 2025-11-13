@@ -1,19 +1,35 @@
 @charset "utf-8";
-
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css');
+/* 웹 폰트: 방법I - CDN */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+/* 웹 폰트: 방법II - @font-face -> CDN❌ */
 @font-face {
+    /* 사용자 정의 폰트명 */
     font-family: Lato-Regular;
+    /* 상대주소 */
+    /* 
+        / 작업 영역 폴더(root)
+        ./ 현재위치, 한 번만
+        ../ 부모위치, 여러 번
+        예) a폴더>b폴더>c폴더: 파일.html
+        예) a폴더: ../../이미지.jpg
+    */
+    /* 내 컴퓨터에서는 */
     src: url(../assets/font/Lato-Regular.ttf);
 }
 @font-face {
+    /* 사용자 정의 폰트명 */
     font-family: Lato-Thin;
+    /* 절대주소 */
+    /* URL: 프로토콜://도메인/폴더경로/파일 */
     src: url(https://fsclass-n.github.io/jfs/assets/font/Lato-Thin.ttf);
 }
 
 /* reset(초기화) */
 * {box-sizing: border-box;}
 :root {
+    /* 페이지 내에서 이동 시 부드러운 움직임 효과 */
     scroll-behavior: smooth;
 }
 body,h1,h2,h3,p,ul {
@@ -27,6 +43,7 @@ img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    vertical-align: middle;
 }
 a {
     text-decoration: none;
@@ -36,18 +53,22 @@ iframe {
     height: 100%;
 }
 button {
-    border: none;
+    border:none;
     cursor: pointer;
 }
 button:hover {
     background: #ccc;
 }
-
 /* typography(타이포그래피) */
+/* :root는 html태그를 선택한다. */
 :root {
     font-size: 10px;
 }
 body {
+    /* 
+        단위: rem은 :root에서 지정한 크기의 배수
+        예) 10px * 1.5배 -> 15px
+    */
     font: 1.5rem/1.6 "Lato-Regular", sans-serif;
     color: #777;
 }
@@ -55,8 +76,9 @@ h2 {
     font-weight: 400;
     font-size: 3.6rem;
     color: #fff;
-    letter-spacing: 1rem;
-    text-transform: uppercase;
+    /* 글자사이 간격: 자간 */
+    letter-spacing: 1rem; /* ls */
+    text-transform: uppercase; /* tt */
 }
 h3 {
     font-size: 2.4rem;
@@ -67,6 +89,7 @@ header a {
 footer a, footer p {
     color: #fff;
 }
+/* a태그는 글자색의 경우 a태그에 직접 지정(상속되지 않는다) */
 footer .top-btn a {
     color: #333;
 }
@@ -76,6 +99,9 @@ footer .sns {
 footer .sns i {
     font-size: 2.4rem;
     margin: 0 -3px;
+}
+#contact h2 {
+    font-size: 3.6rem;
 }
 #contact a {
     color: #777;
@@ -89,11 +115,12 @@ footer .sns i {
 textarea {
     font: 1.5rem/1.6 "Lato-Regular", sans-serif;
 }
+/* 가상 클래스
+    ::placeholder */
 ::placeholder {
     font: 1.5rem/1.6 "Lato-Regular", sans-serif;
     color: #ccc;
 }
-
 /* common(공통) */
 h2 {
     position: absolute;
@@ -128,9 +155,11 @@ header .gnb li i {
     margin-right: 8px;
 }
 
+
 /* footer area */
 footer {
     background: #555;
+    /* 푸터 안의 인라인 요소는 모두 가운데로(배치) */
     text-align: center;
     padding: 100px;
 }
@@ -153,28 +182,55 @@ footer .top-btn i {
     margin-right: 8px;
 }
 
-/* about+work+contact section common area */
-.parallax-bg {
+
+/* index section area: index.html */
+#home {
     position: relative;
-    height: 400px;
-    background: no-repeat 50% 50% / cover fixed;
+    overflow: hidden;
 }
-.container {
-    max-width: 900px;
-    margin: 48px auto 96px;
-    text-align: center;
+#home .bgimg { 
+    /* 뷰포트 크기로 높이 지정 */
+    height: 100vh;
+    background: url(../assets/imgs/benjamin-voros-phIFdC6lA4E-unsplash.jpg) no-repeat 50% 50%/cover fixed;
 }
-button {
-    background: #f1f1f1;
-    padding: 12px 24px;
-    margin-top: 10px;
-    border-radius: 5px;
+#home.dark .bgimg {
+    filter: sepia(80%);
+    background: url(../assets/imgs/johannes-plenio-DKix6Un55mw-unsplash.jpg) no-repeat 50% 50%/cover fixed;
+}
+#home h2 {
+    /* 일반적으로 좌우패딩을 상하보다 많이 준다. */
+    padding: 8px 24px 10px 30px;
+    font-size: 2rem;
+}
+#home.dark h2 {
+    text-shadow: 0 0 6px rgba(35, 173, 278, 1);
+    color: rgba(196, 202, 226, 0.89);
+}
+.circle_ani {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 135px;
+    height: 136px;
+    /* background: lightgrey; */
+    /* transform: rotate(0deg); 기본값 */
+    transition: linear 5s;
+    animation: circle 50s linear infinite;
+}
+@keyframes circle {
+    0% {
+        transform: rotate(0deg) scale(3);
+    }
+    100% {
+        transform: rotate(720deg) scale(3);
+    }
 }
 
 /* about section area */
 #about .parallax-bg {
     background: url(./../assets/imgs/about.jpg) 50%/cover fixed;
 }
+
 #about .basic strong {
     text-decoration: underline 2px wavy rgba(196, 142, 247, 9);
 }
@@ -246,20 +302,40 @@ button {
 #about .count ul {
     display: flex;
     text-align: center;
-    background: #616161;
-    color: #fff;
+    height: 135px;
     padding: 36px 0;
+    background: #333;
+    color: #fff;
 }
 #about .count ul li {
-    /* flex: [grow|shrink|basis]; */
     flex: 25%;
+}
+#about .count li {
+    font-size: 1.5rem;
 }
 #about .count span {
     display: block;
-    font-size: 3.5vw;
+    font-size: 2.4rem;
+    
 }
 
-
+/* about+work+contact section common area */
+.parallax-bg {
+    position: relative;
+    height: 400px;
+    background: no-repeat 50% 50% / cover fixed;
+}
+.container {
+    width: 900px;
+    margin: 48px auto 96px;
+    text-align: center;
+}
+button {
+    background: #f1f1f1;
+    padding: 12px 24px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
 /* work section area: work.html */
 #work .parallax-bg {
     background: url(./../assets/imgs/portfolio.jpg) 50%/cover fixed;
@@ -269,7 +345,7 @@ button {
     gap: 16px;
 }
 #work .portfolio li {
-    flex: 25%;
+    width: 216px;
     height: 162px;
 }
 #shadow {
@@ -286,115 +362,59 @@ button {
 #shadow:hover {
     box-shadow: 0 0 6px rgba(35, 173, 278, 1);
 }
-/* 테블릿 */
-@media (max-width: 1024px) {
-/* 타이포 */
-    body {
-        /* 뷰포트 단위: vw, vh, vmax, vmin */
-        font-size: 2vw;
-    }
-    h2 {
-        font-size: 6vw;
-    }
-    h3 {
-        font-size: 4vw;
-    }
-    button {
-        font-size: 2.5vw;
-    }
-    .top-btn {
-        font-size: 2.5vw;
-    }
-    footer .sns a i {
-        font-size: 4vw;
-    }
 
-/* 섹션 공통 */
-    .container {
-        margin: 48px 24px 96px;
-    }
-
-/* about 섹션 */
-    /* #about .count ul {
-        display: block;
-        flex-wrap: wrap;
-        gap: 16px;
-    }
-    #about .count ul li {
-        flex: 25%;
-    } */
-
-/* work 섹션 */
-    #work .portfolio {
-        flex-wrap: wrap;
-        padding: 0 24px;
+/* contact section area: contact.html */
+#contact .parallax-bg {
+    background: url(./../assets/imgs/contact.jpg) 50%/cover fixed;
+    background-position: 50% 80%;
 }
-    #work .portfolio li {
-        flex: 48%;
-        height: 240px;
+#contact .container {
+    display: flex;
+    justify-content: space-between;
 }
+#contact .map {
+    width: 280px;
+    height: 160px;
+    border-radius: 5px;
+    /* 모서리 둥글게 하기 */
+    overflow: hidden;
+    margin-right: 32px;
 }
-
-/* 폰 */
-@media (max-width: 767px) {
-/* 타이포 */
-    body {
-        font-size: 3.5vw;
-    }
-    h2 {
-        font-size: 10vw;
-    }
-    h3 {
-        font-size: 7vw;
-    }
-    button {
-        font-size: 4vw;
-    }
-
-    /* about 섹션 */
-    #about .count ul {
-        display: block;
-        flex-wrap: wrap;
-        gap: 16px;
-    }
-    #about .count ul li {
-        margin-bottom: 24px;
-    }
-    #about .container p {
-        font-size: 4vw;
-    }
-    #about .skill > p {
-        font-size: 5vw;
-    }
-    #about .skill .inner {
-        font-size: 6vw;
-    }
-    #about .skill .inner p {
-        font-size: 4vw;
-        letter-spacing: 3vw;
-    }
-    #about .count span {
-        font-size: 8vw;
-    }
-    .top-btn {
-        font-size: 4.5vw;
-    }
-    footer .sns a i {
-        font-size: 6.5vw;
-    }
-
-/* 공통 */
-    .ele-hide {
-        display: none;
-    }
-
-/* footer 섹션 */
-    footer {
-        padding: 100px 0;
-    }
-
-/* work 섹션*/
-    #work .portfolio li {
-        flex: 100%;
+#contact .contact {
+    width: 600px;
+    text-align: left;
 }
+#contact .contact p {
+    margin: 24px 0 16px;
+}
+#contact .frm-input {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+#contact input {
+    width: 100%;
+    height: 45px;
+    padding-left: 16px;
+}
+#contact textarea  {
+    width: 100%;
+    /* 텍스트영역 상자의 크기 조정 불가 */
+    resize: none;
+    height: 150px;
+    margin-top: 10px;
+    padding-top: 16px;
+    padding-left: 16px;
+}
+#contact button {
+    background: #111;
+}
+#contact i {
+    margin-right: 8px;
+}
+#contact .addr i {
+    margin-right: 16px;
+}
+#contact .frm-btn {
+    text-align: right;
 }
