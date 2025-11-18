@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 width/height</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+/* 
+크기 지정 width/heigth
+    레이아웃 설정
+    1. float: left; right;
+            - clear: left; right |both; 
+            > float 영향을 제거
+    2. display: flex; (1차원)
+        - flex-direction
+        - flex-wrap
+        - flex-flow
+        - justift-content: flex-start; flex-end; center; space-between; space-around; space-evenly;
+        - align-items
+        - align-content
+        - ...
+    3. display: grid; (2차원)
+*/
+
+$(()=> {
+// 변수 선언 및 초기화
+let x = 100;
+
+/* 
+this
+event 객체 -> 매개변수(e)로 사용 가능
+event.targer
+event.currentTarget
+
+$(this)
+event 객체 -> 매개변수(e)로 사용 가능
+$(event.targer)
+$(event.currentTarget)
+*/
+
+// 버튼을 클릭하면
+$('div').click(function(e) {
+// $('div').click((e) => {
+// $('div').click(() => {
+    console.log($(this));
+    console.log($(event.targer));
+    console.log($(event.currentTarget));
+    
+// 클릭한 박스 배경색을 빨간색으로
+    $(e.target).css({background: 'red'});
+// $(this)는 클릭한 div
+
+// 클릭할 때마다 10px씩 작아지게
+    $(e.target).width(x-=10);
+    $(e.currentTarget).height(x-=10);
+    });
+});
+    </script>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            float: left;
+            margin: 5px;
+            background: yellow;
+        }
+
+        .box {
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div>박스1</div>
+    <div>박스2</div>
+    <div>박스3</div>
+    <div>박스4</div>
+    <div>박스5</div>
+</body>
+
+</html>

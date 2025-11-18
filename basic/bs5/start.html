@@ -50,8 +50,55 @@ text-primary: 파랑, text-secondary: 회색, text-success: 초록, text-danger:
   text-center | text-align: center;
   text-start  | text-align: left;
   text-end    | text-align: right;
+-->
+<!-- 
+width: 0%;
+width: 25%;
+width: 50%;
+width: 75%;
+width: 100%;
+width: auto;
 
+w-0
+w-25
+w-50
+w-75
+w-100
+w-auto
 
+height: 0%;
+height: 25%;
+height: 50%;
+height: 75%;
+height: 100%;
+height: auto;
+
+h-0
+h-25
+h-50
+h-75
+h-100
+h-auto
+-->
+
+<!-- 
+{속성}{상하좌우}-{중단점}-
+속성: m, p
+상: t
+하: b
+좌: s
+우: e
+좌우: x
+상하: y
+중단점: xs, sm, md, lg, xl, xxl
+숫자: 
+0: 0px
+1: 4px
+2: 8px
+3: 16px
+4: 24px
+5: 48px
+auto
 -->
 <div class="container-fluid p-5 bg-success text-white text-center">
   <h1>My First Bootstrap Page</h1>
@@ -59,8 +106,9 @@ text-primary: 파랑, text-secondary: 회색, text-success: 초록, text-danger:
 </div>
   
 <div class="container mt-5" style="background-color: lightgreen;">
-  <div class="row">
-    <div class="col-md-6 col-xl-3">
+  <div class="row pt-5 pb-5">
+    <div class="col-md-6 col-xl-3 pt-5">
+
       <h3>Column 1</h3>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
       <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>

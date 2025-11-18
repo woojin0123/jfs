@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 시작하기</title>
+    <!-- 제이쿼리 라이브러리 -->
+    <!-- CDN 방식 -->
+    <!-- jquery.com -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- 구글 CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- MS(마이크로소프트) CDN -->
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.1.min.js"></script>
+    <!-- CDNJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- jsdelivr -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <!-- 다운로드한 파일을 연결 -->
+    <script src="jquery-3.7.1.min.js"></script>
+    <script>
+        /* 
+            제이쿼리란?
+                - 자바스크립트 라이브러리
+                - 크로스 브라우징에 효과적!
+            
+            라이브러리와 프레임워크
+                모두 재사용 가능한 코드 모음이지만, 제어권의 주체가 다릅니다. 
+            라이브러리
+                개발자가 필요할 때 능동적으로 호출하여 사용하는 코드 묶음이며, 즉, 개발자가 제어권을 갖고 라이브러리를 사용하는 반면, 
+                예) 제이쿼리, 리액트
+            프레임워크
+                전체적인 애플리케이션의 틀을 제공하고 개발자가 그 틀 안에서 코드를 작성하는 방식입니다.프레임워크는 제어의 주도권을 갖고 개발자의 코드를 호출합니다. 
+                예) 부트스트랩, 스프링
+
+            크로스 브라우징이란?
+                다양한 웹 브라우저(크롬, 사파리, 엣지, ...)와 운영체제(윈도우, 맥, iOS, 안드로이드, 리눅스, ...) 환경에서도 웹페이지가 일관된 화면과 기능을 제공하도록 만드는 작업입니다.
+            
+            CDN 이란?
+                CDN은 '콘텐츠 전송 네트워크(Content Delivery Network)'의 줄임말로, 전 세계에 분산된 서버들을 통해 웹사이트 콘텐츠를 사용자에게 더 빠르게 전달하는 네트워크입니다. 사용자와 물리적으로 가까운 서버에 콘텐츠의 복사본을 저장(캐싱)해 두었다가, 사용자가 요청하면 가장 가까운 서버에서 콘텐츠를 바로 전송하여 로딩 시간을 최소화하고 웹 성능을 향상시킵니다.  
+            
+        */
+
+        /* 
+            이벤트 형식
+                객체.addEventListener("이벤트종류", 콜백함수);
+                객체.addEventListener("DOMContentLoaded", function(){});
+                객체.addEventListener("DOMContentLoaded", ()=>{});
+        */
+        // 이벤트 종류: click, DOMContentLoaded, ...
+        // 바닐라 스크립트
+        // DOMContentLoaded: DOM의 내용이 모두 로드되었을 때
+        // 이벤트 리스너를 통해 콜백 함수가 실행된다.
+        // window.addEventListener("DOMContentLoaded", () => {
+        //     document.querySelector('p').innerHTML = "웹 프로그래밍";
+        // });
+
+        // 제이쿼리
+        // 객체.메서드()
+        // jQuery(document).ready()
+        // 문서가 준비되었을 때
+        // jQuery(document).ready(()=>{});
+        // $(document).ready(()=>{});
+        $(()=>{
+            // 제이쿼리 코드
+            $('p').html("웹 프로그래밍");
+        });
+    </script>
+</head>
+
+<body>
+    <p></p>
+</body>
+
+</html>

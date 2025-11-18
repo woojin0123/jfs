@@ -1,13 +1,21 @@
-﻿<!DOCTYPE html>
+﻿﻿<!DOCTYPE html>
 <html>
 <head>
     <script>
         function add() {
-            var header=document.createElement('h3');                            // 요소 노드 생성
-            var textNode=document.createTextNode('내 이름은 홍길동입니다.');    // 텍스트 노드 생성
-            header.appendChild(textNode);          // 요소 노드와 텍스트 노드 연결
-            document.body.appendChild(header);     // 생성한 문서 객체를 body에 추가                    
-        };
+            // 요소 노드 생성
+            // header = <h3></h3>
+            var header=document.createElement('h3');
+            // 텍스트 노드 생성
+            // textNode = '내 이름은 홍길동입니다.'                        
+            var textNode=document.createTextNode('내 이름은 홍길동입니다.');    
+
+            // 요소 노드와 텍스트 노드 연결
+            // <h3>내 이름은 홍길동입니다.</h3>
+            header.appendChild(textNode);
+            // body h3내 이름은 홍길동입니다. /h3/body
+            document.body.appendChild(header); // 생성한 문서 객체를 body에 추가                    
+        }
     </script>
 </head>
 <body>

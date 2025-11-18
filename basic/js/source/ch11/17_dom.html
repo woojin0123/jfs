@@ -1,12 +1,31 @@
-﻿<!DOCTYPE html>
+﻿﻿<!DOCTYPE html>
 <html>
 <head>
     <script>
         function add() {
             var img=document.createElement('img'); 
-            img.setAttribute('src', 'html5.jpg');
-            img.setAttribute('width', 100);
-            img.setAttribute('height', 122);
+            //img.src = 'html5.jpg';
+            // 바닐라스크립트(순수 자바스크립트)
+            // img.setAttribute('src', 'html5.jpg');
+            // img.setAttribute('width', 100);
+            // img.setAttribute('height', 122);
+
+            // 제이쿼리
+            // img.attr('src', 'html5.jpg');
+            // img.attr('width', 100);
+            // img.attr('height', 122);
+            // img.attr({
+            //     src: 'html5.jpg',
+            //     width: 100,
+            //     height: 122
+            // })
+
+
+            img.setAttribute({
+                src: 'html5.jpg',
+                width: 100,
+                height: 122
+            })
             document.body.appendChild(img);
         };
     </script>

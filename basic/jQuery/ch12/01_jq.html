@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="jquery-3.2.1.min.js"></script>
+    <script>
+        $(()=>{
+            // 요소 선택
+            // $(document), $(window), $(this)
+            // DOM 요소를 선택할 때 대체로 문자열로 표기
+            // $('선택자')
+            // $('body'), $('html')
+            // $("button")
+            
+            /* 
+                메서드 유형
+                    1. 이벤트 메서드: 
+                        이벤트명(콜백함수)
+                    2. 효과 메서드: 
+                        hide()
+                        show()
+                    3. 탐색 메서드: 
+                    4. HTML/CSS 메서드:         
+            */
+            // 이벤트 메서드
+            // 객체.click()
+            // 효과 메서드
+            // 객체.hide()
+
+            // 버튼을 클릭하면 함수가 실행된다.
+            $("button").click(function () {
+                // p를 숨긴다.
+                $("p").hide();
+            });
+        });
+    </script>
+</head>
+<body>
+    <p>메시지 : 제이쿼리를 공부하고 있습니다.</p>
+    <button>메시지 삭제</button>
+</body>
+</html>

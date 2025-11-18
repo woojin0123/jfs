@@ -1,0 +1,75 @@
+@charset "utf-8";
+
+@import url(https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap);
+@font-face {
+    font-family: Lato-Regular;
+    src: url(https://fsclass-n.github.io/jfs/assets/font/Lato-Regular.ttf);
+}
+@font-face {
+    font-family: Lato-Thin;
+    src: url(https://fsclass-n.github.io/jfs/assets/font/Lato-Thin.ttf);
+}
+/* @import url(reset.css); */
+
+/* 공통 */
+.container {
+    min-width: 980px;
+}
+
+/* 배경 이미지 */
+#home .bgimg { 
+    height: 100vh;
+    background: url(../assets/imgs/benjamin-voros-phIFdC6lA4E-unsplash.jpg) no-repeat 50% 50%/cover fixed;
+}
+
+#home.dark .bgimg {
+    filter: sepia(80%);
+    background: url(../assets/imgs/johannes-plenio-DKix6Un55mw-unsplash.jpg) no-repeat 50% 50%/cover fixed;
+}
+
+.parallax-bg {
+    height: 400px;
+    background: no-repeat 50% 50%/cover fixed
+}
+
+#about .parallax-bg {
+    background-image: url(./../assets/imgs/about.jpg);
+}
+
+#work .parallax-bg {
+    background-image: url(./../assets/imgs/portfolio.jpg);
+}
+
+#contact .parallax-bg {
+    background-image: url(./../assets/imgs/contact.jpg);
+    background-position: 50% 80%;
+}
+
+/* 애니메이션 */
+.circle_ani {
+    width: 135px;
+    height: 136px;
+    transition: linear 5s;
+    animation: circle 50s linear infinite;
+}
+@keyframes circle {
+    0% {
+        transform: rotate(0deg) scale(3);
+    }
+    100% {
+        transform: rotate(720deg) scale(3);
+    }
+}
+
+/* 텍스트 그림자 */
+#home.dark h2 {
+    text-shadow: 0 0 6px rgba(35, 173, 278, 1);
+    color: rgba(196, 202, 226, 0.89);
+}
+
+/* 나의 사진 */
+.myimg {
+    width: 425px;
+    height: 280px;
+    object-fit: cover;
+}

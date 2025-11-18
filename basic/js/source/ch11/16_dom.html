@@ -1,12 +1,21 @@
-﻿<!DOCTYPE html>
+﻿﻿<!DOCTYPE html>
 <html>
 <head>
     <script>
         function add() {
             var img=document.createElement('img'); 
-	        img.src='html5.jpg';
+            // <img>
+            // DOM객체.HTML속성 = 속성값;
+	        // img.src='html5.jpg';
+            img.setAttribute('src', 'html5.jpg');
+            // <img src="html5.jpg">
             img.width=100;
+            // <img src="html5.jpg" width="100">
+            //img.style="width:100px;";
+            // <img src="html5.jpg" style="width:100px;">
             img.height=122;
+            // <img src="html5.jpg" width="100" height="122">
+
             document.body.appendChild(img);
         };
     </script>

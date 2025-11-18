@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 이벤트</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        /*
+            이벤트의 종류
+                1. window: resize, scroll
+                2. document: ready
+                3. mouse: click, mouseenter, mouseleave, mousedown, mouseup, mousemove, ...
+                4. keyboard: keydown, keyup
+                5. form: submit, focus, blur, change, select
+        */
+
+        // 요소 선택
+        // $(document), $(window), 
+        // $(this)는 자기 자신
+        // DOM 요소를 선택할 때 대체로 문자열로 표기
+        // $('선택자')
+        // $('body'), $('html')
+        // $("button")
+
+        /* 
+            메서드 유형
+                1. 이벤트 메서드: 이벤트명(콜백함수)
+                    click(): 요소를 클릭함
+                    mouseenter(): 요소 안으로 마우스 들어감
+                    mouseleave(): 요소 밖으로 마우스 나감
+                    mousedown(): 요소를 마우스로 누르고 있음
+                    mouseup(): 요소를 mouswdown 후 뗌
+                
+                2. 효과 메서드
+                    hide(): 요소를 숨김
+                    show(): 요소를 보여줌
+
+                3. 탐색 메서드
+                    eq()
+
+                4. HTML/CSS 메서드
+                    text(): html의 내용을 가져온다/지정한다
+                    html(): html의 내용을 가져온다/지정한다 (태그 인식함)
+        */
+        // 이벤트 메서드
+        // 객체.click()
+        // 효과 메서드
+        // 객체.hide()
+
+        // jQuery(document).ready(function(){});
+        // $(function(){});
+        // 문서가 준비되면
+        $(() => {
+            // 버튼 선택
+            // 객체.메서드();
+            // p를 숨긴다.
+            $('p').hide();
+            
+            $('#a1').click(function () {
+                // p가 보인다.
+                $('p:nth-of-type(1)').show();
+            });
+            $('.a2').click(() => {
+                // p가 보인다.
+                $('p:nth-of-type(2)').show();
+            });
+
+            // p를 클릭하면
+            $('p').click(function(){
+                // p를 숨긴다.
+                // $('p').hide();
+                // 클릭한 자기 자신만 숨긴다.
+                // 단, 화살표함수에서 $(this)는 자기자신이 아닌 무얼까? $(window)
+                console.log($(this));
+                $(this).hide();
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+    <h1>퀴즈</h1>
+    <h2>문1. 대한민국의 수도는?</h2>
+    <button type="button" id="a1">정답</button>
+    <p>서울입니다.</p>
+    <h2>문2. 대한민국의 국보1호는?</h2>
+    <button type="button" class="a2">정답</button>
+    <p>숭례문입니다.</p>
+</body>
+
+</html>
