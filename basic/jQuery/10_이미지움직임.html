@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>제이쿼리 이미지움직임</title>
+  <style>
+    .moving {
+      border: 1px solid #000000;
+      margin: 20px auto 0 auto;
+      text-align: right;
+      width: 550px;
+    }
+
+    .moving img {
+      cursor: pointer;
+      position: relative;
+    }
+  </style>
+  <!-- 제이쿼리 core 라이브러리 -->
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <!-- 제이쿼리 UI 라이브러리 -->
+  <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+
+  <script>
+$(() => {
+  // 변수 선언
+  const img = $('img');
+  const imgObj = $('img').width(150); // 너비를 150으로 지정(set)
+  const imgWidth = imgObj.width();
+  const boxWidth = $('.moving').width(); // .movie 너비를 가져옴(get)
+  console.log(imgWidth);
+
+  function move(e, speed){
+    $(e.currentTarget).animate({left: -boxWidth + imgWidth}, speed);
+  }
+  imgObj.eq(0).on('click', e=> move(e, 1000));
+  imgObj.eq(1).on('click', e=> move(e, 1500));
+  imgObj.eq(2).on('click', e=> move(e, 2000));
+
+  $('button').on('click', e=> img.animate({left: 0}));
+});
+  </script>
+</head>
+
+<body>
+  <div class="init">
+    <button type="button">reset</button><br>
+  </div>
+  <div class="moving">
+    <img src="https://i.pinimg.com/236x/5c/93/51/5c9351acd5c3d3bc32a342aad65f48b0.jpg" alt="강아지" /><br>
+    <img src="https://pbs.twimg.com/media/E2SZ5BDVcAUNMTm.jpg" alt="강아지" /><br>
+    <img src="https://i.pinimg.com/236x/51/96/17/519617d474cd9b16c11cc90fba57084b.jpg" alt="강아지" /><br>
+  </div>
+</body>
+
+</html>

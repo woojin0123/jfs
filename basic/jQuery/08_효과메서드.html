@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 효과매서드</title>
+<!-- 제이쿼리 core 라이브러리 -->
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<!-- 제이쿼리 UI 라이브러리 -->
+<!-- animate() 매서드 사용 시 색과 가속도 사용 가능 -->
+  <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <script>
+/* 
+Effect
+* speed: 400ms (기본값)
+* "slow", "fast", "milliseconds"
+* callback(콜백함수): 효과매서드가 끝나면 수행할 함수
+* [생략가능]
+
+1. hide/show (나타남, 사라짐)
+    $(선택자).hide([속도],[함수]);
+    $(selector).show([speed],[easing],[callback]);
+    $(selector).toggle([speed],[easing],[callback]);
+
+2. fade (서서히 나타남, 서서히 사라짐)
+    $(selector).fadeIn([speed],[easing],[callback]);
+    $(selector).fadeOut([speed],[easing],[callback]);
+    $(selector).fadeToggle([speed],[easing],[callback]);
+    $(selector).fadeTo([speed],[opacity],[callback]);
+- opacity: 0-1 사이의 값
+
+3. slide
+    $(selector).slideDown([speed],[easing],[callback]);
+    $(selector).slideUp([speed],[easing],[callback]);
+    $(selector).toggle([speed],[easing],[callback]);
+
+4. animation
+    $(selector).animate({styles},[speed],[easing],[callback]);
+                        {css 속성: 값, ...}
+    easing: swing(기본값, 가속), linear(등속)
+    * 제이쿼리 UI를 설정하면 더 많은 easing값 사용 가능
+
+4-1. stop()
+    $(selector).stop([clearQueue],[jumpToEnd]).애니메이션관련메서드();
+    $(selector).stop()
+    $(selector).stop(false, false) (기본값)
+        - clearQueue: false(기본값), true(큐)에 쌓여있는 애니매이션까지 모두 삭제
+        - jumpToEnd: false(기본값), true
+
+
+HTML/CSS 메서드
+    css("속성명");
+    : 속성명 가져오기
+
+    css("속성명","값");
+    : 속성값 지정하기
+
+    css({params});
+    css({"속성":"값","속성":"값",...});
+    : 하나 이상의 속성값 지정
+
+    animate({"속성":"값","속성":"값",...});
+    : 하나 이상의 속성값으로 애니매이션
+    : speed가 있어서 움직임 (기본값: 400ms)
+    : 배경색x, 추가 가속도x, 변형x 등 모든 속성 사용 불가
+*/
+
+
+// $(document).ready(function(){});
+/* $(()=>{
+    $('button').eq(0).click(function(){
+        $('img').css({width: 100});
+    });
+    $('button').eq(1).click(function(){
+        $('img').css({width: 200});
+    });
+    $('button').eq(2).click(function(){
+        $('img').css({width: 300});
+    });
+});  */
+
+/* $(()=>{
+    function imgwidth(w) {
+        $('img').animate({width: w * 100});
+    }
+    $('button').eq(0).click(function(){
+        imgwidth(1);
+    });
+    $('button').eq(1).click(function(){
+        imgwidth(2);
+    });
+    $('button').eq(2).click(function(){
+        imgwidth(3);
+    });
+}); */
+
+$(()=>{
+    function imgwidth(w) {
+        $('img').animate({width: w * 100});
+    }
+// on('이벤트', 함수) 메서드를 사용한 이벤트 처리 
+    $('button').eq(0).on('click', () => {
+        imgwidth(1);
+    });
+// 이벤트 메소드를 이용한 이벤트 처리
+    $('button').eq(1).on('click', () => {
+        imgwidth(2);
+    });
+    $('button').eq(2).on('click', () => {
+        imgwidth(3);
+    });
+// 축소 버튼을 클릭하면 크기는 100, 위치는 아래로
+    $('button').eq(4).on('click', () => {
+        $('img').css({position: 'relative'}).stop().animate({
+            width: 100,
+            top: 300
+        }, 5000, 'easeOutBounce');
+        });
+// 확대 버튼을 클릭하면 크기, 위치 원상복귀
+    $('button').eq(3).on('click', () => {
+        $('img').css({position: 'relative'}).stop().animate({
+            width: 930,
+            top: 0
+        });
+    });
+// hide, show, toggle
+    $('button').eq(5).on('click', () => {
+        $('img').hide(400);
+    });
+    $('button').eq(6).on('click',() => {
+        $('img').show('fast');
+    });
+    $('button').eq(7).on('click', () => {
+        $('img').toggle('slow');
+    });
+////////// fade 효과 //////////
+    $('button').eq(8).on('click', () => {
+        $('img').fadeIn();
+    });
+    $('button').eq(9).on('click', () => {
+        $('img').fadeOut();
+    });
+    $('button').eq(10).on('click', () => {
+        $('img').fadeToggle();
+    });
+    $('button').eq(11).on('click', () => {
+        $('img').fadeTo(700, 0.7);
+    });
+});
+
+
+
+    </script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="css_pic">
+        버튼을 누르면 그림의 크기가 바뀝니다.</p>
+        <div>
+            <button type="button">0가로 100픽셀</button>
+            <button type="button">1가로 200픽셀</button>
+            <button type="button">2가로 300픽셀</button>
+            <button type="button">3확대+위치</button>
+            <button type="button">4축소+위치</button>
+            <button type="button">5hide</button>
+            <button type="button">6show</button>
+            <button type="button">7toggle</button>
+            <button type="button">8fadeIn</button>
+            <button type="button">9fadeOut</button>
+            <button type="button">10fadeToggle</button>
+            <button type="button">11fadeTo</button>
+        </div>
+        <img src="https://img.vogue.co.kr/vogue/2019/10/style_5daeae5d54273-930x563.jpeg" alt="펭수 거 대충 넘어갑시다">
+    </div>
+</body>
+
+</html>

@@ -1,5 +1,6 @@
 @charset "utf-8";
 
+/* 타이포 */
 @import url(https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap);
 @font-face {
     font-family: Lato-Regular;
@@ -11,6 +12,9 @@
 }
 /* @import url(reset.css); */
 
+.ls10px {
+    letter-spacing: 0.625rem;
+}
 /* 공통 */
 .container {
     min-width: 980px;
@@ -72,4 +76,24 @@
     width: 425px;
     height: 280px;
     object-fit: cover;
+}
+
+/* 프로그래스 바 */
+.progress {
+    height: 35px;
+}
+.progress:first-of-type .prograss-bar {
+    width: 85%;
+}
+.progress:last-of-type .prograss-bar {
+    width: 85%;
+}
+
+/* 폼(양식) */
+input {
+    height: 45px;
+}
+textarea {
+    height: 200px;
+    resize: none;
 }

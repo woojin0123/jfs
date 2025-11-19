@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 슬라이드</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <style>
+        #slide,
+        #panel,
+        #flip {
+            padding: 5px;
+            text-align: center;
+            background-color: #e5eecc;
+            border: solid 1px #c3c3c3;
+        }
+
+        #panel {
+            padding: 70px;
+            display: none;
+            background-color: #ffff00;
+        }
+    </style>
+    <script>
+        $(() => {
+            $('#slide').on('click', () => {
+                $('#panel').slideDown();
+            });
+            $('#panel').on('click', () => {
+                $('#panel').slideUp();
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+    <div id="slide">[Today's Notice]</div>
+    <div id="panel">We will learn the jQuery program today.<br>Create an example and run it.</div>
+    <div id="flip">Toggle slide</div>
+    <p></p>
+    <button id="stop">Stop sliding</button>
+</body>
+
+</html>
