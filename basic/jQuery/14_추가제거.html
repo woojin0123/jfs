@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 추가메서드</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <script>
+/* 
+
+::after
+::before
+
+추가할 위치에 따라 
+    요소.append(내용, 내용, ...) - 요소 끝에 내용 삽입
+    요소.prepend(내용, 내용, ...) - 요소 시작 부분에 내용 삽입
+
+    요소.after(내용, 내용, ...) - 요소 뒤에 내용 삽입
+    요소.before(내용, 내용, ...) - 요소 앞에 내용 삽입 
+*/
+$(()=>{
+    $("p").append("append")
+    $("p").prepend()("prepend")
+    $("p").after("after")
+    $("p").before("before")
+});
+
+// html요소로 생성
+  const txt1 = "<p>Text.</p>";         
+// 제이쿼리로 생성    
+  const txt2 = $("<p></p>").text("Text.");
+// DOM으로 생성
+  const txt3 = document.createElement("p");  
+// DOM으로 지정
+  txt3.innerHTML = "Text.";
+
+  $("body").append(txt1, txt2, txt3);      // Append the new elements
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
