@@ -4,45 +4,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>제이쿼리 추가메서드</title>
-    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <title>제이쿼리 추가 메서드</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
     <script>
-/* 
+        /*
+            요소 추가
+                요소.append(내용, 내용, ...)- 요소의 끝에 내용 삽입
+                요소.prepend(내용, 내용, ...)- 요소의 시작 부분에 내용 삽입
+                요소.after(내용, 내용, ...)- 요소 뒤에 내용 삽입
+                요소.before(내용, 내용, ...)- 요소 앞에 내용 삽입
 
-::after
-::before
+            요소 삭제
+                요소.remove([선택자, 선택자])- 요소 제거한다.
+                요소.empty()- 요소의 내용을 비운다.
 
-추가할 위치에 따라 
-    요소.append(내용, 내용, ...) - 요소 끝에 내용 삽입
-    요소.prepend(내용, 내용, ...) - 요소 시작 부분에 내용 삽입
+        */
 
-    요소.after(내용, 내용, ...) - 요소 뒤에 내용 삽입
-    요소.before(내용, 내용, ...) - 요소 앞에 내용 삽입 
-*/
-$(()=>{
-    $("p").append("append")
-    $("p").prepend()("prepend")
-    $("p").after("after")
-    $("p").before("before")
-});
+        $(() => {
+            $("p").append("append");
+            $("p").prepend("prepend");
+            $("p").after("after");
+            $("p").before("before");
 
-// html요소로 생성
-  const txt1 = "<p>Text.</p>";         
-// 제이쿼리로 생성    
-  const txt2 = $("<p></p>").text("Text.");
-// DOM으로 생성
-  const txt3 = document.createElement("p");  
-// DOM으로 지정
-  txt3.innerHTML = "Text.";
+            // HTML 요소로 생성
+            const txt1 = "<p>Text.</p>";
+            // jQuery 로 생성
+            const txt2 = $("<p></p>").text("Text.");
+            // DOM 으로 생성
+            const txt3 = document.createElement("p");
+            // DOM 생성 후 값 지정
+            txt3.innerHTML = "Text.";
 
-  $("body").append(txt1, txt2, txt3);      // Append the new elements
+            $("body").append(txt1, txt2, txt3);
 
+            // #div1 요소를 지운다. (그 내용도 함께 지워진다.)
+            $("#div1").remove();
+            $('p').remove('.test');
+            $('p').remove('.test, .demo');
+            // #div1 요소의 내용만 지운다.
+            $("#div2").empty();
+        });
     </script>
 </head>
 
 <body>
+    <p>나는 문장이다.</p>
+    <div id="div1">나는 <span>문장</span>이다.</div>
+    <div id="div2">나는 <span>문장</span>이다.</div>
 
+    <p class="test">This is p element with class="test".</p>
+    <p class="test">This is p element with class="test".</p>
+    <p class="demo">This is p element with class="demo".</p>
 </body>
 
 </html>
