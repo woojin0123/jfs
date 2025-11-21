@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 탐색메서드</title>
+    <style>
+    div {
+        margin: 20px;
+    }
+    span {
+        display: block;
+    }
+    .ancestors div {
+        width: 500px;
+    }
+    .ancestors ul {
+        list-style: none;
+    }
+    .ancestors * { 
+        border: 2px solid lightgrey;
+        color: lightgrey;
+        padding: 5px;
+        margin: 15px;
+}
+
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <script>
+/* 
+탐색 메서드
+    조상
+    filter, stop인자는 조상 요소로 지정
+        요소.parent()
+            - 요소의 부모 
+        요소.parents()
+            - 요소의 모든 조상
+        요소.parentsUntil('선택자')
+            - 요소의 조상 중 선택자의 자식까지
+
+    자손
+        children()
+        find()
+
+    형제
+        siblings()
+        next()
+        nextAll()
+        nextUntil()
+        prev()
+        prevAll()
+        prevUntil()
+
+    필터
+        first()
+        last()
+        eq()
+        filter()
+        not()
+*/
+$(()=> {
+    $('ul').children().css({border: '1px solid red'})
+});
+</script>
+</head>
+
+<body>
+<div class="ancestors">
+  <div>div (great-grandparent)
+    <ul>ul (grandparent)  
+      <li>li (direct parent)
+        <span>span</span>
+      </li>
+    </ul>   
+  </div>
+
+  <div>div (grandparent)   
+    <p>p (direct parent)
+      <span>span</span>
+    </p> 
+  </div>
+</div>
+
+  <div class="container">
+  <div class="parent">
+    <p>Child 1</p>
+  </div>
+  <div class="parent">
+    <p>Child 2</p>
+  </div>
+  <div class="other">
+    <p>Child 3</p>
+  </div>
+</div>
+
+<div class="outer">
+  <div class="inner">
+    <div class="target">
+      <p>This is the target element.</p>
+    </div>
+  </div>
+</div>
+</body>
+
+</html>

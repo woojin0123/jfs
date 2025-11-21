@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 탐색메서드</title>
+    <style>
+    div {
+        margin: 20px;
+    }
+    span {
+        display: block;
+    }
+    .ancestors div {
+        width: 500px;
+    }
+    .ancestors ul {
+        list-style: none;
+    }
+    .ancestors * { 
+        border: 2px solid lightgrey;
+        color: lightgrey;
+        padding: 5px;
+        margin: 15px;
+}
+    .container, .outer {
+        border: 2px solid red;
+}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <script>
+/* 
+탐색 메서드
+    조상
+    filter, stop인자는 조상 요소로 지정
+        요소.parent()
+          - 요소의 상위 요소
+        요소.parents()
+          - 요소의 모든 상위 요소
+        요소.parentsUntil('선택자')
+          - 요소의 상위 요소 ~ 선택자의 하위 요소
+
+    자손
+        children()
+          - 요소의 하위 요소
+        find()
+          - 요소의 하위 요소 찾기
+
+    형제
+        siblings()
+        next()
+        nextAll()
+        nextUntil()
+        prev()
+        prevAll()
+        prevUntil()
+
+    필터
+        first()
+        last()
+        eq()
+        filter()
+        not()
+*/
+$(()=> {
+    // $('html,body,div,ul,li,p').css({color: 'red', border: '2px solid red'})
+    // span을 기준으로 span의 부모
+    $('span').parentsUntil('div').css({color: 'red', border: '2px solid red'});
+    // p의 부모 선택, 부모의 배경색을 노란색으로
+    $('p').parent('.parent').css({background: 'yellow'});
+    $(document).ready(function() {
+    // '.target' 요소에서부터 '.outer' 요소까지 부모를 찾고, 그 중 클래스가 'inner'인 부모만 선택
+        $('.target').parentsUntil('.outer', '.inner').css('border', '2px solid blue');
+  });
+});
+</script>
+</head>
+
+<body>
+<div class="ancestors">
+  <div>div (great-grandparent)
+    <ul>ul (grandparent)  
+      <li>li (direct parent)
+        <span>span</span>
+      </li>
+    </ul>   
+  </div>
+
+  <div>div (grandparent)   
+    <p>p (direct parent)
+      <span>span</span>
+    </p> 
+  </div>
+</div>
+
+  <div class="container">
+  <div class="parent">
+    <p>Child 1</p>
+  </div>
+  <div class="parent">
+    <p>Child 2</p>
+  </div>
+  <div class="other">
+    <p>Child 3</p>
+  </div>
+</div>
+
+<div class="outer">
+  <div class="inner">
+    <div class="target">
+      <p>This is the target element.</p>
+    </div>
+  </div>
+</div>
+</body>
+
+</html>
