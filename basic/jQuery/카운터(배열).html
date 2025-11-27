@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카운터(4개)</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <script>
+        $(() => {
+            // 1~100까지의 숫자가 증가
+            let i0 = i1 = i2 = i3 = 0;
+
+            // 반복객체.each(function(idx, ele) {반복할 내용;});
+            let num;
+            let str;
+            $('p').each(function(idx, ele){
+                const span = $(ele).find('span');
+                let num = span.attr('data-count');
+                console.log(parseInt(num)+10);
+
+                // 배열에 값 추가
+                counters.push(num);
+                console.log(counters);
+
+                let i = 0;
+                function counter() {
+                    if (i <= Number(num)) {
+                        span.text(i++);
+                    }
+                }
+
+                switch (num) {
+                    case 20: str = "20입니다"; break;
+                    case 25: str = "20입니다"; break;
+                    case 27: str = "20입니다"; break;
+                    case 50: str = "20입니다"; break;
+                }
+                console.log(str);
+            });
+
+
+            // 객체.attr(속성명) > 속성에 해당하는 값 가져오기
+            const num1 = $('p').eq(0).find('span').attr('data-count');
+            const num2 = $('p').eq(1).find('span').attr('data-count');
+            const num3 = $('p').eq(2).find('span').attr('data-count');
+            const num4 = $('p').eq(3).find('span').attr('data-count');
+            console.log(num);
+
+            function counter() {
+                if (i0 <= num1) {                
+                    $('p').eq(0).find('span').text(i0++);
+                }
+                if (i1 <= num2) {                
+                    $('p').eq(1).find('span').text(i1++);
+                }
+                if (i2 <= num3) {                
+                    $('p').eq(2).find('span').text(i2++);
+                }
+                if (i3 <= num4) {                
+                    $('p').eq(3).find('span').text(i3++);
+                }
+            }
+            // setInterval(함수, 시간)
+            // 시간은 밀리초(ms): 1000 > 1초
+            setInterval(function () { counter(); }, 50);
+            // clearInterval(변수명)
+        });
+    </script>
+</head>
+
+<body>
+    <!-- 
+사용자 정의 속성    
+data-* 
+-->
+    <p><span data-count="20">0</span>+</p>
+    <p><span data-count="25">0</span>+</p>
+    <p><span data-count="27">0</span>+</p>
+    <p><span data-count="50">0</span>+</p>
+</body>
+
+</html>

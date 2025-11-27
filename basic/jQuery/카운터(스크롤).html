@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카운터</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        section {
+            height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+            line-height: 100vh;
+        }
+        #counters {
+            background: lightblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .counter {
+            font-size: 4em;
+            font-weight: bold;
+            margin: 20px;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        .counter.active {
+            opacity: 1;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+</head>
+
+<body>
+    <section>
+        <h1>스크롤 아래로 내려보세요</h1>
+    </section>
+
+    <section>
+        <div id="counters">
+            <div class="counter" data-target="10">0</div>
+            <div class="counter" data-target="20">0</div>
+            <div class="counter" data-target="30">0</div>
+            <div class="counter" data-target="40">0</div>
+        </div>
+    </section>
+
+    <script>
+        $(function () {
+            let counted = false; // 한 번만 실행
+
+            function runCounter() {
+                const scrollTop = $(window).scrollTop(),
+                    windowHeight = $(window).height(),
+                    countersTop = $("#counters").offset().top;
+
+                    console.log('windowHeight =', windowHeight);
+                    console.log('countersTop =', countersTop);
+
+                if (!counted && scrollTop + windowHeight > countersTop + 100) {
+                    counted = true;
+
+                    $(".counter").each(function () {
+                        var $this = $(this),
+                            target = parseInt($this.attr("data-target")),
+                            count = 0,
+                            speed = 50;
+
+                        $this.addClass("active");
+
+                        const counterInterval = setInterval(() => {
+                            count++; 
+                            // += Math.ceil(target / 100);
+                            if (count >= target) {
+                                // count = target; // 하나씩 증가시키면 생략 가능
+                                clearInterval(counterInterval);
+                            }
+                            // toFixed(n): 소수점 n번째까지 표시
+                            $this.text(count.toFixed());
+                            console.log(($this));
+                        }, speed);
+                    }); // $(".counter")
+                } // if
+            } // function
+
+            $(window).on("scroll", runCounter);
+            runCounter(); // 새로고침 시도
+        }); // ($function)
+    </script>
+</body>
+
+</html>
