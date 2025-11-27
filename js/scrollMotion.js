@@ -1,33 +1,62 @@
 $(window).scroll(function () {
-  //변수 선언
   const windowHeight = $(window).height();
   let windowScrollTop = $(window).scrollTop();
-  const speed = 1000,
-    easing = "easeOutExpo",
-    pos = 0,
-    offset = 2.5; // 숫자 커질수록 빨리 나타남
+  (easing = "easeOutExpo"), (pos = 0);
 
-  // 우측 상단에 스크롤 양, 창 높이값 출력
-  $(".result").html(windowScrollTop + " , " + windowHeight);
+  $(".motion").each(function (i, el) {
+    // position(): 포지션이 설정된 가장 가까운 조상 요소(부모)를 기준으로 지정
+    const elementTop = $(el).position().top;
+    // offset1: .motion이 움직이기 시작하는 시점, 숫자가 클수록 더 많이 스크롤해야 동작한다
+    // offset2: .motion의 시작 위치
+    let offset1, offset2, speed;
 
-  if (windowScrollTop > windowHeight * offset) {
-    //참일 경우
-    // i는 0, 1, 2, 3
-    for (let i = 0; i < 4; i++) {
-      $(".motion")
-        .eq(i)
+    switch (i) {
+      case 0:
+        offset1 = 800;
+        offset2 = 300;
+        speed = 2000;
+        break;
+      case 1:
+      case 2:
+        offset1 = 700;
+        offset2 = 600;
+        speed = 1000;
+        break;
+      default:
+        offset1 = 1800;
+        offset2 = 600;
+        speed = 400;
+    }
+
+    // if (i < 1) {
+    // } else if (i < 3) {
+    //   offset1 = 800;
+    //   offset2 = 300;
+    //   speed = 2000;
+    // } else {
+    //   offset1 = 800;
+    //   offset2 = 600;
+    //   speed = 1000;
+    // }
+    // if (i >= 3) {
+    //   offset1 = 1800;
+    //   offset2 = 600;
+    //   speed = 400;
+    // }
+
+    if (windowScrollTop > elementTop - windowHeight + offset1) {
+      $(el)
         .stop()
         .animate({ top: pos, opacity: 1 }, (speed * (i + 1)) / 2, easing);
+    } else {
+      $(el)
+        .stop()
+        .animate({ top: pos + offset2, opacity: 0 }, speed, easing);
     }
-  } else {
-    //거짓일 경우 else 부분 없으면 최초 1회만 동작
-    $(".motion")
-      .stop()
-      .animate({ top: pos + 600, opacity: 0 }, speed, easing);
-  }
+  });
 
   // $(window).scroll
-   if (windowScrollTop > 0) {
+  if (windowScrollTop > 0) {
     $("#header").addClass("active");
   } else {
     $("#header").removeClass("active");

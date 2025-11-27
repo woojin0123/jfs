@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS 나머지 매개변수</title>
+</head>
+
+<body>
+    <script>
+// 나머지(rest) 매개변수
+// 맨 마지막 변수로 사용해야함
+        function func(a, b, ...rest) {
+            console.log(a);         // 첫 번째 인자
+            console.log(b);         // 두 번째 인자
+            console.log(...rest);   // 나머지 인자 배열
+
+        }
+        func(5, 3, 2, 10, 11, 18, 31)
+
+    // 누적 합계 구하기
+    // acc(Accumulator): 누적값
+    // cur(Current Value): 현재값
+        function sum(...numbers) {
+            // 객체.reduce((누적값, 현재값) => acc + cur, 0 )
+            return numbers.reduce((acc, cur) => acc + cur, 0);
+        }
+
+        console.log(sum(1, 2, 3));      // 6
+        console.log(sum(5, 10, 15, 20)); // 50
+    </script>
+</body>
+
+</html>

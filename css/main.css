@@ -3,143 +3,161 @@
 /* 타이포 */
 @import url(https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap);
 @font-face {
-    font-family: Lato-Regular;
-    src: url(https://fsclass-n.github.io/jfs/assets/font/Lato-Regular.ttf);
+  font-family: Lato-Regular;
+  src: url(https://fsclass-n.github.io/jfs/assets/font/Lato-Regular.ttf);
 }
 @font-face {
-    font-family: Lato-Thin;
-    src: url(https://fsclass-n.github.io/jfs/assets/font/Lato-Thin.ttf);
+  font-family: Lato-Thin;
+  src: url(https://fsclass-n.github.io/jfs/assets/font/Lato-Thin.ttf);
 }
 /* @import url(reset.css); */
 
 .ls10px {
-    letter-spacing: 0.625rem;
+  letter-spacing: 0.625rem;
 }
 /* 공통 */
 .container {
-    max-width: 980px;
+  max-width: 980px;
 }
 
 /* 배경 이미지 */
-#home .bgimg { 
-    height: 100vh;
-    background: url(../assets/imgs/benjamin-voros-phIFdC6lA4E-unsplash.jpg) no-repeat 50% 50%/cover fixed;
+#home .bgimg {
+  height: 100vh;
+  background: url(../assets/imgs/benjamin-voros-phIFdC6lA4E-unsplash.jpg)
+    no-repeat 50% 50% / cover fixed;
 }
 
 #home.dark .bgimg {
-    filter: sepia(80%);
-    background: url(../assets/imgs/johannes-plenio-DKix6Un55mw-unsplash.jpg) no-repeat 50% 50%/cover fixed;
+  filter: sepia(80%);
+  background: url(../assets/imgs/johannes-plenio-DKix6Un55mw-unsplash.jpg)
+    no-repeat 50% 50% / cover fixed;
 }
 
 .parallax-bg {
-    height: 400px;
-    background: no-repeat 50% 50%/cover fixed
+  height: 400px;
+  background: no-repeat 50% 50% / cover fixed;
 }
 
 #about .parallax-bg {
-    background-image: url(./../assets/imgs/about.jpg);
+  background-image: url(./../assets/imgs/about.jpg);
 }
 
 #work .parallax-bg {
-    background-image: url(./../assets/imgs/portfolio.jpg);
+  background-image: url(./../assets/imgs/portfolio.jpg);
 }
 
 #contact .parallax-bg {
-    background-image: url(./../assets/imgs/contact.jpg);
-    background-position: 50% 80%;
+  background-image: url(./../assets/imgs/contact.jpg);
+  background-position: 50% 80%;
 }
 
 /* 애니메이션 */
 .circle_ani {
-    width: 135px;
-    height: 136px;
-    transition: linear 5s;
-    animation: circle 50s linear infinite;
+  width: 135px;
+  height: 136px;
+  transition: linear 5s;
+  animation: circle 50s linear infinite;
 }
 @keyframes circle {
-    0% {
-        transform: rotate(0deg) scale(3);
-    }
-    100% {
-        transform: rotate(720deg) scale(3);
-    }
+  0% {
+    transform: rotate(0deg) scale(3);
+  }
+  100% {
+    transform: rotate(720deg) scale(3);
+  }
 }
 
 #header {
-    background: transparent;
-    transition: background 0.3s;
+  background: transparent;
+  transition: background 0.3s;
 }
 #header a {
-    color: #fff;
+  color: #fff;
 }
 #header a:hover {
-    color: #999;
+  color: #999;
 }
 #header.active {
-    background: #111;
-    /* 헤더 박스 그림자 */
-    /* box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12); */
+  background: #111;
+  /* 헤더 박스 그림자 */
+  /* box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12); */
 }
 #header.active a {
-    color: #fff;
+  color: #fff;
 }
 #header.active a:hover {
-    color: #999;
+  color: #999;
 }
 /* 텍스트 그림자 */
 #home h2 {
-    text-shadow: 0 0 6px rgb(210, 218, 223);
-    color: rgba(196, 202, 226, 0.89);
+  text-shadow: 0 0 6px rgb(210, 218, 223);
+  color: rgba(196, 202, 226, 0.89);
 }
 #home.dark h2 {
-    text-shadow: 0 0 6px rgba(35, 173, 278, 1);
-    color: rgba(196, 202, 226, 0.89);
+  text-shadow: 0 0 6px rgba(35, 173, 278, 1);
+  color: rgba(196, 202, 226, 0.89);
 }
 #about .count {
-    /* counter와 #work섹션 사이에 벌어진 부분 해결*/
-    transform: translateY(56px);
+  /* counter와 #work섹션 사이에 벌어진 부분 해결*/
+  /* transform: translateY(56px); */
+  transform: translateY(56px);
 }
-#about::before, #work::before, #contact::before {
-    /* 높이을 헤더의 높이만큼 지정 */
-    display: block;
-    content: "";
-    height: 56px;
+#about::before,
+#work::before,
+#contact::before {
+  /* 높이fmf 헤더의 높이만큼 지정 */
+  display: block;
+  content: "";
+  height: 56px;
 }
 /* 나의 사진 */
 .myimg {
-    width: 425px;
-    height: 280px;
-    object-fit: cover;
+  width: 425px;
+  height: 280px;
+  object-fit: cover;
 }
 
 /* 프로그래스 바 */
 .progress {
-    height: 35px;
+  height: 35px;
 }
 .progress:first-of-type .prograss-bar {
-    width: 85%;
+  width: 85%;
 }
 .progress:last-of-type .prograss-bar {
-    width: 85%;
+  width: 85%;
 }
 
+/* 카운터 */
+.counter {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.counter::after {
+    content: '+';
+}
+
+.counter.active {
+    opacity: 1;
+}
 /* 지도 */
 .map {
-    height: 160px;
+  height: 160px;
 }
 
 /* 폼(양식) */
 input {
-    height: 45px;
+  height: 45px;
 }
-#name, #email {
-    width: calc(50% - 6px);
+#name,
+#email {
+  width: calc(50% - 6px);
 }
 textarea {
-    width: 100%;
-    height: 200px;
-    resize: none;
+  width: 100%;
+  height: 200px;
+  resize: none;
 }
 #btnForm {
-    width: 28%;
+  width: 28%;
 }

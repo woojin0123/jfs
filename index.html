@@ -49,12 +49,12 @@
 <!-- #home -->
 
 <!-- about section -->
-    <div id="about" class="container-fluid px-0">
+    <div id="about" class="container-fluid px-0 position-relative">
             <h3 class="text-center mt-5 pt-5 fs-2">WHO AM I</h3>
             <p class="text-center mt-4 mb-5 "><em>I'm Cha Woojin.</em></p>
             <div class="container pb-5">
-                <div class="basic">
-                    <p>We have created a fictional "personal" website/blog, and our fictional characteris a
+                <div class="basic overflow-hidden">
+                    <p class="motion position-relative">We have created a fictional "personal" website/blog, and our fictional characteris a
                         <strong>hobby photographer</strong>. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
                         nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
@@ -64,11 +64,11 @@
                         aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
                         commodo consequat.</p>
                     <div class="row inner mt-5 p-0">
-                        <div class="col text-center">
+                        <div class="col text-center motion position-relative">
                             <b class="d-block mb-5"><i class="fa-regular fa-user"></i>My Name</b>
                             <div class="myimg"><img class="w-100 h-100 object-fit-cover" src="assets/imgs/avatar_hat.jpg" alt="내 사진"></div>
                         </div>
-                        <p class="col ele-hide">Welcome to my website. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor
+                        <p class="col ele-hide motion position-relative">Welcome to my website. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor
                             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
                             exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
                             in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
@@ -82,39 +82,47 @@
                     <p class="text-center mt-5 mb-4">My skill</p>
                     <div class="inner">
                         <p class="ls10px"><i class="fa-solid fa-desktop"></i>Photoshop</p>
-                        <div class="progress rounded-0 mb-4">
+                        <div class="progress-wrap rounded-0 mb-4">
                             <div class="progress-bar bg-secondary" style="width:90%">
-                                <div><span>90%</span></div>
+                                <div><span class="percent">90%</span></div>
                             </div>
                         </div>
                         <p class="ls10px"><i class="fa-solid fa-camera"></i>Photography</p>
-                        <div class="progress rounded-0 mb-4">
+                        <div class="progress-wrap rounded-0 mb-4">
                             <div class="progress-bar bg-secondary" style="width:80%">
-                                <div><span>80%</span></div>
+                                <div><span class="percent">80%</span></div>
                             </div>
                         </div>
                         <p class="ls10px"><i class="fa-solid fa-pen-nib"></i>Design</p>
-                        <div class="progress rounded-0 mb-4">
+                        <div class="progress-wrap rounded-0 mb-4">
                             <div class="progress-bar bg-secondary" style="width:70%">
-                                <div><span>70%</span></div>
+                                <div><span class="percent">70%</span></div>
                             </div>
                         </div>
-                    </div>
+                    </div> <!-- inner -->
                 </div> <!-- skill -->
             </div> <!-- .container -->
-            <div class="container-fluid p-0 bg-dark count py-5">
+            <div id="counterWrap" class="container-fluid p-0 bg-dark count py-5">
                 <ul class="row text-center list-unstyled py-2 text-white gx-0" id="counters">
-                    <li class="col"><span class="counter fs-2 d-block" data-bs-target="3">0</span>+Partners</li>
-                    <li class="col"><span class="counter fs-2 d-block" data-bs-target="3">0</span>+Projects Done</li>
-                    <li class="col"><span class="counter fs-2 d-block" data-bs-target="15">0</span>+Total Page</li>
-                    <li class="col"><span class="counter fs-2 d-block" data-bs-target="1">0</span>+National technical certification</li>
-                </ul>
-            </div> <!-- count -->
+                    <li class="col">
+                        <span class="counter fs-2" data-target="3">0</span><div>Partners</div>
+                    </li>
+                    <li class="col">
+                        <span class="counter fs-2" data-target="3">0</span><div>Projects Done</div>
+                    </li>
+                    <li class="col">
+                        <span class="counter fs-2" data-target="15">0</span><div>Total Page</div>
+                    </li>
+                    <li class="col">
+                        <span class="counter fs-2" data-target="1">0</span><div>National technical certification</div>
+                    </li>
+                </ul> <!-- counters -->
+            </div> <!-- counterWrap -->
     </div> 
 <!-- #about -->
 
 <!-- work section -->
-    <div id="work" class="container-fluid px-0 pb-5">
+    <div id="work" class="container-fluid px-0 pb-5 position-relative overflow-hidden">
         <div class="parallax-bg position-relative">
             <h2 class="position-absolute top-50 start-50 translate-middle text-white ls10px display-6">PORTFOLIO</h2>
         </div>
@@ -185,11 +193,13 @@
  </footer>
  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
  <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-throttle-debounce/1.1/jquery.ba-throttle-debounce.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-throttle-debounce/1.1/jquery.ba-throttle-debounce.min.js"></script>
+
  <script src="js/scrollMotion.js"></script>
  <script src="js/clock.js"></script>
  <script src="js/dark.js"></script>
  <script src="js/contact.js"></script>
  <script src="js/counter.js"></script>
+ <script src="js/progress.js"></script>
 </body>
 </html>
