@@ -23,7 +23,7 @@
         .progress-bar {
             width: 0%;
             height: 100%;
-            background: #4fea57;
+            background: #4caf50;
             transition: width .3s ease-out;
         }
 
@@ -35,36 +35,20 @@
             font-weight: bold;
         }
     </style>
-    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-                    <div class="inner">
-                        <p class="ls10px"><i class="fa-solid fa-desktop"></i>Photoshop</p>
-                        <div class="progress-wrap rounded-0 mb-4">
-                            <div class="progress-bar bg-secondary" style="width:90%">
-                                <div><span class="percent">90%</span></div>
-                            </div>
-                        </div>
-                        <p class="ls10px"><i class="fa-solid fa-camera"></i>Photography</p>
-                        <div class="progress-wrap rounded-0 mb-4">
-                            <div class="progress-bar bg-secondary" style="width:80%">
-                                <div><span class="percent">80%</span></div>
-                            </div>
-                        </div>
-                        <p class="ls10px"><i class="fa-solid fa-pen-nib"></i>Design</p>
-                        <div class="progress-wrap rounded-0 mb-4">
-                            <div class="progress-bar bg-secondary" style="width:70%">
-                                <div><span class="percent">70%</span></div>
-                            </div>
-                        </div>
-                    </div>
-    <div class="progress-wrap">
-        <div class="progress-bar"></div>
-        <span class="percent">0%</span>
+
+
+    <div class="progress rounded-0">
+        <div class="progress-bar bg-info"><span>85%</span></div>
     </div>
+
+    <div class="progress-wrap">
+        <div class="progress-bar"><span class="percent">0%</span></div>    
+    </div>
+
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="script.js"></script>
     <script>
         $(function () {
             let current = 0;            // 시작값

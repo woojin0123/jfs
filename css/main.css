@@ -110,6 +110,11 @@
   content: "";
   height: 56px;
 }
+
+/* 프로필 소개 문단 */
+.basic p {
+  text-align: justify;
+}
 /* 나의 사진 */
 .myimg {
   width: 425px;
