@@ -12,7 +12,7 @@ $(function () {
                 clearInterval(counterInterval);
             }
             // 바 증가
-            $counter.parent(".progress-bar").css("width", count + "%");
+            $counter.parent(".prograss-bar").css("width", count + "%");
             // 숫자(퍼센트) 증가
             $counter.text(count);
         }, speed);

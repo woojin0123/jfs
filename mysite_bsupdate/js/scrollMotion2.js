@@ -5,7 +5,7 @@ $(window).scroll(function () {
   const speed = 1000,
     easing = "easeOutExpo",
     pos = 0,
-    offset = 2.5; // 숫자 커질수록 빨리 나타남
+    offset = 0.6; // 숫자 커질수록 빨리 나타남
 
   // 우측 상단에 스크롤 양, 창 높이값 출력
   $(".result").html(windowScrollTop + " , " + windowHeight);
@@ -13,17 +13,17 @@ $(window).scroll(function () {
   if (windowScrollTop > windowHeight * offset) {
     //참일 경우
     // i는 0, 1, 2, 3
-    for (let i = 0; i < 4; i++) {
-      $(".motion")
+    for (let i = 0; i < 3; i++) {
+      $(".motion2")
         .eq(i)
         .stop()
-        .animate({ top: pos, opacity: 1 }, (speed * (i + 1)) / 2, easing);
+        .animate({ top: pos, opacity: 1 }, (speed * (i + 1))/2, easing);
     }
   } else {
     //거짓일 경우 else 부분 없으면 최초 1회만 동작
-    $(".motion")
+    $(".motion2")
       .stop()
-      .animate({ top: pos + 600, opacity: 0 }, speed, easing);
+      .animate({ top: pos + 1000, opacity: 0 }, speed, easing);
   }
 
   // $(window).scroll
