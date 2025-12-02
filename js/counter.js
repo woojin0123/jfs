@@ -1,4 +1,6 @@
-$(function () {
+
+    $(()=>{
+    
     function runCounter($counter) {
         var target = parseInt($counter.attr("data-target")),
             count = 0,
@@ -17,7 +19,7 @@ $(function () {
             $counter.text(count);
         }, speed);
     } // function runCounter($counter) end
-
+    
     function checkScroll() {
         const scrollTop = $(window).scrollTop(),
             windowHeight = $(window).height(),
@@ -43,4 +45,4 @@ $(function () {
     $(window).on("scroll", $.throttle(100, checkScroll));
     checkScroll();
 
-}); // $(document).ready() end
+});// $(document).ready() end

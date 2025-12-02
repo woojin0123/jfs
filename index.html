@@ -63,7 +63,7 @@
                         laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
                         aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
                         commodo consequat.</p>
-                    <div class="row inner mt-5 p-0">
+                    <div class="row mt-5 p-0">
                         <div class="col text-center motion position-relative">
                             <b class="d-block mb-5"><i class="fa-regular fa-user"></i>My Name</b>
                             <div class="myimg"><img class="w-100 h-100 object-fit-cover" src="assets/imgs/avatar_hat.jpg" alt="내 사진"></div>
@@ -83,15 +83,15 @@
                         <div class="inner counters">
                             <p class="ls10px"><i class="fa-solid fa-desktop"></i>Photoshop</p>
                             <div class="progress rounded-0 mb-4">
-                                    <div class="progress-bar bg-secondary"><span class="counter percent" data-target="90">0%</span></div>
+                                    <div class="progress-bar bg-secondary"><span class="counter percent" data-target="90">0</span><span>%</span></div>
                             </div>
                             <p class="ls10px"><i class="fa-solid fa-camera"></i>Photography</p>
                             <div class="progress rounded-0 mb-4">
-                                    <div class="progress-bar bg-secondary"><span class="counter percent" data-target="80">0%</span></div>
+                                    <div class="progress-bar bg-secondary"><span class="counter percent" data-target="80">0</span><span>%</span></div>
                             </div>
                             <p class="ls10px"><i class="fa-solid fa-pen-nib"></i>Design</p>
                             <div class="progress rounded-0 mb-4">
-                                    <div class="progress-bar bg-secondary"><span class="counter percent" data-target="70">0%</span></div>
+                                    <div class="progress-bar bg-secondary"><span class="counter percent" data-target="70">0</span><span>%</span></div>
                             </div>
                         </div> <!-- inner -->
                 </div> <!-- skill -->
@@ -116,19 +116,20 @@
 <!-- #about -->
 
 <!-- work section -->
-    <div id="work" class=" portfolio container-fluid px-0 pb-5 position-relative overflow-hidden">
+    <div id="work" class="container-fluid px-0 pb-5 position-relative overflow-hidden">
         <div class="parallax-bg position-relative">
             <h2 class="position-absolute top-50 start-50 translate-middle text-white ls10px display-6">PORTFOLIO</h2>
         </div>
         <h3 class="text-center mt-5 pt-5">MY WORK</h3>
         <p class="text-center mt-4 mb-5">제 작업 중 일부를 확인해 보세요!<br>이미지를 클릭하시면 크게 확인하실 수 있습니다.</p>
         <div class="container mt-4 mb-5">
-            <ul class="row text-center list-unstyled mb-3">
+            <div class="row portfolio"></div> <!-- //portfolio -->
+            <!-- <ul class="row text-center list-unstyled mb-3">
                 <li class="col-lg col-md-6 motion position-relative mb-lg-3 mb-md-3"><a href="#"><img class="w-100 h-100 object-fit-cover" src="assets/imgs/p2.jpg" alt="팀 작품"></a></li>
                 <li class="col-lg col-md-6 motion position-relative mb-lg-3 mb-md-3 mt-3 mt-md-0"><a href="project/index.html" target="_blank"><img class="w-100 h-100 object-fit-cover" src="assets/imgs/wj_project2_thumb.jpg" alt="모방 작품"></a></li>
                 <li class="col-lg col-md-6 motion position-relative mb-lg-3 mb-md-3 mt-3 mt-md-0"><a href="#"><img class="w-100 h-100 object-fit-cover" src="assets/imgs/p5.jpg" alt="개인 작품"></a></li>
                 <li class="col-lg col-md-6 motion position-relative mb-lg-3 mb-md-3 mt-3 mt-md-0"><a href="#"><img class="w-100 h-100 object-fit-cover" src= "assets/imgs/p6.jpg" alt="준비중"></a></li>
-            </ul>
+            </ul> -->
             <div class="text-center"><button type="button" id="shadow" class="btn btn-outline-secondary px-5 rounded-1 position-relative">Load More...</button></div>
         </div> <!-- .container -->
     </div> 
@@ -193,7 +194,9 @@
  <script src="js/clock.js"></script>
  <script src="js/dark.js"></script>
  <script src="js/contact.js"></script>
- <script src="js/progress.js"></script>
+ <!-- <script src="js/progress.js"></script> -->
  <script src="js/counter.js"></script>
+ <script src="js/data.js"></script>
+ <script src="js/portfolio.js"></script>
 </body>
 </html>

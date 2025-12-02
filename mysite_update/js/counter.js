@@ -1,23 +1,24 @@
 $(function () {
-    function runCounter($counter) {
-        var target = parseInt($counter.attr("data-target")),
-            count = 0,
-            speed = 50;
+    // function runCounter($counter) {
+    //     var target = parseInt($counter.attr("data-target")),
+    //         count = 0,
+    //         speed = 50;
 
-        $counter.text(0);
+    //     $counter.text(0);
 
-        var counterInterval = setInterval(function () {
-            count++;
-            if (count >= target) {
-                clearInterval(counterInterval);
-            }
-            // 바 증가
-            $counter.parent(".prograss-bar").css("width", count + "%");
-            // 숫자(퍼센트) 증가
-            $counter.text(count);
-        }, speed);
-    } // function runCounter($counter) end
+    //     var counterInterval = setInterval(function () {
+    //         count++;
+    //         if (count >= target) {
+    //             clearInterval(counterInterval);
+    //         }
+    //         // 바 증가
+    //         $counter.parent(".progress-bar").css("width", count + "%");
+    //         // 숫자(퍼센트) 증가
+    //         $counter.text(count);
+    //     }, speed);
+    // } // function runCounter($counter) end
 
+    
     function checkScroll() {
         const scrollTop = $(window).scrollTop(),
             windowHeight = $(window).height(),
