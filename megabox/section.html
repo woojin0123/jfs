@@ -135,14 +135,23 @@
             transform: rotateY(360deg);
         }
     </style>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="js/data.js"></script>
 </head>
 
 <body>
+    <h2>박스 오피스</h2>
+    <div><a href="https://www.megabox.co.kr/movie">더 많은 영화보기<i class="fa-regular fa-plus"></i></a></div>
     <!-- Card UI(카드 UI) -->
     <div class="box_office"></div><!-- //.box_office -->
+    <input type="text" placeholder="영화명을 입력해 주세요">
+    <ul>
+        <li><a href="https://www.megabox.co.kr/booking/timetable"><img src="images/ico-schedule-white.png" alt="상영시간표"></a>상영시간표</li>
+        <li><a href="https://www.megabox.co.kr/movie"><img src="images/ico-boxoffice-main.png" alt="박스오피스"></a>박스오피스</li>
+        <li><a href="https://www.megabox.co.kr/booking"><img src="images/ico-quick-reserve-main.png" alt="빠른예매"></a>빠른예매</li>
+    </ul>
 
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/data.js"></script>
     <script>
         // ${data.screenTypes[0] === undefined ? "" : `<img src="${data.screenTypes[0]}" alt="mega mx4d">`}
         // ${data.screenTypes[1] === undefined ? "" : `<img src="${data.screenTypes[1]}" alt="dolby cinema">`}
