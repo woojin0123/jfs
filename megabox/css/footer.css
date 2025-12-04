@@ -41,10 +41,6 @@ ul {
 }
 
 /* https://sitero.co.kr/fontsize */
-body {
-    font: 0.9375rem/1.6 "NanumBarunGothic", sans-serif;
-    background: #111;
-}
 
 a {
     text-decoration: none;
@@ -53,8 +49,6 @@ a {
 
 img {
     vertical-align: middle;
-    width: 100%;
-    height: 100%;
     object-fit: cover;
 }
 input {
@@ -70,4 +64,62 @@ input {
 }
 address {
     font-style: normal;
+}
+
+
+body, a {
+    color: #666;
+    font-size: 0.81rem;
+}
+/* #footer {
+    background: #000;
+} */
+#footer .inner {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+#footer .linktr {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 30px;
+    align-items: center;
+}
+#footer .ftlink ul {
+    display: flex;
+    margin-right: 5px;
+}
+#footer .ftlink li:nth-of-type(6) a {
+    color: #222;
+}
+#footer .ftlink li:nth-of-type(7) a {
+    color: #222;
+}
+#footer .ftlink ul li {
+    margin-right: 16px;
+}
+#footer .ftlink ul li:hover {
+    text-decoration: underline;
+}
+
+#footer .btn_looking_theater {
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    padding: 3px 16px;
+}
+#footer .searchtr img {
+    margin-right: 5px;
+}
+
+#footer .down {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-bottom: 50px;
+}
+#footer .ftlogo {
+    padding: 20px 0 20px 0;
+}
+#footer .sns {
+    
+    padding: 16px 0px 20px 20px;
 }
